@@ -1,0 +1,23 @@
+<div class="home-topbox">
+    {% include 'base.html' %}
+    <section class="home-wotd">
+        <div class="home-wotd__wrapper">
+            <div class="home-wotd__inside">
+                <div>
+                    "Hello<br /> Eniac"
+                </div>
+                <br />
+                <span>
+          에니악 홈페이지에 오신걸 환영합니다 <br />
+          저희는 프로젝트 활동 중심 동아리이며<br />
+          동아리 회원분들의 성장을 목표로 두고있는 동아리입니다
+        </span>
+            </div>
+
+            <div>Get Started</div>
+        </div>
+    </section>
+</div>
+{% for project in potato %}
+<h1>{{project.title}}</h1>
+{% endfor %}

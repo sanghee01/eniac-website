@@ -1,0 +1,30 @@
+.home-topbox {
+    background: linear-gradient(180deg, #fef6b2 0%, #fffce3 100%);
+}
+
+.home-wotd {
+    padding-top: 60px;
+    margin-bottom: 60px;
+}
+
+.home-wotd__wrapper {
+    width: 1280px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.home-wotd__inside {
+    padding-left: 10.37%;
+}
+
+.home-wotd__inside div:first-child {
+    font-family: DM Serif Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 56px;
+    line-height: 68px;
+    /* or 103% */
+    letter-spacing: 0.01em;
+    color: #20202b;
+    margin-bottom: 10px;
+}

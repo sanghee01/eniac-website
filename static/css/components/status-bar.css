@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+.status-bar {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.status-bar__column {
+    width: 50%;
+}
+
+.status-bar__column:first-child span {
+    margin-right: 5px;
+}
+
+.status-bar__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.status-bar__column div {
+    margin-left: 90px;
+}
+
+.status-bar__signup {
+    border-radius: 20px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
