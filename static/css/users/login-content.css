@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@100&display=swap");
+.login-content {
+    display: flex;
+    margin-top: 40px;
+}
+
+.login-content__inputlist {}
+
+.login-content__form {
+    margin-left: 20px;
+}
+
+.login-content__form h1 {
+    font-family: DM Serif Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 66px;
+    line-height: 90px;
+    letter-spacing: 0.3px;
+    margin-top: -26.22px;
+}
+
+
+/* .login-content__img {
+    width: 60%;
+} */
+
+.login-content__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 150%;
+}
+
+.login-content__input label {
+    margin-bottom: 10px;
+}
+
+.login-content__input input {
+    background: #ffffff;
+    border: 1px solid #8d8d8d;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 51px;
+}
+
+.login-content__input select {
+    background: #ffffff;
+    border: 1px solid #8d8d8d;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 51px;
+}

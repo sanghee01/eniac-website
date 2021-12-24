@@ -1,23 +1,71 @@
+{% load static %}
+
+
 <div class="home-topbox">
-    {% include 'base.html' %}
+
+
     <section class="home-wotd">
+        {% include 'base.html' %}
         <div class="home-wotd__wrapper">
             <div class="home-wotd__inside">
-                <div>
-                    "Hello<br /> Eniac"
-                </div>
+                <div>"Hello<br /><span style="margin-left: 80px">Eniac"</span></div>
                 <br />
                 <span>
           에니악 홈페이지에 오신걸 환영합니다 <br />
-          저희는 프로젝트 활동 중심 동아리이며<br />
-          동아리 회원분들의 성장을 목표로 두고있는 동아리입니다
+          저희는 프로젝트 활동 중심 동아리이며,<br />
+          동아리 회원분들의 개발자로서의 성장을 목표로 두고있는 동아리입니다
         </span>
+                <div class="home-wotd__button">Get Started</div>
             </div>
-
-            <div>Get Started</div>
+            <div class="home-wotd__photoside">
+                <div>
+                    <img src="{% static 'img/coding.png' %}" alt="" />
+                </div>
+                <br />
+                <div class="home-wotd__developer">개발자 윤동규 이상희</div>
+            </div>
         </div>
     </section>
+    <section class="home-cardlist">
+        {% for project in potato %}
+        <div class="home-cardlist__card">
+            <div class="home-cardlist__text">
+                <div class="home-cardlist__subtext">
+                    <h1>{{project.title | truncatechars:7}}</h1>
+                    <h3>{{project.desc}}</h3>
+                    <span>{{project.user}}</span>
+                </div>
+                <button>자세히보기</button>
+            </div>
+            <div>
+                <img style="width: 470px; height: 360px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+            </div>
+        </div>
+        {% endfor %} {% for project in second %}
+        <div class="home-cardlist__card">
+            <div>
+                <img style="width: 470px; height: 360px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+            </div>
+            <div class="home-cardlist__text ">
+                <div class="home-cardlist__subtext">
+                    <h1>{{project.title | truncatechars:20}}</h1>
+                    <h3>{{project.desc | truncatechars:80}}</h3>
+                    <span>{{project.user}}</span>
+                </div>
+                <button>자세히보기</button>
+            </div>
+
+        </div>
+        {% endfor %}
+    </section>
+
+    <nav class="nav">
+        <!-- <div class="nav__btn">
+            <a class="nav__link" href="friends.html"><i class="fas fa-user fa-lg"></i
+          ></a>
+        </div>
+        <div class="nav__btn">
+            <a class="nav__link" href="#"><i class="far fa-comment fa-lg"></i></a>
+        </div> -->
+    </nav>
 </div>
-{% for project in potato %}
-<h1>{{project.title}}</h1>
-{% endfor %}

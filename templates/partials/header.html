@@ -8,33 +8,28 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/components/status-bar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/components/nav.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Friends - Kokoa Clone</title>
 </head>
 
 <body>
 
     <div class="status-bar">
         <div class="status-bar__column">
-            <img src="{% static 'img/logo_home.png' %}" alt="My image"></img>
+            <a>
+                <img src="{% static 'img/logo_home.png' %}" alt="My image"></img>
+            </a>
         </div>
 
         <div class="status-bar__column">
             <div class="">공지사항</div>
             <div class="">프로젝트</div>
             <div class="">활동</div>
-            <div class="status-bar__signup">sign up</div>
+            <div class="status-bar__signup">
+                <a>Log in </a>
+            </div>
         </div>
     </div>
 
-    <nav class="nav">
-        <div class="nav__btn">
-            <a class="nav__link" href="friends.html"><i class="fas fa-user fa-lg"></i
-          ></a>
-        </div>
-        <div class="nav__btn">
-            <a class="nav__link" href="#"><i class="far fa-comment fa-lg"></i></a>
-        </div>
-    </nav>
+
 
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 </body>
