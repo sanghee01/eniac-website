@@ -14,14 +14,14 @@
 
     <div class="status-bar">
         <div class="status-bar__column">
-            <a>
+            <a href="{% url 'core:project' %}">
                 <img src="{% static 'img/logo_home.png' %}" alt="My image"></img>
             </a>
         </div>
 
         <div class="status-bar__column">
             <div class="">공지사항</div>
-            <div class="">프로젝트</div>
+            <div class=""><a href="{% url 'core:project_list' %}">프로젝트</a></div>
             <div class="">활동</div>
             <div class="status-bar__signup">
                 <a style="text-decoration: none; color: white;" href="{% url 'user:login' %}">Log in </a>

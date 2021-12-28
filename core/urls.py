@@ -8,8 +8,8 @@ from django.conf import settings
 app_name = "core"
 
 urlpatterns = [
-   path("home", project_view.all_projects, name="project"),
-
+   path("home", project_view.home_projects, name="project"),
+   path("project", project_view.all_projects, name="project_list"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
