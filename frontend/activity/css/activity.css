@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+#act-bg {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+}
