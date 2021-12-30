@@ -1,3 +1,7 @@
+#Tab {
+  margin-bottom: 100px;
+}
+
 .tab-menu {
   list-style: none;
   width: 100%;
@@ -15,24 +19,23 @@
   margin-right: 5%;
 }
 
-.tab-menu__list__btn {
+.tab-menu__btn {
   font-size: 20px;
   font-weight: bold;
 }
-.tab-menu__list__cont {
+.tab-menu__cont {
   display: none;
   width: 80%;
-  border: 1px solid black;
   text-align: center;
   position: absolute;
-  top: 80px;
+  top: 120px;
   left: 9%;
 }
 
-.is_on .tab-menu__list__btn {
+.is_on .tab-menu__btn {
   border-bottom: 5px solid #7879f1;
 }
 
-.is_on .tab-menu__list__cont {
+.is_on .tab-menu__cont {
   display: block;
 }

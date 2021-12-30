@@ -1,5 +1,5 @@
 const tabList = document.querySelectorAll(".tab-menu__list");
-const tabBtn = document.querySelectorAll(".tab-menu__list__btn");
+const tabBtn = document.querySelectorAll(".tab-menu__btn");
 
 for (let i = 0; i < tabList.length; i++) {
   tabBtn[i].addEventListener("click", function (e) {
