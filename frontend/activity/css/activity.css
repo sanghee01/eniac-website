@@ -8,6 +8,7 @@ body {
 }
 #act-bg {
   width: 100vw;
+  height: 200%;
   position: absolute;
   top: 0;
 }
