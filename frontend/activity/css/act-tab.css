@@ -18,6 +18,9 @@
 .tab-menu__list {
   margin-right: 5%;
 }
+.tab-menu__list:first-child {
+  margin-left: 5%;
+}
 
 .tab-menu__btn {
   font-size: 20px;
