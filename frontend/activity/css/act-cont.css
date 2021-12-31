@@ -43,5 +43,5 @@ li {
 
 .activity__comment-name {
   border-right: 1px solid rgba(1, 1, 1, 0.3);
-  margin-right: 5px;
+  padding-right: 5px;
 }

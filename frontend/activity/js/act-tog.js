@@ -1,6 +1,6 @@
 const toggle = document.querySelector(".activity__comment-tog");
 const togCont = document.querySelector(".activity__comment");
-const icon = document.querySelector(".fa-chevron-down");
+const icon = document.querySelector(".fa-chevron-up");
 
 toggle.addEventListener("click", function () {
   if (togCont.style.display === "block") {
