@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect, reverse
 from django.contrib.auth import authenticate, login, logout
 from . import forms
+from . import models
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -21,3 +23,4 @@ class SignUpView(FormView):
     form_class = forms.SignUpForm
     success_url = reverse_lazy("core:home")
     initial = {"first_name": "Nicoas", "last_name": "Serr", "email": "itn@las.com"}
+

@@ -13,7 +13,7 @@ class Project(TimeStampedModel):
     git = models.CharField(max_length=60)
     views = models.PositiveIntegerField(default=0, verbose_name='조회수')
     user = models.ForeignKey(
-        "users.User", on_delete=models.CASCADE, related_name="project",  null=False, blank=False
+        "users.User", on_delete=models.CASCADE, related_name="project",  null=True, blank=False
     ) 
     class Meta:
         ordering = ["-created"]
