@@ -7,6 +7,17 @@ a {
     display: flex;
 }
 
+.project-content__underline {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    border-radius: 3px;
+    transition: 0.5s;
+    background-color: pink;
+    top: 0;
+}
+
 .project-content__tab_menu {
     display: flex;
     align-items: center;
@@ -51,20 +62,14 @@ li.is__on {
 
 .project-content__tab_menu .project-content__list .cont {
     display: none;
-    position: absolute;
-    top: 25px;
-    left: 0;
     background: #555;
     color: #fff;
     text-align: center;
-    width: 250px;
-    height: 100px;
-    line-height: 100px;
 }
 
 .project-content__tab_menu .project-content__list li.is_on .btn {
     font-weight: bold;
-    border-bottom: none solid green;
+    border-bottom: 2px solid black;
 }
 
 .project-content__tab_menu .project-content__list li.is_on .cont {
