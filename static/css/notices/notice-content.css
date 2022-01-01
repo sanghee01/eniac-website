@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
+.notice-content__title {
+    display: flex;
+    justify-content: center;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 20px;
+    /* identical to box height, or 34% */
+    letter-spacing: -0.133333px;
+    margin-top: 5%;
+}
+
+.notice-content__card {
+    display: flex;
+    margin: 8% 0 0 15%;
+}
+
+.notice-content__text {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.notice-content__card-title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 20px;
+    /* identical to box height, or 50% */
+    letter-spacing: 2.133333px;
+    margin-bottom: 20px;
+}
+
+.notice-content__card-desc {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 20px;
+    /* identical to box height, or 62% */
+    letter-spacing: 1.133333px;
+}
+
+.notice-content__tag {
+    display: flex;
+    height: 60%;
+    align-items: flex-end;
+}
+
+.notice-content__tag div {
+    width: 100px;
+    height: 50px;
+    background: #c7b6e3;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.notice-content__border {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.notice-content__border div {
+    border: 0.04px solid #000000;
+    width: 80%;
+}

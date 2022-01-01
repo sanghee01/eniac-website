@@ -7,6 +7,16 @@ a {
     display: flex;
 }
 
+.project-content__tabs {
+    margin-left: 5%;
+    margin-top: 3%;
+    display: flex;
+}
+
+.project-content__a span {
+    margin-left: 6px;
+}
+
 .project-content__underline {
     position: absolute;
     left: 0;
@@ -45,6 +55,17 @@ a {
 
 .project-content__list li {
     margin-left: 20px;
+}
+
+.project-content__a {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.project-content__a:nth-child(2) {
+    border-bottom: 2px solid black;
+    height: 60px;
 }
 
 li.is__on {

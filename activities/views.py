@@ -15,7 +15,7 @@ def all_activity(request):
 
 
     all_users = User.objects.all()
-    paginator = Paginator(all_users, 20)
+    paginator = Paginator(all_users, 40)
     users = paginator.get_page(page)
 
     return render(request,  "activities/activity.html", context={"act": activities, "user": users})
