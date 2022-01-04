@@ -96,3 +96,29 @@ li.is__on {
 .project-content__tab_menu .project-content__list li.is_on .cont {
     display: block;
 }
+
+.project-menu {
+    list-style: none;
+    display: flex;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.project-menu__cont {
+    display: none;
+    text-align: center;
+    left: 20%;
+}
+
+.project-menu__btn {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width: 90px;
+    height: 60px;
+}
+
+.project-menu__btn span {
+    width: 40px;
+    margin-left: 8px;
+}

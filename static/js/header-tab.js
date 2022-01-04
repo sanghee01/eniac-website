@@ -1,20 +1,21 @@
 const headerSpan = document.querySelectorAll(".status-bar__circle");
 const headerBtn = document.querySelectorAll(".status-bar__button");
 
-for (let i = 0; i < headerSpan.length; i++) {
-    headerBtn[i].addEventListener("click", function(e) {
-        e.preventDefault();
-        for (let j = 0; j < headerSpan.length; j++) {
-            headerSpan[j].classList.remove("is_on");
-        }
-        this.nextElementSibling.classList.add("is_on");
+console.log(this.location.href);
 
-        // if (headerList.classList === "is_on") {
-        //     headerList.classList.remove("is_on");
-        // } else {
-        //     headerList.classList.add("is_on");
-        // }
+for (let i = 0; i < tabList.length; i++) {
+    headerBtn[i].addEventListener("click", function(e) {
+        if (this.location.href === "http://127.0.0.1:8000/notice") {
+            // 잴 앞에거만 냄겨놓고 잴 앞에것만 is_on실행
+            headerSpan[0].classList.add("is_on");
+        } else if (this.location.href === "http://127.0.0.1:8000/project") {
+            // 잴 앞에거만 냄겨놓고 잴 앞에것만 is_on실행
+            headerSpan[1].classList.add("is_on");
+        } else if (this.location.href === "http://127.0.0.1:8000/activity") {
+            // 잴 앞에거만 냄겨놓고 잴 앞에것만 is_on실행
+            headerSpan[2].classList.add("is_on");
+        }
     });
 }
 
-// is on일경우 제거
+console.log(headerSpan[0]);

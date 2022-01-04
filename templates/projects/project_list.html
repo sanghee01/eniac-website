@@ -1,67 +1,65 @@
  {% load static %}
 <img style="position: absolute; top: 0; left: 0; width: 100%; height: 130%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
-<div class="project-content">
-    <div class="project-content__tabs">
-        <div class="project-content__underline"></div>
-        <a class="project-content__a" href="#">
+<main>
+    <ul class="project-menu">
+        <li class="project-menu__list is_on">
+            <a class="project-menu__btn" href="#">
+                <img style="width: 50px; height: 50px;" src="{% static 'img/Time.png' %}" alt="">
+                <span>최신</span>
+            </a>
+            <div id="project1" id="activity" class="project-menu__cont">
 
-            <img style="width: 50px; height: 50px;" src="{% static 'img/Time.png' %}" alt="">
-            <span>최신</span>
+                <div class="project-cardlist">
+                    {% for project in projects.object_list %}
+                    <div class="project-cardlist__card">
+                        <div>
+                            <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+                        </div>
+                        <div class="project-cardlist__text">
+                            <div class="home-cardlist__subtext">
+                                <h1>{{project.title | truncatechars:7}}</h1>
+                                <h3>{{project.desc | truncatechars:30}}</h3>
 
-        </a>
-        <!-- a태그 클릭하면  -->
-
-        <!-- 여기서 클릭이벤트가 발생하면 밑줄 아님 밑줄지우기 이런식으로 내용 도 포함해서 -->
-        <a class="project-content__a" href="#">
-            <img src="{% static 'img/Vector.png' %}" alt="">
-            <span>인기순</span>
-        </a>
-        <span class="border"></span>
-
-    </div>
-    <!-- horiziental -->
-
-    <!-- 일단 여기서 클릭이벤트 움직일때 전체인  -->
-
-    <div class="project-cardlist">
-        {% for project in projects.object_list %}
-        <div class="project-cardlist__card">
-            <div>
-                <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
-            </div>
-            <div class="project-cardlist__text">
-                <div class="home-cardlist__subtext">
-                    <h1>{{project.title | truncatechars:7}}</h1>
-                    <h3>{{project.desc | truncatechars:30}}</h3>
-
+                            </div>
+                            <div class="project-cardlist__user">
+                                <span>{{project.user}}</span>
+                                <button>자세히보기</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                <div class="project-cardlist__user">
-                    <span>{{project.user}}</span>
-                    <button>자세히보기</button>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="project-cardlist">
-        {% for project in projects.object_list %}
-        <div class="project-cardlist__card">
-            <div>
-                <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
-            </div>
-            <div class="project-cardlist__text">
-                <div class="home-cardlist__subtext">
-                    <h1>{{project.title | truncatechars:7}}</h1>
-                    <h3>{{project.desc | truncatechars:30}}</h3>
+        </li>
+        <li class="project-menu__list ">
+            <a class="project-menu__btn" href="#">
+                <img src="{% static 'img/Vector.png' %}" alt="">
+                <span>인기</span>
+            </a>
+            <div class="project-cardlist">
+                {% for project in projects.object_list %}
+                <div class="project-cardlist__card">
+                    <div>
+                        <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+                    </div>
+                    <div class="project-cardlist__text">
+                        <div class="home-cardlist__subtext">
+                            <h1>{{project.title | truncatechars:7}}</h1>
+                            <h3>{{project.desc | truncatechars:30}}</h3>
 
+                        </div>
+                        <div class="project-cardlist__user">
+                            <span>{{project.user}}</span>
+                            <button>자세히보기</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-cardlist__user">
-                    <span>{{project.user}}</span>
-                    <button>자세히보기</button>
-                </div>
+                {% endfor %}
             </div>
-        </div>
-        {% endfor %}
-    </div>
+
+        </li>
+
+    </ul>
+</main>
 </div>
+<script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
 </img>

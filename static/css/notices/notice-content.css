@@ -19,15 +19,14 @@
 
 .notice-content__text {
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .notice-content__card-title {
     font-family: Roboto Mono;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 20px;
+    font-size: 32px;
     /* identical to box height, or 50% */
     letter-spacing: 2.133333px;
     margin-bottom: 20px;
@@ -38,14 +37,13 @@
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
-    line-height: 20px;
     /* identical to box height, or 62% */
     letter-spacing: 1.133333px;
 }
 
 .notice-content__tag {
     display: flex;
-    height: 60%;
+    height: 40%;
     align-items: flex-end;
 }
 

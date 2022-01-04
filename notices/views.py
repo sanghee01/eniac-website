@@ -12,6 +12,11 @@ def all_notice(request):
     all_notice = models.Notice.objects.all()
     paginator = Paginator(all_notice, 10)
     notices = paginator.get_page(page)
-
+    
    
     return render(request,  "notices/notice.html", context={"notice": notices})
+
+
+# 시작하자
+
+# 그럼여기서 

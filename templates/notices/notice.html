@@ -21,26 +21,34 @@
       " src="{% static 'img/triangle.png' %}" />{% include 'base.html' %}
     <div class="notice-content">
         <div class="notice-content__title">공지사항</div>
+
+        {% for notices in notice.object_list %}
+
         <div class="notice-content__card">
             <div class="notice-content__img">
                 <img src="{% static 'img/coding.png' %}" style="width: 200px; height: 190px" alt="" />
             </div>
             <div class="notice-content__text">
                 <div>
-                    <div class="notice-content__card-title">부트캠프 안내</div>
+                    <div class="notice-content__card-title">
+                        {{notices.title| truncatechars:10}}
+                    </div>
                     <div class="notice-content__card-desc">
-                        그래서 부트캠프는 이렇게 안내가 되려고 합니다 같이 참여합시다
+                        {{notices.desc| truncatechars:40}}
                     </div>
                 </div>
+                <!-- {% for tag in notice.object_list.tags.all %} -->
                 <div class="notice-content__tag">
-                    <div>대회안내</div>
-                    <div>전학년</div>
+                    <div>{{tag.name}}</div>
                 </div>
+                <!-- {% endfor %} -->
             </div>
         </div>
+
         <div class="notice-content__border">
             <div></div>
         </div>
+        {% endfor %}
     </div>
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>

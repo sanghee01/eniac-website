@@ -38,7 +38,8 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'rest_framework',   
+    
     
 ]
 
@@ -58,7 +59,15 @@ PROJECT_APPS = [
     "activities.apps.ActivitiesConfig",
     "challenges.apps.ChallengesConfig",
     "notices.apps.NoticesConfig",
+    'taggit',
+    
+  
+        
+
 ]
+
+
+
 
 THIRD_PARTY_APPS = [
     "django_seed",
@@ -81,6 +90,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+)
 
 TEMPLATES = [
     {
@@ -161,6 +174,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'users.User'
+
+
 
 
 MEDIA_URL = '/media/'

@@ -35,7 +35,7 @@ class Act_Comment(TimeStampedModel):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
     desc = models.TextField(max_length=300)
     user = models.ForeignKey(
-        "users.User", on_delete=models.PROTECT, related_name="comment_users",   null=False, blank=False
+        "users.User", on_delete=models.PROTECT, related_name="comment_users",   null=True, blank=False
     )
 
     def __str__(self):
