@@ -16,16 +16,29 @@
 }
 
 .tab-menu__list {
-  margin-right: 5%;
+  margin-right: 2%;
 }
 .tab-menu__list:first-child {
-  margin-left: 5%;
+  margin-left: 2%;
 }
 
 .tab-menu__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 50px;
   font-size: 20px;
   font-weight: bold;
+
+  padding-bottom: 3px;
 }
+
+.tab-menu__btn:hover {
+  background-color: #e8dbff;
+  border-radius: 5px;
+}
+
 .tab-menu__cont {
   display: none;
   width: 60%;
