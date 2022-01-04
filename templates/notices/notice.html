@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/notices/notice-content.css' %}" />
     <title>Eniac - Activity</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -50,8 +51,23 @@
         </div>
         {% endfor %}
     </div>
+    <div class="project-page">
+        {% if notice.has_previous %}
+        <a class="project-page__a" href="?page={{notice.previous_pre_number}}">
+            <i style="margin-right: 10px" class="fas fa-chevron-left fa-lg"></i>
+        </a>
+        {% endif %}
+
+        <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if projects.has_next %}
+        <a class="project-page__a" href="?page={{notice.next_page_number}}">
+            <i style="margin-left: 10px;" class="fas fa-chevron-right fa-2x"></i>
+        </a>
+        </a>
+        {% endif %}
+    </div>
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

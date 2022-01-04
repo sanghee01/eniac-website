@@ -14,7 +14,7 @@
 
 .notice-content__card {
     display: flex;
-    margin: 8% 0 0 15%;
+    margin: 5% 0 0 10%;
 }
 
 .notice-content__text {
@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .notice-content__border div {

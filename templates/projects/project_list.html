@@ -36,7 +36,7 @@
                 <span>인기</span>
             </a>
             <div class="project-cardlist">
-                {% for project in projects.object_list %}
+                {% for project in date.object_list %}
                 <div class="project-cardlist__card">
                     <div>
                         <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
@@ -59,6 +59,24 @@
         </li>
 
     </ul>
+    <div class="project-page">
+
+        {% if projects.has_previous %}
+        <a class="project-page__a" href="?page={{projects.previous_pre_number}}">
+            <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+        </a>
+        {% endif %}
+
+
+
+        <span> {{projects.number}} of {{projects.paginator.num_pages}}</span> {% if projects.has_next %}
+        <a class="project-page__a" href="?page={{projects.next_page_number}}">
+            <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+        </a>
+        {% endif %}
+
+
+    </div>
 </main>
 </div>
 <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>

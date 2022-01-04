@@ -10,7 +10,7 @@ from users.models import User
 def all_notice(request):
     page = request.GET.get("page")
     all_notice = models.Notice.objects.all()
-    paginator = Paginator(all_notice, 10)
+    paginator = Paginator(all_notice, 4)
     notices = paginator.get_page(page)
     
    
