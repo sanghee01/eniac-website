@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/activity.css" />
     <link rel="stylesheet" href="css/act-tab.css" />
     <link rel="stylesheet" href="css/act-cont.css" />
+    <link rel="stylesheet" href="css/dropdown.css">
     <link rel="stylesheet" href="css/attend.css">
     <link rel="stylesheet" href="css/challenge.css">
     <link rel="stylesheet" href="css/cmd-tog.css">
@@ -25,10 +26,29 @@
           <div id="tab1" id="activity" class="tab-menu__cont">
            
             <section class="activity__cont-wrap">
-              <select name="term" class="activity__dropdown">
-                <option value="1">22년 1학기</option>
-                <option value="2">22년 2학기</option>
-              </select>
+              <div class="dropdown">
+                <button type="button" class="dropdown-toggle">
+                  학기
+                </button>
+        
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <button type="button" value="1" class="dropdown-option">
+                      22년도 1학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="2" class="dropdown-option">
+                      22년도 2학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="3" class="dropdown-option">
+                      23년도 1학기
+                    </button>
+                  </li>
+                </ul>
+              </div>
               <h1 class="activity__title">3월 활동 내역</h1>
               <img src="../img/activity.JPG" class="activity__img" />
               <p class="activity__content">
@@ -61,10 +81,29 @@
           <a href="#tab2" class="tab-menu__btn">출석</a>
           <div id="tab2" id="attendence" class="tab-menu__cont">
             <section class="attend__wrap">
-            <select name="term" class="attend__dropdown">
-              <option value="1">22년 1학기</option>
-              <option value="2">22년 2학기</option>
-            </select>
+              <div class="dropdown">
+                <button type="button" class="dropdown-toggle">
+                  학기
+                </button>
+        
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <button type="button" value="1" class="dropdown-option">
+                      22년도 1학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="2" class="dropdown-option">
+                      22년도 2학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="3" class="dropdown-option">
+                      23년도 1학기
+                    </button>
+                  </li>
+                </ul>
+              </div>
               <table>
                 <thead>
                   <tr>
@@ -333,6 +372,7 @@
     <!-- Footer -->
     <script src="js/act-tab.js"></script>
     <script src="js/act-tog.js"></script>
+    <script src="js/dropdown.js"></script>
     <script src="js/chall-tog.js"></script>
   </body>
 </html>
