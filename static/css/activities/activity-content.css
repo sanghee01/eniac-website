@@ -1,0 +1,12 @@
+.activity-content {
+  display: flex;
+  justify-content: center;
+}
+
+.activity-content table {
+  width: 100%;
+}
+
+.activity-content__tr th {
+  margin-left: 30px;
+}

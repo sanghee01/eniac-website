@@ -1,0 +1,52 @@
+.project-cardlist {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3% 0% 0 0%;
+}
+
+.project-cardlist__card {
+    margin-left: 100px;
+    background-color: white;
+    margin-bottom: 70px;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 5px;
+    color: #adaeb9;
+    flex-direction: column;
+    width: 360px;
+    grid-template-columns: minmax(150px, 1fr) 2fr;
+    grid-gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.project-cardlist__text {
+    margin-left: 10px;
+}
+
+.project-cardlist__user {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-cardlist__user {
+    align-items: center;
+}
+
+.project-cardlist__user button {
+    background: #2ecc71;
+    border-radius: 4px;
+    width: 80px;
+    height: 44px;
+    border: none;
+}
+
+.is_on .project-menu__btn {
+    border-bottom: 5px solid #7879f1;
+    width: 90px;
+}
+
+.is_on .tab-menu__cont {
+    display: block;
+}

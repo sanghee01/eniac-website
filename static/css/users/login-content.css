@@ -21,10 +21,10 @@
     margin-top: -26.22px;
 }
 
-
-/* .login-content__img {
-    width: 60%;
-} */
+.login-content__img {
+    margin-right: 60px;
+    width: 50%;
+}
 
 .login-content__input {
     display: flex;
@@ -51,4 +51,26 @@
     box-sizing: border-box;
     border-radius: 4px;
     height: 51px;
+}
+
+.login-content__input button {
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 50px;
+    height: 50px;
+    margin-top: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+    /* identical to box height */
+    text-align: center;
+}
+
+.login-content__signup span {}
+
+.login-content__signup a {
+    color: blue;
 }

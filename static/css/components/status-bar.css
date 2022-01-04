@@ -10,7 +10,26 @@ body {
 }
 
 .status-bar__column {
-    width: 50%;
+    width: 70%;
+}
+
+.status-bar__column div {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.status-bar__circle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: black;
+    margin-top: 23px;
+}
+
+a {
+    color: black;
 }
 
 .status-bar__column:first-child span {
@@ -37,3 +56,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.status-bar__circle {
+    display: none;
+}
+
+.status-bar__list .is_on {
+    display: block;
+}
+
+
+/* 클리갛면 a태그 display noen으로 클릭안하면 block */
