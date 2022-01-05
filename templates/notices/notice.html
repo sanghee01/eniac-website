@@ -57,11 +57,9 @@
             <i style="margin-right: 10px" class="fas fa-chevron-left fa-lg"></i>
         </a>
         {% endif %}
-
-        <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if projects.has_next %}
+        <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if notice.has_next %}
         <a class="project-page__a" href="?page={{notice.next_page_number}}">
-            <i style="margin-left: 10px;" class="fas fa-chevron-right fa-2x"></i>
-        </a>
+            <i style="margin-left: 10px" class="fas fa-chevron-right fa-lg"></i>
         </a>
         {% endif %}
     </div>

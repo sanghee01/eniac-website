@@ -14,7 +14,7 @@ class Activity(TimeStampedModel):
     
     SEMI_CHOICES = (
       (SEMI_A, "1학기"),
-      (SEMI_B, "1학기"),
+      (SEMI_B, "2학기"),
     )
 
     title = models.CharField(max_length=100, default = '', null=True, blank=False)
