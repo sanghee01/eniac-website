@@ -8,15 +8,20 @@
         <h1>Login Eniac</h1>
         <div class="login-content__inputlist">
             <form method="POST" action="{% url 'user:login'%}">
-                {% csrf_token %} Username:
+                {% csrf_token %}
+                <div class="login-content__input ">
+                    <label for="name">이메일</label>
+                    <input name="username" type="text" value="">
+                </div>
+                <div class="login-content__input ">
+                    <label for="name ">비밀번호</label>
+                    <input name="password" type="password" value="">
+                </div>
                 <br>
-                <input name="username" type="text" value="">
-                <br> Password:
-                <br>
-                <input name="password" type="password" value="">
-                <br>
-                <br>
-                <input class="btn btn-primary" type="submit" value="Login">
+                <div class="login-content__input ">
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </div>
+
             </form>
         </div>
         <div class="login-content__signup">

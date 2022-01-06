@@ -19,6 +19,11 @@ body {
     margin: 0 auto;
 }
 
+.status-bar__column .status-bar__icon {
+    display: none;
+    position: absolute;
+}
+
 .status-bar__circle {
     position: absolute;
     width: 5px;
@@ -67,3 +72,38 @@ a {
 
 
 /* 클리갛면 a태그 display noen으로 클릭안하면 block */
+
+@media screen and (min-width: 1200px) and (max-width: 1350px) {
+    .status-bar__column:last-child {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80%;
+    }
+    .home-wotd__wrapper {
+        width: 1280px;
+        padding: 0 0px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .status-bar__column:last-child {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80%;
+    }
+    .status-bar__column:last-child div {
+        display: none;
+    }
+    .status-bar__column .status-bar__icon {
+        display: block;
+    }
+}
+
+
+/* 1300밑으로 내려가면  */
