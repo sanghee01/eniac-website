@@ -11,9 +11,14 @@ from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import auth
-
-
 from django.contrib.auth.models import User  # User model 연결 
+
+
+from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView # 오브젝트를 생성하는 뷰 (form 혹은 model과 연결되서 새로운 데이터를 넣을 때 CreateView - generic view를 사용)
+# from django.contrib.auth.forms import UserCreationForm  >>  장고의 기본 회원가입 폼 (ID, PW만 확인한다 - 뒤에서 이메일 추가 커스터미아징 예정)
+
+
 
 
 # Create your views here.
@@ -42,16 +47,30 @@ def log_out(request):
     return redirect(reverse("core:project"))
 
 
+class SignUpView(FormView):
+    template_name = "users/signup.html"
+    form_class = forms.SignUpForm
+    success_url = reverse_lazy("core:project_list")
 
+    def form_valid(self, form):
+        form.save()
+        email = form.cleaned_data.get("email")
+        password = form.cleaned_data.get("password")
+        user = authenticate(self.request, username=email, password=password)
+        print(user)
 
-def signup(request):
-    # 입력한 method 요청이 들어올 때
-    if request.method == 'POST':
-        # 입력한 password1과 password2가 같다면
-        if request.POST['password1'] == request.POST['password2']:
-            # 새로운 회원을 만들고
-            models.User.objects.create_user(request.POST['username'], password=request.POST['password1'], major=request.POST['major'], git_url=request.POST['git_url'])
-        # index로 돌아간다.
-        return redirect(reverse("core:project"))
-    #위의 경우가 아니면 그냥 signup 페이지를 다시 리턴한다.
-    return render(request, 'users/signup.html')
+        if user is not None:
+            login(self.request, user)
+        return super().form_valid(form)
+
+# def signup(request):
+#     # 입력한 method 요청이 들어올 때
+#     if request.method == 'POST':
+#         # 입력한 password1과 password2가 같다면
+#         if request.POST['password1'] == request.POST['password2']:
+#             # 새로운 회원을 만들고
+#             models.User.objects.create_user(request.POST['username'], password=request.POST['password1'], major=request.POST['major'], git_url=request.POST['git_url'])
+#         # index로 돌아간다.
+#         return redirect(reverse("core:project"))
+#     #위의 경우가 아니면 그냥 signup 페이지를 다시 리턴한다.
+#     return render(request, 'users/signup.html')

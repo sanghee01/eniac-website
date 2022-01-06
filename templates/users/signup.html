@@ -12,10 +12,10 @@
                 <form method="POST" action="{% url 'user:signup' %}">
                     {% csrf_token %}
                     <div class="login-content__input ">
-                        <label for="name ">이름</label>
-                        <input type="text " name="username" id=" " placeholder="Enter your first name " />
+                        {{form.as_p}}
                     </div>
-                    <div class="login-content__input ">
+
+                    <!-- <div class="login-content__input ">
                         <label for="name ">비밀번호</label>
                         <input name="password1" type="password" value="">
                     </div>
@@ -49,7 +49,7 @@
                     <div class="login-content__input ">
                         <label for="name ">각오</label>
                         <input type="text " name="desc" id=" " />
-                    </div>
+                    </div> -->
                     <br>
                     <div class="login-content__input ">
                         <input class="btn btn-primary" type="submi  t" value="Sign Up!">
