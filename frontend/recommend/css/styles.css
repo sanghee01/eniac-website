@@ -1,0 +1,18 @@
+@import "recom-tab/css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#recommend-bg {
+  width: 100vw;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  z-index: -999;
+}
