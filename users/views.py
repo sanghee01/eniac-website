@@ -12,13 +12,9 @@ from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import auth
 from django.contrib.auth.models import User  # User model 연결 
-
-
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView # 오브젝트를 생성하는 뷰 (form 혹은 model과 연결되서 새로운 데이터를 넣을 때 CreateView - generic view를 사용)
 # from django.contrib.auth.forms import UserCreationForm  >>  장고의 기본 회원가입 폼 (ID, PW만 확인한다 - 뒤에서 이메일 추가 커스터미아징 예정)
-
-
 
 
 # Create your views here.
@@ -35,6 +31,7 @@ def login(request):
             # 로그인하고 index로 리다이렉트한다. 
             auth.login(request, user)
             return redirect(reverse("core:project"))
+        
         else:
             # 없다면, 에러를 표시하고, login페이지 로 이동(새로고침)
             return render(request, 'users/login.html', {'error': 'username or password is incorrect.'})
@@ -46,31 +43,23 @@ def log_out(request):
     logout(request)
     return redirect(reverse("core:project"))
 
-
 class SignUpView(FormView):
+
     template_name = "users/signup.html"
     form_class = forms.SignUpForm
-    success_url = reverse_lazy("core:project_list")
+    success_url = reverse_lazy("core:project")
+    initial = {"first_name": "Nicoas", "last_name": "Serr", "email": "itn@las.com"}
 
+    # user를 생성하고 바로 로그인시
+    # 폼이 유효하다면 form.save를 실행시키자는거다
     def form_valid(self, form):
         form.save()
         email = form.cleaned_data.get("email")
+        username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
-        user = authenticate(self.request, username=email, password=password)
-        print(user)
-
+        user = authenticate(self.request, email=email, password=password)
         if user is not None:
-            login(self.request, user)
+            auth.login(self.request, user)
         return super().form_valid(form)
 
-# def signup(request):
-#     # 입력한 method 요청이 들어올 때
-#     if request.method == 'POST':
-#         # 입력한 password1과 password2가 같다면
-#         if request.POST['password1'] == request.POST['password2']:
-#             # 새로운 회원을 만들고
-#             models.User.objects.create_user(request.POST['username'], password=request.POST['password1'], major=request.POST['major'], git_url=request.POST['git_url'])
-#         # index로 돌아간다.
-#         return redirect(reverse("core:project"))
-#     #위의 경우가 아니면 그냥 signup 페이지를 다시 리턴한다.
-#     return render(request, 'users/signup.html')
+

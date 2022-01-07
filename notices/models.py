@@ -21,5 +21,11 @@ class Notice(TimeStampedModel):
         ordering = ["-created"]
 
 
-   
+    @property
+    def get_photo_url(self):
+      if self.thumnail_img:
+          return self.thumnail_img.url
+      else:
+          return "/static/images/coding.jpg"
+
 

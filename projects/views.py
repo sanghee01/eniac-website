@@ -17,7 +17,7 @@ def all_projects(request):
     paginator = Paginator(all_projects, 6)
     projects = paginator.get_page(page)
 
-    fav_projects = models.Project.objects.filter(views="1")
+    fav_projects = models.Project.objects.all().order_by("-created")
     pages = Paginator(fav_projects, 6)
     fav_projects_all = pages.get_page(page)
 

@@ -27,22 +27,24 @@
 
         <div class="notice-content__card">
             <div class="notice-content__img">
-                <img src="{% static 'img/coding.png' %}" style="width: 200px; height: 190px" alt="" />
+                <img src="{{notices.get_photo_url}}" style="width: 200px; height: 190px" alt="" />
             </div>
             <div class="notice-content__text">
                 <div>
                     <div class="notice-content__card-title">
-                        {{notices.title| truncatechars:10}}
+                        {{notices.title| truncatechars:20}}
                     </div>
                     <div class="notice-content__card-desc">
-                        {{notices.desc| truncatechars:40}}
+                        {{notices.desc| truncatechars:80}}
                     </div>
                 </div>
                 <!-- {% for tag in notice.object_list.tags.all %} -->
-                <div class="notice-content__tag">
-                    <div>{{tag.name}}</div>
-                </div>
+
                 <!-- {% endfor %} -->
+                <div class="notice-content__tag">
+                    <div>대회안내</div>
+                    <div>전학년</div>
+                </div>
             </div>
         </div>
 
@@ -63,6 +65,7 @@
         </a>
         {% endif %}
     </div>
+    {% include 'partials/footer.html' %}
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>

@@ -16,12 +16,12 @@
 </head>
 
 
-<body>
+<div>
     {% load static %}
     <img style="position: absolute; top: 0; left: 0; width: 100%; height: 150%; z-index: -999;" src="{% static 'img/triangle.png' %}">
     <!-- Tab -->
     {% include 'base.html' %}
-    <main id="Tab">
+    <div id="Tab" style="height: 100%; width: 100%;">
         <ul class="tab-menu">
             <li class="tab-menu__list is_on">
                 <a href="#tab1" class="tab-menu__btn">활동</a>
@@ -129,14 +129,18 @@
                     Tab Cont3
                 </div>
             </li>
+
         </ul>
-    </main>
 
-    <!-- Footer -->
-    <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
-</body>
+        </div>
 
+
+
+        <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
+
+    </div>
+    {% include 'partials/footer.html' %}
 
 </html>

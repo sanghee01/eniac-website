@@ -13,7 +13,7 @@ def all_activity(request):
     paginator = Paginator(all_activities, 6)
     activities = paginator.get_page(page)
     
-    all_users = User.objects.all()
+    all_users = User.objects.all().order_by('-date_joined')
     paginator = Paginator(all_users, 40)
     users = paginator.get_page(page)
 
