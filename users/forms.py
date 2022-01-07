@@ -2,18 +2,14 @@ from django import forms
 from . import models
 
 class LoginForm(forms.Form):
-
-   
-    id = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Email"}))
-    password = forms.CharField(
-        widget=forms.PasswordInput(attrs={"placeholder": "Password"})
-    )
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
 
     def clean(self):
-        username = self.cleaned_data.get("username")
+        email = self.cleaned_data.get("email")
         password = self.cleaned_data.get("password")
         try:
-            user = models.User.objects.get(username=username)
+            user = models.User.objects.get(email=email)
             if user.check_password(password):
                 return self.cleaned_data
             else:
@@ -24,19 +20,17 @@ class LoginForm(forms.Form):
 
 
 
-
-
-class SignUpForm(forms.Form):
-
+class SignUpForm(forms.ModelForm):
     class Meta:
         model = models.User
-        fields = ("name", "email", "major", "git_url", "eniac_code", "fav", "resolution")
+        fields = ("username", "email", "git_url", "fav_pro_genre", "major")
 
-
-  
+   
+    
     password = forms.CharField(widget=forms.PasswordInput)
     password1 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
-   
+    
+
     
     def clean_email(self):
         email = self.cleaned_data.get("email")
@@ -54,19 +48,25 @@ class SignUpForm(forms.Form):
         else:
             return password 
 
-    def save(self):
-        name = self.cleaned_data.get("username")
+    def save(self, *args, **kwargs):
+        user = super().save(commit=False)
+        username = self.cleaned_data.get("username")
         email = self.cleaned_data.get("email")
         password = self.cleaned_data.get("password")
-        major = self.cleaned_data.get("major")
+        password1 = self.cleaned_data.get("password1")
         git_url = self.cleaned_data.get("git_url")
-        eniac_code = self.cleaned_data.get("eniac_code")
-        fav = self.cleaned_data.get("fav")
-
-        user = models.User.objects.create_user(email, email, password)
-        # 왜 이메일을 두번하는거지..?
-        user.username = email
+        fav_pro_genre = self.cleaned_data.get("fav_pro_genre")
+        major = self.cleaned_data.get("major")
+        
+        user.email = email
+        user.git_url = git_url
+        user.fav_pro_genre = fav_pro_genre
+        user.major = major
         user.set_password(password)
         user.save()
 
-        # 이제 기서 save쪽을
+    # 계정을 생성하는 함수
+  
+
+
+        # 바셀했고

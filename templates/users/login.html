@@ -10,14 +10,18 @@
             <form method="POST" action="{% url 'user:login'%}">
                 {% csrf_token %}
                 <div class="login-content__input ">
-                    <label for="name">이메일</label> {{form.email}}
+                    <label for="name">이메일</label>
+                    <input name="username" type="text" value="">
                 </div>
                 <div class="login-content__input ">
-                    <label for="name ">비밀번호</label> {{form.password}}
+                    <label for="name ">비밀번호</label>
+                    <input name="password" type="password" value="">
                 </div>
+                <br>
                 <div class="login-content__input ">
-                    <button type="submit ">제출</button>
+                    <input class="btn btn-primary" type="submit" value="Login">
                 </div>
+
             </form>
         </div>
         <div class="login-content__signup">

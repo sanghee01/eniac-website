@@ -43,6 +43,7 @@
     box-sizing: border-box;
     border-radius: 4px;
     height: 51px;
+    width: 150%;
 }
 
 .login-content__input select {
@@ -67,6 +68,7 @@
     line-height: 26px;
     /* identical to box height */
     text-align: center;
+    width: 150%;
 }
 
 .login-content__signup span {}

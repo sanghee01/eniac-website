@@ -17,13 +17,15 @@ def all_projects(request):
     paginator = Paginator(all_projects, 6)
     projects = paginator.get_page(page)
 
-    date_projects = models.Project.objects.all().order_by('-id')
-    paginator_date = Paginator(date_projects, 6)
-    projects_date = paginator_date.get_page(page) 
+    fav_projects = models.Project.objects.all().order_by("-created")
+    pages = Paginator(fav_projects, 6)
+    fav_projects_all = pages.get_page(page)
 
 
+    return render(request, "projects/project_list.html", context={"potato": projects, "fav": fav_projects_all})
 
-    return render(request, "projects/project_list.html", context={"projects": projects, "date": projects_date})
+
+    
 
 
 

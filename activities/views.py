@@ -9,13 +9,20 @@ from users.models import User
 
 def all_activity(request):
     page = request.GET.get("page")
-    all_activities = models.Activity.objects.all()
+    all_activities = models.Activity.objects.filter(semester="1학기")
     paginator = Paginator(all_activities, 6)
     activities = paginator.get_page(page)
-
-
-    all_users = User.objects.all()
+    
+    all_users = User.objects.all().order_by('-date_joined')
     paginator = Paginator(all_users, 40)
     users = paginator.get_page(page)
 
-    return render(request,  "activities/activity.html", context={"act": activities, "user": users})
+    next_all_activities = models.Activity.objects.filter(semester="2학기")
+    paginator = Paginator(next_all_activities, 6)
+    next_activities = paginator.get_page(page)
+
+    
+
+
+
+    return render(request,  "activities/activity.html", context={"act": activities, "user": users, "next_act": next_activities,})
