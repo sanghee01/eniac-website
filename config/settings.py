@@ -60,7 +60,7 @@ PROJECT_APPS = [
     "challenges.apps.ChallengesConfig",
     "notices.apps.NoticesConfig",
     'taggit',
-    
+    "tags.apps.TagsConfig"
   
         
 
