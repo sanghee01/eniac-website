@@ -1,43 +1,100 @@
-ul {
+/* middle tab-menu */
+.mid-tab-menu {
   list-style: none;
-}
-a {
-  text-decoration: none;
-  color: #333;
-}
-.wrap {
-  padding: 15px;
-  letter-spacing: -0.5px;
-}
-.tab_menu {
-  position: relative;
-}
-.tab_menu .list {
-  overflow: hidden;
+  width: 100%;
   display: flex;
+  justify-content: right;
 }
-.tab_menu .list li {
-  margin-right: 14px;
-}
-.tab_menu .list .btn {
-  font-size: 13px;
-}
-.tab_menu .list .cont {
-  display: none;
-  position: absolute;
-  top: 25px;
-  left: 0;
-  background: #555;
-  color: #fff;
-  text-align: center;
-  width: 250px;
-  height: 100px;
-  line-height: 100px;
-}
-.tab_menu .list li.is_on .btn {
+
+.mid-tab-menu__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 35px;
+  font-size: 17px;
   font-weight: bold;
-  color: green;
+  margin-right: 5px;
 }
-.tab_menu .list li.is_on .cont {
+
+.mid-tab-menu__btn i {
+  margin-right: 5px;
+}
+
+.mid-tab-menu__btn:hover {
+  background-color: #daf4fa;
+  border-radius: 5px;
+}
+
+.mid-tab-menu__cont {
+  display: none;
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  top: 120px;
+  left: 20%;
+}
+
+.is_on > .mid-tab-menu__btn {
+  border-bottom: 3px solid #000000;
+}
+
+.is_on > .mid-tab-menu__cont {
+  display: block;
+}
+
+/* tab-menu */
+.tab-menu {
+  list-style: none;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.mid-tab-menu__list a,
+.tab-menu__list a {
+  text-decoration: none;
+  color: black;
+}
+
+.tab-menu__list {
+  margin-right: 2%;
+}
+.tab-menu__list:first-child {
+  margin-left: 2%;
+}
+
+.tab-menu__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+.tab-menu__btn:hover {
+  background-color: #e8dbff;
+  border-radius: 5px;
+}
+
+.tab-menu__cont {
+  display: none;
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  top: 120px;
+  left: 20%;
+}
+
+.is_on .tab-menu__btn {
+  border-bottom: 5px solid #7879f1;
+}
+
+.is_on .tab-menu__cont {
   display: block;
 }

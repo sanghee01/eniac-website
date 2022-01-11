@@ -1,7 +1,8 @@
-const tabList = document.querySelectorAll(".tab_menu .list li");
+const tabList = document.querySelectorAll(".tab-menu__list");
+const tabBtn = document.querySelectorAll(".tab-menu__btn");
 
 for (let i = 0; i < tabList.length; i++) {
-  tabList[i].querySelector(".btn").addEventListener("click", function (e) {
+  tabBtn[i].addEventListener("click", function (e) {
     e.preventDefault();
     for (let j = 0; j < tabList.length; j++) {
       tabList[j].classList.remove("is_on");
