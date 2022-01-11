@@ -27,7 +27,7 @@ class Command(BaseCommand):
             {
                "title": lambda x: projects_seeder.faker.text(),
                "desc": lambda x: projects_seeder.faker.text(),
-               "tag": lambda x: projects_seeder.faker.words(),
+               "tag": lambda x: projects_seeder.faker.word(),
                "git": lambda x: projects_seeder.faker.url(),
                "views": lambda x: random.randint(0, 30),
                "user" : lambda x: random.choice(users), 

@@ -1,11 +1,28 @@
 from django.views import View
+from . import models
 from django.shortcuts import render
+from django.core.paginator import Paginator
+import activities
+from users.models import User
 
 # Create your views here.
 
-class ActivityView(View):
-    def get(self, request):
-        return render(request, "activities/attendance.html")
+def all_activity(request):
+    page = request.GET.get("page")
+    all_activities = models.Activity.objects.filter(semester="1학기")
+    paginator = Paginator(all_activities, 4)
+    activities = paginator.get_page(page)
+    
+    all_users = User.objects.all().order_by('-date_joined')
+    paginator = Paginator(all_users, 40)
+    users = paginator.get_page(page)
 
-    def post(self, request):
-        pass
+    next_all_activities = models.Activity.objects.filter(semester="2학기")
+    paginator = Paginator(next_all_activities, 6)
+    next_activities = paginator.get_page(page)
+
+    
+
+
+
+    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities,})

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
+.footer {
+    background-color: #2f2f2f;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer__img {
+    margin-left: 25%;
+    padding: 60px;
+}
+
+.footer__text {
+    color: white;
+    margin-left: 60px;
+    font-family: Source Serif Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.footer__link a {
+    color: white;
+    font-family: Source Serif Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.footer__link {
+    margin-top: 40px;
+}
+
+.footer__per div {
+    margin-bottom: 6px;
+}

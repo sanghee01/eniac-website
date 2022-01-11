@@ -14,7 +14,7 @@ class Activity(TimeStampedModel):
     
     SEMI_CHOICES = (
       (SEMI_A, "1학기"),
-      (SEMI_B, "1학기"),
+      (SEMI_B, "2학기"),
     )
 
     title = models.CharField(max_length=100, default = '', null=True, blank=False)
@@ -22,11 +22,20 @@ class Activity(TimeStampedModel):
     thumnail_img = models.ImageField(default = '')
     desc = models.TextField(max_length=300)
 
+    class Meta:
+        ordering = ["-created"]
+
+    @property
+    def get_photo_url(self):
+      if self.thumnail_img:
+          return self.thumnail_img.url
+      else:
+          return "/static/images/user.jpg"
 class Act_Comment(TimeStampedModel):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
     desc = models.TextField(max_length=300)
     user = models.ForeignKey(
-        "users.User", on_delete=models.PROTECT, related_name="comment_users",   null=False, blank=False
+        "users.User", on_delete=models.PROTECT, related_name="comment_users",   null=True, blank=False
     )
 
     def __str__(self):
