@@ -1,0 +1,24 @@
+.project-create {
+    display: flex;
+    justify-content: center;
+}
+
+.project-create__title {
+    display: flex;
+    justify-content: center;
+}
+
+.project-field {}
+
+.project-create__field {
+    margin-top: 30px;
+}
+
+.project-create__field input {
+    background: #ffffff;
+    border: 1px solid #8d8d8d;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 51px;
+    width: 150%;
+}

@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
 .footer {
     background-color: #2f2f2f;
-    position: relative;
+    position: absolute;
     width: 100%;
     display: flex;
     align-items: center;
+    bottom: 0;
 }
 
 .footer__img {

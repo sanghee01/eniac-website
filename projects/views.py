@@ -2,6 +2,10 @@ from django.shortcuts import render
 from . import models
 import projects
 from django.core.paginator import Paginator
+from users import mixins as user_mixins
+from django.views.generic import ListView, DetailView, View, UpdateView, FormView
+from . import models, forms
+from django.shortcuts import render, redirect, reverse
 
 
 
@@ -17,7 +21,7 @@ def all_projects(request):
     paginator = Paginator(all_projects, 6)
     projects = paginator.get_page(page)
 
-    fav_projects = models.Project.objects.all().order_by("-created")
+    fav_projects = models.Project.objects.filter(views="1")
     pages = Paginator(fav_projects, 6)
     fav_projects_all = pages.get_page(page)
 
@@ -25,11 +29,14 @@ def all_projects(request):
     return render(request, "projects/project_list.html", context={"potato": projects, "fav": fav_projects_all})
 
 
-    
 
+class CreateProjectView(user_mixins.LoggedInOnlyView, FormView):
 
-
-def create(request):
-  # 생략
-  models.Project.thumnail_img = request.FILES['thumnail_img']
-
+    form_class = forms.CreateProjectForm
+    template_name = "projects/project_create.html"
+    def form_valid(self, form):
+        project = form.save()
+        project.user = self.request.user
+        project.save()
+        # project.success(self.request, "Photo Uploaded")
+        return redirect(reverse("core:project_list"))

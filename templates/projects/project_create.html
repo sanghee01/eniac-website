@@ -1,0 +1,8 @@
+{% include "base.html" %} {% block page_title %}
+<div class="project-create__title">Create Project</div>
+{% endblock page_title %} {% block search-bar %} {% endblock search-bar %} {% block content %}
+
+<div class="project-create">
+    {% include 'mixins/project/project_form.html' with form=form cta="Create room" %}
+</div>
+{% endblock content %}
