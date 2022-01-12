@@ -78,7 +78,7 @@
 }
 
 .tab-menu__btn:hover {
-  background-color: #e8dbff;
+  background-color: #daf4fa;
   border-radius: 5px;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .is_on .tab-menu__btn {
-  border-bottom: 5px solid #7879f1;
+  border-bottom: 5px solid #7be7ff;
 }
 
 .is_on .tab-menu__cont {
