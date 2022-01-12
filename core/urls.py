@@ -10,7 +10,7 @@ from django.conf import settings
 app_name = "core"
 
 urlpatterns = [
-   path("home", project_view.home_projects, name="project"),
+   path("", project_view.home_projects, name="project"),
    path("project", project_view.all_projects, name="project_list"),
 
    path("notice", notice_view.all_notice, name="notice_list"),

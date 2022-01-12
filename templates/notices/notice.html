@@ -42,8 +42,7 @@
 
                 <!-- {% endfor %} -->
                 <div class="notice-content__tag">
-                    <div>대회안내</div>
-                    <div>전학년</div>
+                    <div>{% for tag in notices.tags.all %} {{tag}} {% endfor %}</div>
                 </div>
             </div>
         </div>

@@ -11,11 +11,15 @@
   height: 40%;
 =======
     background-color: #2f2f2f;
-    position: relative;
+    position: absolute;
     width: 100%;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
 >>>>>>> e3e3f38c7eba75e6be96f0fcc54194b30a812aa3
+=======
+    bottom: 0;
+>>>>>>> 903f142d5e1870fb7f76d40c3ecf460e76b2071a
 }
 
 .footer__img {

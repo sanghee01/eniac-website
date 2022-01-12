@@ -81,44 +81,47 @@ li.is__on {
     overflow: hidden;
 }
 
-.project-content__tab_menu .project-content__list .cont {
-    display: none;
-    background: #555;
-    color: #fff;
-    text-align: center;
-}
-
-.project-content__tab_menu .project-content__list li.is_on .btn {
-    font-weight: bold;
-    border-bottom: 2px solid black;
-}
-
-.project-content__tab_menu .project-content__list li.is_on .cont {
-    display: block;
-}
-
 .project-menu {
     list-style: none;
+    position: relative;
     display: flex;
-    margin-top: 3%;
-    margin-left: 3%;
+    margin-top: 80px;
+    margin-left: 7%;
 }
 
 .project-menu__cont {
     display: none;
+    width: 60%;
     text-align: center;
-    left: 20%;
+    position: absolute;
+    top: 120px;
+    left: 20px;
 }
 
 .project-menu__btn {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    width: 90px;
-    height: 60px;
+    height: 70px;
 }
 
 .project-menu__btn span {
-    width: 40px;
     margin-left: 8px;
+}
+
+.project-menu__list {
+    margin-left: 5px;
+}
+
+.project-menu__cont {
+    width: 90%;
+}
+
+.is_on .project-menu__cont {
+    display: block;
+}
+
+.project__pageparent {
+    display: flex;
+    justify-content: center;
 }

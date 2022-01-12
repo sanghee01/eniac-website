@@ -9,13 +9,12 @@ from taggit.models import (
 
 
 
-
 # Create your models here.
 class Notice(TimeStampedModel): 
     title = models.CharField(max_length=100)
     thumnail_img = models.ImageField()
     desc = models.TextField(max_length=300)
-    tags = TaggableManager(blank=True)
+  
     
     class Meta:
         ordering = ["-created"]
