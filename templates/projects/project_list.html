@@ -64,27 +64,29 @@
         </li>
 
         <!-- {% include 'partials/footer.html' %} -->
-        </main>
+
+    </ul>
+
+    </div>
+    <div class="project__pageparent">
+        <div class="project-page">
+
+            {% if fav.has_previous %}
+            <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
+                <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+            </a>
+            {% endif %}
+
+
+
+            <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
+            <a class="project-page__a" href="?page={{fav.next_page_number}}">
+                <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+            </a>
+            {% endif %}
+
+
         </div>
-        <div class="project__pageparent">
-            <div class="project-page">
-
-                {% if fav.has_previous %}
-                <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
-                    <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
-                </a>
-                {% endif %}
-
-
-
-                <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
-                <a class="project-page__a" href="?page={{fav.next_page_number}}">
-                    <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
-                </a>
-                {% endif %}
-
-
-            </div>
-        </div>
-        <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
-        </img>
+    </div>
+    <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
+    </img>

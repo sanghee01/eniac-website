@@ -14,7 +14,7 @@ class Notice(TimeStampedModel):
     title = models.CharField(max_length=100)
     thumnail_img = models.ImageField()
     desc = models.TextField(max_length=300)
-  
+    tag = models.ManyToManyField('tags.Tag', verbose_name='태그')
     
     class Meta:
         ordering = ["-created"]

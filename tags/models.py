@@ -6,6 +6,6 @@ from core.models import TimeStampedModel
 
 class Tag(TimeStampedModel):
     name = models.CharField(max_length=32, verbose_name="태그명")
-    
+
     def __str__(self):
-        return self.name
+        return self.name 

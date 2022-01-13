@@ -126,14 +126,20 @@
             <li class="tab-menu__list">
                 <a href="#tab3" class="tab-menu__btn">챌린지</a>
                 <div id="tab3" id="challge" class="tab-menu__cont challenge">
-                    Tab Cont3
+                    {% for challenge in chall.object_list %}
+                    <div class="challenge-content">
+                        <div class="challenge__title">{{challenge.users}}</div>
+                        <p class="challenge__desc">
+                            {{challenge.desc}}
+                        </p>
+                    </div>
+                    {% endfor %}
                 </div>
             </li>
 
         </ul>
 
         </div>
-
 
 
         <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>

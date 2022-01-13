@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 import activities
 from users.models import User
+from challenges.models import Challenge
 
 # Create your views here.
 
@@ -21,8 +22,10 @@ def all_activity(request):
     paginator = Paginator(next_all_activities, 6)
     next_activities = paginator.get_page(page)
 
-    
+    all_challenges = Challenge.objects.all().order_by("-created")
+    paginator = Paginator(all_challenges, 6)
+    challenges = paginator.get_page(page)
 
 
 
-    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities,})
+    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges})
