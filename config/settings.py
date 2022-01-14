@@ -60,6 +60,7 @@ PROJECT_APPS = [
     "challenges.apps.ChallengesConfig",
     "notices.apps.NoticesConfig",
     "tags.apps.TagsConfig",
+    'tagging.apps.TaggingConfig',
 ]
 
 

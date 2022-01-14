@@ -33,7 +33,7 @@
                 <option value="2">22년 2학기</option>
               </select> {% for activity in act.object_list %}
                         <h1 class="activity__title">{{activity.title}}</h1>
-                        <img src="{{activity.get_photo_url}}" style="width: 1200px; height: 300px; background-size: cover; background-position: center;" class="activity__img" />
+                        <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
                         <p class="activity__content">
                             {{activity.desc}}
                         </p>
@@ -58,7 +58,25 @@
                     </section>
                     <section class="activity__comment">
                     </section>
+                    <!-- 페이지 -->
+                    <div class="activity__pageparent">
+                        <div class="activity-page">
 
+                            {% if activity.has_previous %}
+                            <a class="activity-page__a" href="?page={{activity.previous_pre_number}}">
+                                <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+                            </a>
+                            {% endif %}
+
+                            <span> {{activity.number}} of {{activity.paginator.num_pages}}</span> {% if fav.has_next %}
+                            <a class="activity-page__a" href="?page={{activity.next_page_number}}">
+                                <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+                            </a>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
 
             </li>
             <li class="tab-menu__list">

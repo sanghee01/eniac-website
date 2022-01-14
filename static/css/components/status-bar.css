@@ -21,7 +21,6 @@ body {
 
 .status-bar__column div:nth-child(4) {
     display: flex;
-    justify-content: flex-end;
 }
 
 .status-bar__column .status-bar__icon {

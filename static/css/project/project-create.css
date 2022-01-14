@@ -1,17 +1,18 @@
 .project-create {
     display: flex;
-    justify-content: center;
 }
 
 .project-create__title {
     display: flex;
     justify-content: center;
+    font-size: 40px;
 }
 
 .project-field {}
 
 .project-create__field {
     margin-top: 30px;
+    width: 120%;
 }
 
 .project-create__field input {
@@ -21,4 +22,16 @@
     border-radius: 4px;
     height: 51px;
     width: 150%;
+}
+
+.project-create__content {
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.project-create__section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }

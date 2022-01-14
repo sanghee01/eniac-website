@@ -11,7 +11,7 @@ class CreateProjectForm(forms.ModelForm):
             "thumnail_img",
             "tag",
             "git",
-            "user",
+ 
         )
 
     def save(self, *args, **kwargs):
