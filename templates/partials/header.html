@@ -47,7 +47,9 @@
                 </div>
                 <span class="stauts-bar__profile-menu">
               
-                    <div class="status-bar__single-menu" >프로필</div>
+                    <div class="status-bar__single-menu" >
+                        <a href="{{user.get_absolute_url}}">프로필</a>
+                    </div>
                  <a href="{% url 'project:create' %}">
                     <div class="status-bar__single-menu" >프로젝트 생성</div>
                       </a>

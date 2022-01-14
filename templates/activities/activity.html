@@ -62,15 +62,15 @@
                     <div class="activity__pageparent">
                         <div class="activity-page">
 
-                            {% if activity.has_previous %}
-                            <a class="activity-page__a" href="?page={{activity.previous_pre_number}}">
-                                <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+                            {% if act.has_previous %}
+                            <a class="activity-page__a" href="?page={{act.previous_pre_number}}">
+                                <i style="margin-right: 10px;" class="fas fa-chevron-left"></i>
                             </a>
                             {% endif %}
 
-                            <span> {{activity.number}} of {{activity.paginator.num_pages}}</span> {% if fav.has_next %}
-                            <a class="activity-page__a" href="?page={{activity.next_page_number}}">
-                                <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+                            <span> {{act.number}} of {{act.paginator.num_pages}}</span> {% if act.has_next %}
+                            <a class="activity-page__a" href="?page={{act.next_page_number}}">
+                                <i style="margin-left: 10px;" class="fas fa-chevron-right"></i>
                             </a>
                             {% endif %}
 
@@ -150,7 +150,26 @@
                         <p class="challenge__desc">
                             {{challenge.desc}}
                         </p>
+                        <p class="challenge__date">
+                            {{challenge.created}}
+                        </p>
+                        <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
+                        <ul class="activity__comment">
+                            <li class="activity__comment-list">
+                                <span class="activity__comment-name">이상희</span>
+                                <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
+                            </li>
+                            <li class="activity__comment-list">
+                                <span class="activity__comment-name">윤동규</span>
+                                <span class="ctivity__comment-cont">네 알겠습니다~</span>
+                            </li>
+                            <li class="activity__comment-list">
+                                <span class="activity__comment-name">홍길동</span>
+                                <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span>
+                            </li>
+                        </ul>
                     </div>
+
                     {% endfor %}
                 </div>
             </li>

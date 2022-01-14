@@ -11,7 +11,7 @@ from challenges.models import Challenge
 def all_activity(request):
     page = request.GET.get("page")
     all_activities = models.Activity.objects.filter(semester="1학기")
-    paginator = Paginator(all_activities, 4)
+    paginator = Paginator(all_activities, 3)
     activities = paginator.get_page(page)
     
     all_users = User.objects.all().order_by('-date_joined')

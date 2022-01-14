@@ -17,8 +17,14 @@
     font-weight: normal;
     font-size: 22px;
     line-height: 20px;
+    margin-top: 60px;
 }
 
 .challenge-content {
     margin-bottom: 60px;
+}
+
+.challenge__date {
+    font-size: 15px;
+    margin-bottom: 40px;
 }
