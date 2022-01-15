@@ -16,7 +16,7 @@
 </head>
 
 
-<div>
+<div class="activity">
     {% load static %}
     <img style="position: absolute; top: 0; left: 0; width: 100%; height: 180%; z-index: -999;" src="{% static 'img/tri-blue.png' %}">
     <!-- Tab -->
@@ -171,6 +171,7 @@
                     </div>
 
                     {% endfor %}
+
                 </div>
             </li>
 
@@ -182,7 +183,7 @@
         <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
-
+        {% include 'partials/footer.html' %}
     </div>
 
 </html>

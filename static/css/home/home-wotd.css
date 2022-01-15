@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 .body {}
 
-.home-topbox {}
+.home-topbox {
+    position: relative;
+    height: 100%;
+}
 
 .home-topbox__triangle {
     width: 100%;

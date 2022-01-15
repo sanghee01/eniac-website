@@ -2,6 +2,11 @@ body {
     height: 100%;
 }
 
+.activity {
+    position: relative;
+    min-height: 120%;
+}
+
 .activity__cont-wrap {
     display: flex;
     flex-direction: column;
