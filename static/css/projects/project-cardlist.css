@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 3% 0% 0 0%;
+    position: relative;
 }
 
 .project-cardlist__card {

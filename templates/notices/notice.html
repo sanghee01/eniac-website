@@ -42,7 +42,7 @@
 
                 <!-- {% endfor %} -->
                 <div class="notice-content__tag">
-                    <div>{% for tag in notices.tags.all %} {{tag}} {% endfor %}</div>
+                    <div>{{notices.tag.all| join:", "}}</div>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
         </a>
         {% endif %}
     </div>
-    {% include 'partials/footer.html' %}
+    <!-- {% include 'partials/footer.html' %} -->
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>

@@ -107,6 +107,11 @@ a {
     color: white;
 }
 
+.status-bar__single-menu>a:hover {
+    background-color: black;
+    color: white;
+}
+
 
 /* 클리갛면 a태그 display noen으로 클릭안하면 block */
 
