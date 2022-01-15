@@ -1,56 +1,61 @@
 body {
-    height: 100%;
+  height: 100%;
+}
+
+.activity {
+  position: relative;
+  min-height: 120%;
 }
 
 .activity__cont-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .activity__dropdown {
-    width: 100px;
-    margin-bottom: 30px;
+  width: 100px;
+  margin-bottom: 30px;
 }
 
 .activity__img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
 }
 
 .activity__content {
-    text-align: left;
-    line-height: 30px;
+  text-align: left;
+  line-height: 30px;
 }
-<<<<<<< HEAD
-=======
 
 .activity__comment-tog {
-    width: 100%;
-    border-bottom: 1px solid rgba(1, 1, 1, 0.3);
-    padding-bottom: 10px;
-    font-weight: 600;
-    text-align: left;
-    margin-bottom: 20px;
+  width: 100%;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.3);
+  padding-bottom: 10px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .activity__comment {
-    display: none;
+  display: none;
 }
 
 ul,
 li {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .activity__comment-list {
-    text-align: left;
-    margin-bottom: 15px;
+  text-align: left;
+  margin-bottom: 15px;
 }
 
 .activity__comment-name {
-    border-right: 1px solid rgba(1, 1, 1, 0.3);
-    margin-right: 5px;
+  border-right: 1px solid rgba(1, 1, 1, 0.3);
+  margin-right: 5px;
 }
->>>>>>> 447d41a908c1e6f6a39613db01ccd2b5f2015141

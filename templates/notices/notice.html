@@ -12,59 +12,61 @@
 </head>
 
 <body>
-    <img style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 150%;
-        z-index: -999;
-      " src="{% static 'img/triangle.png' %}" />{% include 'base.html' %}
-    <div class="notice-content">
-        <div class="notice-content__title">공지사항</div>
+    <div class="notice-parent">
+        <img style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 150%;
+          z-index: -999;
+        " src="{% static 'img/triangle.png' %}" />{% include 'base.html' %}
+        <div class="notice-content">
+            <div class="notice-content__title">공지사항</div>
 
-        {% for notices in notice.object_list %}
+            {% for notices in notice.object_list %}
 
-        <div class="notice-content__card">
-            <div class="notice-content__img">
-                <img src="{{notices.get_photo_url}}" style="width: 200px; height: 190px" alt="" />
-            </div>
-            <div class="notice-content__text">
-                <div>
-                    <div class="notice-content__card-title">
-                        {{notices.title| truncatechars:20}}
+            <div class="notice-content__card">
+                <div class="notice-content__img">
+                    <img src="{{notices.get_photo_url}}" style="width: 200px; height: 190px" alt="" />
+                </div>
+                <div class="notice-content__text">
+                    <div>
+                        <div class="notice-content__card-title">
+                            {{notices.title| truncatechars:20}}
+                        </div>
+                        <div class="notice-content__card-desc">
+                            {{notices.desc| truncatechars:80}}
+                        </div>
                     </div>
-                    <div class="notice-content__card-desc">
-                        {{notices.desc| truncatechars:80}}
+                    <!-- {% for tag in notice.object_list.tags.all %} -->
+
+                    <!-- {% endfor %} -->
+                    <div class="notice-content__tag">
+                        <div>{{notices.tag.all| join:", "}}</div>
                     </div>
                 </div>
-                <!-- {% for tag in notice.object_list.tags.all %} -->
-
-                <!-- {% endfor %} -->
-                <div class="notice-content__tag">
-                    <div>{% for tag in notices.tags.all %} {{tag}} {% endfor %}</div>
-                </div>
             </div>
-        </div>
 
-        <div class="notice-content__border">
-            <div></div>
+            <div class="notice-content__border">
+                <div></div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <div class="project-page">
+            {% if notice.has_previous %}
+            <a class="project-page__a" href="?page={{notice.previous_pre_number}}">
+                <i style="margin-right: 10px" class="fas fa-chevron-left fa-lg"></i>
+            </a>
+            {% endif %}
+            <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if notice.has_next %}
+            <a class="project-page__a" href="?page={{notice.next_page_number}}">
+                <i style="margin-left: 10px" class="fas fa-chevron-right fa-lg"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% include 'partials/footer.html' %}
     </div>
-    <div class="project-page">
-        {% if notice.has_previous %}
-        <a class="project-page__a" href="?page={{notice.previous_pre_number}}">
-            <i style="margin-right: 10px" class="fas fa-chevron-left fa-lg"></i>
-        </a>
-        {% endif %}
-        <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if notice.has_next %}
-        <a class="project-page__a" href="?page={{notice.next_page_number}}">
-            <i style="margin-left: 10px" class="fas fa-chevron-right fa-lg"></i>
-        </a>
-        {% endif %}
-    </div>
-    {% include 'partials/footer.html' %}
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>

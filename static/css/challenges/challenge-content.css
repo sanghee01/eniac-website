@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@100&display=swap");
+.challenge__title {
+    display: flex;
+    justify-content: flex-start;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 20px;
+    letter-spacing: -0.133333px;
+}
+
+.challenge__desc {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 20px;
+    margin-top: 60px;
+}
+
+.challenge-content {
+    margin-bottom: 60px;
+}
+
+.challenge__date {
+    font-size: 15px;
+    margin-bottom: 40px;
+}

@@ -1,6 +1,6 @@
  {% load static %}
 <img style="position: absolute; top: 0; left: 0; width: 100%; height: 130%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
-<div id="Tab" style="height: 100%; width: 100%;">
+<div id="Tab" style="height: 100%; position: relative; ">
     <ul class="project-menu">
         <li class="project-menu__list is_on">
             <a class="project-menu__btn" href="#">
@@ -23,11 +23,36 @@
                             </div>
                             <div class="project-cardlist__user">
                                 <span>{{project.user}}</span>
-                                <button>자세히보기</button>
+                                <div>{% if project.user == user %}
+                                    <a href="{% url 'project:edit' project.id %}" class="btn-link block">
+                                        <button>
+                               수정 {% endif %}
+                                </button>
+                                    </a>
+                                    <button>자세히보기</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
+                    <div class="project__pageparent">
+                        <div class="project-page">
+
+                            {% if fav.has_previous %}
+                            <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
+                                <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+                            </a>
+                            {% endif %}
+
+                            <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
+                            <a class="project-page__a" href="?page={{fav.next_page_number}}">
+                                <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+                            </a>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
                 </div>
                 <section class="activity__comment">
                 </section>
@@ -52,8 +77,12 @@
                                 <h3>{{abc.desc | truncatechars:30}}</h3>
 
                             </div>
+
+
                             <div class="project-cardlist__user">
-                                <span>{{abc.user}}</span>
+                                <span>{{abc.user}}</span> {% if abc.user == user %}
+                                <a href="{% url 'project:edit' abc.id %}" class="btn-link block">Edit</a> {% endif %}
+
                                 <button>자세히보기</button>
                             </div>
                         </div>
@@ -63,28 +92,11 @@
             </div>
         </li>
 
-        <!-- {% include 'partials/footer.html' %} -->
-        </main>
-        </div>
-        <div class="project__pageparent">
-            <div class="project-page">
-
-                {% if fav.has_previous %}
-                <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
-                    <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
-                </a>
-                {% endif %}
 
 
+    </ul>
+    {% include 'partials/footer.html' %}
+    </div>
 
-                <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
-                <a class="project-page__a" href="?page={{fav.next_page_number}}">
-                    <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
-                </a>
-                {% endif %}
-
-
-            </div>
-        </div>
-        <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
-        </img>
+    <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
+    </img>

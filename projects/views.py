@@ -40,3 +40,23 @@ class CreateProjectView(user_mixins.LoggedInOnlyView, FormView):
         project.save()
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("core:project_list"))
+
+
+class ProjectDetail(DetailView):
+
+    """ RoomDetail Definition """
+
+    model = models.Project
+
+class EditProjectView(UpdateView):
+
+    model = models.Project
+    template_name = "projects/project_edit.html"
+    fields = (
+        "title",
+        "desc",
+        "thumnail_img",
+        "tag",
+        "git",
+   
+    )

@@ -4,5 +4,7 @@
     <div class="project-field">
         {% for field in form %} {% include 'mixins/project/project_input.html' with field=field %} {% endfor %}
     </div>
-    <button class="btn bg-red-500 text-white">{{cta}}</button>
+    <div class="project-create__section">
+        <button class="project-create__button">{{cta}}</button>
+    </div>
 </form>
