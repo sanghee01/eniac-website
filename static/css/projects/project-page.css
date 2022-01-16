@@ -1,0 +1,12 @@
+.project-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 5%;
+    margin-right: 60px;
+}
+
+.project-page span {
+    font-size: 25px;
+}

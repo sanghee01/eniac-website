@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+}
+
+#recommend-bg {
+  width: 100vw;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  z-index: -999;
+}

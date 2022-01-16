@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 .body {}
 
-.home-topbox {}
+.home-topbox {
+    position: relative;
+    height: 100%;
+}
 
 .home-topbox__triangle {
     width: 100%;
@@ -62,4 +65,20 @@
 .home-wotd__developer {
     display: flex;
     justify-content: flex-end;
+}
+
+@media screen and (max-width: 1200px) {
+    .home-wotd__wrapper {
+        width: 900px;
+        padding: 0 20px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .home-wotd__inside {
+        width: 50%;
+        margin-left: 6%;
+        margin-right: 120px;
+    }
 }

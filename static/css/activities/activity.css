@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+}
+
+<<<<<<< HEAD:static/css/activities/activity.css
+#act-bg {
+=======
+#recommend-bg {
+>>>>>>> feature/Recommendation:frontend/recommend/css/styles.css
+  width: 100vw;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  z-index: -999;
+}

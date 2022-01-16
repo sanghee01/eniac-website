@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@100&display=swap");
+body {}
+
+.notice-parent {
+    height: 130%;
+    position: relative;
+}
+
+.notice-content__title {
+    display: flex;
+    justify-content: center;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 20px;
+    /* identical to box height, or 34% */
+    letter-spacing: -0.133333px;
+    margin-top: 5%;
+}
+
+.notice-content__card {
+    display: flex;
+    margin: 5% 0 0 10%;
+}
+
+.notice-content__text {
+    margin-top: 10px;
+    margin-left: 40px;
+    width: 70%;
+}
+
+.notice-content__card-title {
+    font-family: DM Serif Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    /* identical to box height, or 50% */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.notice-content__card-desc {
+    font-family: DM Serif Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 2px;
+    /* identical to box height, or 62% */
+}
+
+.notice-content__tag {
+    display: flex;
+    height: 40%;
+    align-items: flex-end;
+}
+
+.notice-content__tag div {
+    width: 100px;
+    height: 50px;
+    background: #c7b6e3;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.notice-content__border {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.notice-content__border div {
+    border: 0.04px solid #000000;
+    width: 80%;
+}

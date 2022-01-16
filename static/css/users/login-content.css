@@ -9,6 +9,7 @@
 
 .login-content__form {
     margin-left: 20px;
+    width: 30%;
 }
 
 .login-content__form h1 {
@@ -21,16 +22,16 @@
     margin-top: -26.22px;
 }
 
-
-/* .login-content__img {
-    width: 60%;
-} */
+.login-content__img {
+    margin-right: 60px;
+    width: 50%;
+}
 
 .login-content__input {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    width: 150%;
+    width: 80%;
 }
 
 .login-content__input label {
@@ -43,6 +44,7 @@
     box-sizing: border-box;
     border-radius: 4px;
     height: 51px;
+    width: 150%;
 }
 
 .login-content__input select {
@@ -51,4 +53,27 @@
     box-sizing: border-box;
     border-radius: 4px;
     height: 51px;
+}
+
+.login-content__input button {
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 50px;
+    height: 50px;
+    margin-top: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+    /* identical to box height */
+    text-align: center;
+    width: 150%;
+}
+
+.login-content__signup span {}
+
+.login-content__signup a {
+    color: blue;
 }

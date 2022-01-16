@@ -8,5 +8,6 @@ class NoticeAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "desc",
-        "tag",
+    
     )
+  
