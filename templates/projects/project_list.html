@@ -1,13 +1,13 @@
  {% load static %}
 <img style="position: absolute; top: 0; left: 0; width: 100%; height: 130%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
-<main>
+<div id="Tab" style="height: 100%; position: relative; ">
     <ul class="project-menu">
         <li class="project-menu__list is_on">
             <a class="project-menu__btn" href="#">
                 <img style="width: 30px; height: 30px;" src="{% static 'img/Time.png' %}" alt="">
                 <span>최신</span>
             </a>
-            <div id="project1" id="activity" class="project-menu__cont">
+            <div id="tab1" id="activity" class="project-menu__cont">
 
                 <div class="project-cardlist">
                     {% for project in potato.object_list %}
@@ -21,70 +21,80 @@
                             </div>
                             <div class="project-cardlist__user">
                                 <span>{{project.user}}</span>
-                                <button class="modal__openbtn">자세히보기</button>
-                                <div class="modal hidden">
-                                  <div class="modal__overlay"></div>
-                                  <div class="modal__content">
-                                    <h1>Hello</h1>
-                                    <button class="modal__closebtn">close</button>
-                                  </div>
+                                <div>{% if project.user == user %}
+                                    <a href="{% url 'project:edit' project.id %}" class="btn-link block">
+                                        <button>
+                               수정 {% endif %}
+                                </button>
+                                    </a>
+                                    <button>자세히보기</button>
                                 </div>
-                            
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="project__pageparent">
+                        <div class="project-page">
+
+                            {% if fav.has_previous %}
+                            <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
+                                <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+                            </a>
+                            {% endif %}
+
+                            <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
+                            <a class="project-page__a" href="?page={{fav.next_page_number}}">
+                                <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+                            </a>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                </div>
+                <section class="activity__comment">
+                </section>
+
+
+        </li>
+        <li class="project-menu__list">
+            <a class="project-menu__btn" href="#">
+                <img style="width: 25px; height: 35px;" src="{% static 'img/Vector.png' %}" alt="">
+                <span>인기</span>
+            </a>
+            <div id="tab2" id="attendence" class="project-menu__cont">
+                <div class="project-cardlist">
+                    {% for abc in fav.object_list %}
+                    <div class="project-cardlist__card">
+                        <div>
+                            <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
+                        </div>
+                        <div class="project-cardlist__text">
+                            <div class="home-cardlist__subtext">
+                                <h1>{{abc.title | truncatechars:15}}</h1>
+                                <h3>{{abc.desc | truncatechars:30}}</h3>
+
+                            </div>
+
+
+                            <div class="project-cardlist__user">
+                                <span>{{abc.user}}</span> {% if abc.user == user %}
+                                <a href="{% url 'project:edit' abc.id %}" class="btn-link block">Edit</a> {% endif %}
+
+                                <button>자세히보기</button>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
-        </li>
-        <li class="project-menu__list ">
-            <a class="project-menu__btn" href="#">
-                <img style="width: 25px; height: 35px;" src="{% static 'img/Vector.png' %}" alt="">
-                <span>인기</span>
-            </a>
-            <div class="project-cardlist">
-                {% for abc in fav.object_list %}
-                <div class="project-cardlist__card">
-                    <div>
-                        <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
-                    </div>
-                    <div class="project-cardlist__text">
-                        <div class="home-cardlist__subtext">
-                            <h1>{{abc.title | truncatechars:15}}</h1>
-                            <h3>{{abc.desc | truncatechars:30}}</h3>
-
-                        </div>
-                        <div class="project-cardlist__user">
-                            <span>{{abc.user}}</span>
-                            <button>자세히보기</button>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
             </div>
-
         </li>
+
+
 
     </ul>
-    <div class="project-page">
-
-        {% if fav.has_previous %}
-        <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
-            <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
-        </a>
-        {% endif %}
-
-
-
-        <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
-        <a class="project-page__a" href="?page={{fav.next_page_number}}">
-            <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
-        </a>
-        {% endif %}
-
-
-    </div>
     {% include 'partials/footer.html' %}
-</main>
-</div>
-<script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
-</img>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
+    </img>

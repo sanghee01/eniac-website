@@ -30,6 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 3% 0% 0 0%;
+  position: relative;
 }
 
 .project-cardlist__card {
@@ -74,7 +75,6 @@
 
 .is_on .project-menu__btn {
   border-bottom: 5px solid #7879f1;
-  width: 90px;
 }
 
 .is_on .tab-menu__cont {

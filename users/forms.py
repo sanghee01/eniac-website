@@ -21,15 +21,16 @@ class LoginForm(forms.Form):
 
 
 class SignUpForm(forms.ModelForm):
-    class Meta:
-        model = models.User
-        fields = ("username", "email", "git_url", "fav_pro_genre", "major")
-
-   
     
+  
+   
+    username = forms.CharField(help_text=False)
     password = forms.CharField(widget=forms.PasswordInput)
     password1 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
     
+    class Meta:
+        model = models.User
+        fields = ("email", "git_url", "fav_pro_genre", "major")
 
     
     def clean_email(self):
@@ -57,7 +58,7 @@ class SignUpForm(forms.ModelForm):
         git_url = self.cleaned_data.get("git_url")
         fav_pro_genre = self.cleaned_data.get("fav_pro_genre")
         major = self.cleaned_data.get("major")
-        
+        user.username = username
         user.email = email
         user.git_url = git_url
         user.fav_pro_genre = fav_pro_genre

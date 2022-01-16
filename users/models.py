@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
+from django.shortcuts import reverse
 
 
 # Create your models here.
@@ -27,5 +28,5 @@ class User(AbstractUser):
     fav_pro_genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
 
     def get_absolute_url(self):
-        return reverse("users:profile", kwargs={'pk': self.pk})
+        return reverse("user:profile", kwargs={'pk': self.pk})
 

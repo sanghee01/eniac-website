@@ -1,0 +1,31 @@
+.activity__comment-tog,
+.challenge__comment-tog {
+  width: 100%;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.3);
+  padding-bottom: 10px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.activity__comment,
+.challenge__comment {
+  display: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+
+.activity__comment-list,
+.challenge__comment-list {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.activity__comment-name,
+.challenge__comment-name {
+  border-right: 1px solid rgba(1, 1, 1, 0.3);
+  padding-right: 5px;
+}

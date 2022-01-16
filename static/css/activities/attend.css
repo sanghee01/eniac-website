@@ -1,7 +1,7 @@
 .attend__wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 .attend__dropdown {
@@ -12,7 +12,7 @@
 table {
   background: white;
   margin-top: 40px;
-  width: 90%;
+  width: 100%;
   border-top: 1px solid #444444;
   border-collapse: collapse;
 }
@@ -48,4 +48,18 @@ th:last-child {
 
 tr:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 1000px) {
+  .tab-menu__cont {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tab-menu__cont {
+    width: 86%;
+    left: 7%;
+  }
 }

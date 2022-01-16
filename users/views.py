@@ -1,6 +1,6 @@
 from django.views import View
 from django.shortcuts import render
-from django.views.generic import FormView
+from django.views.generic import FormView, DetailView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, reverse
 from django.contrib.auth import authenticate, login, logout
@@ -48,7 +48,7 @@ class SignUpView(FormView):
     template_name = "users/signup.html"
     form_class = forms.SignUpForm
     success_url = reverse_lazy("core:project")
-    initial = {"first_name": "Nicoas", "last_name": "Serr", "email": "itn@las.com"}
+    initial = {}
 
     # user를 생성하고 바로 로그인시
     # 폼이 유효하다면 form.save를 실행시키자는거다
@@ -63,3 +63,7 @@ class SignUpView(FormView):
         return super().form_valid(form)
 
 
+class UserProfileView(DetailView):
+
+    model = models.User
+    context_object_name = "user_obj"

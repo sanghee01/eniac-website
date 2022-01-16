@@ -37,14 +37,36 @@
                 <span class="status-bar__circle "></span>
             </div>
 
+            {% if user.is_authenticated %}
+            <div class="status-bar__profile">
+                <div class="status-bar__i">
 
-            <div class="status-bar__signup">
-                {% if user.is_authenticated %}
-                <a style="text-decoration: none; color: white;" href="{% url 'user:logout' %}">Log out </a> {% else %}
-                <a style="text-decoration: none; color: white;" href="{% url 'user:login' %}">Log in </a> {% endif %}
+                    <i class="fas fa-user-circle fa-2x"></i>
+                    <i style="margin-left: 5px;" class="fas fa-chevron-down"></i>
+
+                </div>
+                <span class="stauts-bar__profile-menu">
+              
+                    <div class="status-bar__single-menu" >
+                        <a href="{{user.get_absolute_url}}">프로필</a>
+                    </div>
+                 <a href="{% url 'project:create' %}">
+                    <div class="status-bar__single-menu" >프로젝트 생성</div>
+                      </a>
+                 <a href="{% url 'user:logout' %}">
+                    <div class="status-bar__single-menu" >로그아웃</div>
+                </a>
+                </span>
             </div>
+            {% else %}
+            <div class="status-bar__signup">
+
+                <a style="text-decoration: none; color: white;" href="{% url 'user:login' %}">Log in </a>
+            </div>
+            {% endif %}
 
             <span class="status-bar__icon">
+
                 <i class="fas fa-bars fa-lg"></i>
             </span>
 
@@ -52,8 +74,9 @@
 
     </div>
 
-
+    <script type="text/javascript" src="{% static 'js/header-tog.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/header-tab.js' %}"></script>
+
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 </body>
 

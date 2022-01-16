@@ -1,0 +1,29 @@
+.challenge__enroll {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.challenge__enroll input {
+  padding: 0px 10px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.challenge__enroll input:focus {
+  outline: none;
+}
+
+.challenge__enroll button {
+  cursor: pointer;
+  background-color: #ea96ec;
+  border: none;
+  width: 55px;
+  height: 40px;
+  transition: background-color 0.2s ease-in-out;
+}
+.challenge__enroll button:hover {
+  background-color: #c471c5;
+}
