@@ -50,3 +50,12 @@
 .is_on .tab-menu__cont {
     display: block;
 }
+
+@media screen and (max-width: 1600px) {
+    .project-cardlist {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 3% 0% 0 6%;
+        position: relative;
+    }
+}

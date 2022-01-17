@@ -8,6 +8,11 @@ body {}
     position: relative;
 }
 
+.notice-content__tags {
+    display: flex;
+    margin-top: 30px;
+}
+
 .notice-content__title {
     display: flex;
     justify-content: center;

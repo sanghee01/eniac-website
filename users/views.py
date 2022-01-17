@@ -6,6 +6,7 @@ from django.shortcuts import redirect, reverse
 from django.contrib.auth import authenticate, login, logout
 from . import forms
 from . import models
+
 from django.core.paginator import Paginator
 from django.views.generic import FormView
 from django.urls import reverse_lazy
@@ -30,6 +31,7 @@ def login(request):
         if user is not None: 
             # 로그인하고 index로 리다이렉트한다. 
             auth.login(request, user)
+          
             return redirect(reverse("core:project"))
         
         else:
@@ -60,6 +62,7 @@ class SignUpView(FormView):
         user = authenticate(self.request, username=username, password=password)
         if user is not None:
             auth.login(self.request, user)
+        user.verify_email()
         return super().form_valid(form)
 
 

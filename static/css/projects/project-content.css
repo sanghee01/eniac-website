@@ -2,11 +2,6 @@ a {
     text-decoration: none;
 }
 
-body,
-html {
-    height: 130%;
-}
-
 .project-content__list {
     list-style-type: none;
     display: flex;
