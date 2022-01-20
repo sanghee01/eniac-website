@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    body,
+    html {
+        height: 130%;
+    }
+</style>
 
 <head>
     {% load static %}
@@ -18,7 +24,7 @@
           top: 0;
           left: 0;
           width: 100%;
-          height: 150%;
+          height: 90%;
           z-index: -999;
         " src="{% static 'img/triangle.png' %}" />{% include 'base.html' %}
         <div class="notice-content">
@@ -42,8 +48,12 @@
                     <!-- {% for tag in notice.object_list.tags.all %} -->
 
                     <!-- {% endfor %} -->
-                    <div class="notice-content__tag">
-                        <div>{{notices.tag.all| join:", "}}</div>
+                    <div class="notice-content__tags">
+                        {% for tag in notices.tag.all %}
+                        <div class="notice-content__tag">
+                            <div>{{tag}}</div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

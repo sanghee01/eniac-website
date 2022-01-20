@@ -1,4 +1,11 @@
- {% load static %}
+<style>
+    body,
+    html {
+        height: 160%;
+    }
+</style>
+
+{% load static %}
 <img style="position: absolute; top: 0; left: 0; width: 100%; height: 130%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
 <div id="Tab" style="height: 100%; position: relative; ">
     <ul class="project-menu">
@@ -33,23 +40,24 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="project__pageparent">
-                        <div class="project-page">
 
-                            {% if fav.has_previous %}
-                            <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
-                                <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
-                            </a>
-                            {% endif %}
+                </div>
+                <div class="project__pageparent">
+                    <div class="project-page">
 
-                            <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
-                            <a class="project-page__a" href="?page={{fav.next_page_number}}">
-                                <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
-                            </a>
-                            {% endif %}
+                        {% if fav.has_previous %}
+                        <a class="project-page__a" href="?page={{fav.previous_pre_number}}">
+                            <i style="margin-right: 10px;" class="fas fa-chevron-left fa-lg"></i>
+                        </a>
+                        {% endif %}
+
+                        <span> {{fav.number}} of {{fav.paginator.num_pages}}</span> {% if fav.has_next %}
+                        <a class="project-page__a" href="?page={{fav.next_page_number}}">
+                            <i style="margin-left: 10px;" class="fas fa-chevron-right fa-lg"></i>
+                        </a>
+                        {% endif %}
 
 
-                        </div>
                     </div>
                 </div>
                 <section class="activity__comment">

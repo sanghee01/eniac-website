@@ -6,6 +6,7 @@ from django.shortcuts import redirect, reverse
 from django.contrib.auth import authenticate, login, logout
 from . import forms
 from . import models
+
 from django.core.paginator import Paginator
 from django.views.generic import FormView
 from django.urls import reverse_lazy
@@ -15,7 +16,6 @@ from django.contrib.auth.models import User  # User model 연결
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView # 오브젝트를 생성하는 뷰 (form 혹은 model과 연결되서 새로운 데이터를 넣을 때 CreateView - generic view를 사용)
 # from django.contrib.auth.forms import UserCreationForm  >>  장고의 기본 회원가입 폼 (ID, PW만 확인한다 - 뒤에서 이메일 추가 커스터미아징 예정)
-
 
 # Create your views here.
 
@@ -30,6 +30,7 @@ def login(request):
         if user is not None: 
             # 로그인하고 index로 리다이렉트한다. 
             auth.login(request, user)
+          
             return redirect(reverse("core:project"))
         
         else:
@@ -60,6 +61,7 @@ class SignUpView(FormView):
         user = authenticate(self.request, username=username, password=password)
         if user is not None:
             auth.login(self.request, user)
+        user.verify_email()
         return super().form_valid(form)
 
 
