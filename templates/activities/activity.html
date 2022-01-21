@@ -17,10 +17,10 @@
 
 <div class="activity">
     {% load static %}
-    <img style="position: absolute; top: 0; left: 0; width: 100%; height: 180%; z-index: -999;" src="{% static 'img/tri-blue.png' %}">
+    <img style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -999;" src="{% static 'img/tri-blue.png' %}">
     <!-- Tab -->
     {% include 'base.html' %}
-    <div id="Tab" style="height: 100%; width: 100%;">
+    <div id="Tab">
         <ul class="tab-menu">
             <li class="tab-menu__list is_on">
                 <a href="#tab1" class="tab-menu__btn">활동</a>
@@ -179,10 +179,9 @@
     {% include 'partials/footer.html' %}
 
 
-        <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
-        {% include 'partials/footer.html' %}
-    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
 
 </html>
