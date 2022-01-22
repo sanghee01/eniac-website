@@ -125,13 +125,7 @@ li.is__on {
   display: flex;
   justify-content: center;
   position: absolute;
-<<<<<<< HEAD
-  margin-top: 80px;
-  bottom: 0;
-  left: 50%;
-=======
   margin-top: 40px;
   bottom: 0;
   left: 43%;
->>>>>>> 3bdce60ac0ada95319a936d56e74094941f8b6ae
 }

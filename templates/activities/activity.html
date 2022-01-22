@@ -32,51 +32,6 @@
                 <option value="1">22년 1학기</option>
                 <option value="2">22년 2학기</option>
               </select> {% for activity in act.object_list %}
-<<<<<<< HEAD
-                        <h1 class="activity__title">{{activity.title}}</h1>
-                        <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
-                        <p class="activity__content">
-                            {{activity.desc}}
-                        </p>
-                        <div class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></div>
-                        <ul class="activity__comment">
-                            <li class="activity__comment-list">
-                                <span class="activity__comment-name">이상희</span>
-                                <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
-                            </li>
-                            <li class="activity__comment-list">
-                                <span class="activity__comment-name">윤동규</span>
-                                <span class="ctivity__comment-cont">네 알겠습니다~</span>
-                            </li>
-                            <li class="activity__comment-list">
-                                <span class="activity__comment-name">홍길동</span>
-                                <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span>
-                            </li>
-                        </ul>
-                        {% endfor %}
-
-
-                    </section>
-                    <section class="activity__comment">
-                    </section>
-                    <!-- 페이지 -->
-                    <div class="activity__pageparent">
-                        <div class="activity-page">
-
-                            {% if act.has_previous %}
-                            <a class="activity-page__a" href="?page={{act.previous_pre_number}}">
-                                <i style="margin-right: 10px;" class="fas fa-chevron-left"></i>
-                            </a>
-                            {% endif %}
-
-                            <span> {{act.number}} of {{act.paginator.num_pages}}</span> {% if act.has_next %}
-                            <a class="activity-page__a" href="?page={{act.next_page_number}}">
-                                <i style="margin-left: 10px;" class="fas fa-chevron-right"></i>
-                            </a>
-                            {% endif %}
-
-
-=======
                             <h1 class="activity__title">{{activity.title}}</h1>
                             <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
                             <p class="activity__content">
@@ -123,7 +78,6 @@
 
 
                             </div>
->>>>>>> 5db9276fa09d85a396bdfb8ede9a40eddfe5b4e6
                         </div>
                     </main>
                     {% include 'partials/footer.html' %}
@@ -226,20 +180,12 @@
         </ul>
 
         </div>
-    {% include 'partials/footer.html' %}
 
 
-<<<<<<< HEAD
-</div>
-<script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
-=======
         <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
 
     </div>
->>>>>>> 5db9276fa09d85a396bdfb8ede9a40eddfe5b4e6
 
 </html>

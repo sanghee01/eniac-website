@@ -36,8 +36,6 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse("user:profile", kwargs={'pk': self.pk})
-<<<<<<< HEAD
-=======
 
     def verify_email(self):
         if self.email_verified is False:
@@ -51,4 +49,3 @@ class User(AbstractUser):
                 fail_silently=False,
             )
         return
->>>>>>> 5db9276fa09d85a396bdfb8ede9a40eddfe5b4e6

@@ -1,24 +1,24 @@
 body {
-  height: 130%;
+  height: 100%;
 }
 
 #tab1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .activity-main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-#tab1>main {
-    width: 70%;
+#tab1 > main {
+  width: 70%;
 }
 
 .activity {
@@ -27,16 +27,10 @@ body {
 }
 
 .activity__cont-wrap {
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-=======
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 70%;
->>>>>>> 5db9276fa09d85a396bdfb8ede9a40eddfe5b4e6
+  width: 70%;
 }
 
 .activity__dropdown {
