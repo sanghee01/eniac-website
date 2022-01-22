@@ -3,7 +3,6 @@
 
 .home-topbox {
     position: relative;
-    height: 100%;
 }
 
 .home-topbox__triangle {
@@ -33,6 +32,7 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    50%
 }
 
 .home-wotd__inside div:first-child {
@@ -67,6 +67,10 @@
     justify-content: flex-end;
 }
 
+.home-wotd__span {
+    margin-left: 80px;
+}
+
 @media screen and (max-width: 1200px) {
     .home-wotd__wrapper {
         width: 900px;
@@ -80,5 +84,55 @@
         width: 50%;
         margin-left: 6%;
         margin-right: 120px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .home-wotd__photoside {
+        align-items: center;
+        display: none;
+    }
+    .home-wotd__inside br {
+        display: none;
+    }
+    .home-wotd__span {
+        margin-left: 20px;
+    }
+    .home-wotd__inside {
+        width: 100%;
+        margin-left: 15%;
+        margin-right: 120px;
+    }
+    .home-wotd__inside div:first-child {
+        font-family: DM Serif Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 56px;
+        line-height: 68px;
+        letter-spacing: 0.01em;
+        color: #20202b;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .home-wotd__inside a {
+        display: flex;
+        justify-content: center;
+    }
+    .home-wotd__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0 30px 0;
+        width: 208px;
+        height: 45px;
+        background-color: #131255;
+        color: white;
+    }
+    body,
+    html {
+        height: 145%;
+        width: 150%;
     }
 }

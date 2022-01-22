@@ -76,6 +76,7 @@
                 <div class="project-cardlist">
                     {% for abc in fav.object_list %}
                     <div class="project-cardlist__card">
+                        <i class="fas fa-trash"></i>
                         <div>
                             <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
                         </div>

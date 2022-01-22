@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<style>
-    body,
-    html {
-        height: 130%;
-    }
-</style>
+
 
 <head>
     {% load static %}
@@ -32,58 +27,61 @@
             <li class="tab-menu__list is_on">
                 <a href="#tab1" class="tab-menu__btn">활동</a>
                 <div id="tab1" id="activity" class="tab-menu__cont">
-
-                    <section class="activity__cont-wrap">
-                        <select name="term" class="activity__dropdown">
+                    <main class="activity-main">
+                        <section class="activity__cont-wrap">
+                            <select name="term" class="activity__dropdown">
                 <option value="1">22년 1학기</option>
                 <option value="2">22년 2학기</option>
               </select> {% for activity in act.object_list %}
-                        <h1 class="activity__title">{{activity.title}}</h1>
-                        <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
-                        <p class="activity__content">
-                            {{activity.desc}}
-                        </p>
-                        <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
-                        <ul class="activity__comment">
-                            <li class="activity__comment-list">
-                                <span class="activity__comment-name">이상희</span>
-                                <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
-                            </li>
-                            <li class="activity__comment-list">
-                                <span class="activity__comment-name">윤동규</span>
-                                <span class="ctivity__comment-cont">네 알겠습니다~</span>
-                            </li>
-                            <li class="activity__comment-list">
-                                <span class="activity__comment-name">홍길동</span>
-                                <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span>
-                            </li>
-                        </ul>
-                        {% endfor %}
+                            <h1 class="activity__title">{{activity.title}}</h1>
+                            <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
+                            <p class="activity__content">
+                                {{activity.desc}}
+                            </p>
+                            <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
+                            <ul class="activity__comment">
+                                <li class="activity__comment-list">
+                                    <span class="activity__comment-name">이상희</span>
+                                    <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
+                                </li>
+                                <li class="activity__comment-list">
+                                    <span class="activity__comment-name">윤동규</span>
+                                    <span class="ctivity__comment-cont">네 알겠습니다~</span>
+                                </li>
+                                <li class="activity__comment-list">
+                                    <span class="activity__comment-name">홍길동</span>
+                                    <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span>
+                                </li>
+                            </ul>
+                            {% endfor %}
 
 
-                    </section>
-                    <section class="activity__comment">
-                    </section>
-                    <!-- 페이지 -->
-                    <div class="activity__pageparent">
-                        <div class="activity-page">
-
-                            {% if act.has_previous %}
-                            <a class="activity-page__a" href="?page={{act.previous_pre_number}}">
-                                <i style="margin-right: 10px;" class="fas fa-chevron-left"></i>
-                            </a>
-                            {% endif %}
-
-                            <span> {{act.number}} of {{act.paginator.num_pages}}</span> {% if act.has_next %}
-                            <a class="activity-page__a" href="?page={{act.next_page_number}}">
-                                <i style="margin-left: 10px;" class="fas fa-chevron-right"></i>
-                            </a>
-                            {% endif %}
+                        </section>
+                        <section class="activity__comment">
+                        </section>
 
 
+                        <!-- 페이지 -->
+                        <div class="activity__pageparent">
+                            <div class="activity-page">
+
+                                {% if act.has_previous %}
+                                <a class="activity-page__a" href="?page={{act.previous_pre_number}}">
+                                    <i style="margin-right: 10px;" class="fas fa-chevron-left"></i>
+                                </a>
+                                {% endif %}
+
+                                <span> {{act.number}} of {{act.paginator.num_pages}}</span> {% if act.has_next %}
+                                <a class="activity-page__a" href="?page={{act.next_page_number}}">
+                                    <i style="margin-left: 10px;" class="fas fa-chevron-right"></i>
+                                </a>
+                                {% endif %}
+
+
+                            </div>
                         </div>
-                    </div>
-
+                    </main>
+                    {% include 'partials/footer.html' %}
             </li>
             <li class="tab-menu__list">
                 <a href="#tab2" class="tab-menu__btn">명단</a>
@@ -189,7 +187,7 @@
         <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
-        {% include 'partials/footer.html' %}
+
     </div>
 
 </html>

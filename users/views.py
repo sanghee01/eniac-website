@@ -16,7 +16,9 @@ from django.contrib.auth.models import User  # User model 연결
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView # 오브젝트를 생성하는 뷰 (form 혹은 model과 연결되서 새로운 데이터를 넣을 때 CreateView - generic view를 사용)
 # from django.contrib.auth.forms import UserCreationForm  >>  장고의 기본 회원가입 폼 (ID, PW만 확인한다 - 뒤에서 이메일 추가 커스터미아징 예정)
-
+from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -61,7 +63,7 @@ class SignUpView(FormView):
         password = form.cleaned_data.get("password")
         user = authenticate(self.request, username=username, password=password)
         if user is not None:
-            auth.login(self.request, user)
+            auth.login(self.request, user)  
         user.verify_email()
         return super().form_valid(form)
 
@@ -70,3 +72,9 @@ class UserProfileView(DetailView):
 
     model = models.User
     context_object_name = "user_obj"
+
+
+
+
+
+

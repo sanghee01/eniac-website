@@ -34,7 +34,7 @@
     width: 60%;
     position: absolute;
     top: 120px;
-    left: 20%;
+    left: 0;
 }
 
 .is_on .tab-menu__btn {

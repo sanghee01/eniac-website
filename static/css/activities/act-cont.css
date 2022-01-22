@@ -2,6 +2,25 @@ body {
     height: 130%;
 }
 
+#tab1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activity-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tab1>main {
+    width: 70%;
+}
+
 .activity {
     position: relative;
     min-height: 127%;
@@ -11,6 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 70%;
 }
 
 .activity__dropdown {

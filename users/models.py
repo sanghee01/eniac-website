@@ -39,13 +39,12 @@ class User(AbstractUser):
         return reverse("user:profile", kwargs={'pk': self.pk})
 
     def verify_email(self):
-        pass
         if self.email_verified is False:
             secret = uuid.uuid4().hex[:20]
             self.email_secret = secret
             send_mail(
                 "Verify Airbnb Account",
-                f"Eniac account, this is your secret: {secret}",
+                f"Verify account, this is your secret: {secret}",
                 settings.EMAIL_FROM,
                 [self.email],
                 fail_silently=False,
