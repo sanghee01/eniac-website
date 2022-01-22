@@ -36,3 +36,19 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse("user:profile", kwargs={'pk': self.pk})
+<<<<<<< HEAD
+=======
+
+    def verify_email(self):
+        if self.email_verified is False:
+            secret = uuid.uuid4().hex[:20]
+            self.email_secret = secret
+            send_mail(
+                "Verify Airbnb Account",
+                f"Verify account, this is your secret: {secret}",
+                settings.EMAIL_FROM,
+                [self.email],
+                fail_silently=False,
+            )
+        return
+>>>>>>> 5db9276fa09d85a396bdfb8ede9a40eddfe5b4e6

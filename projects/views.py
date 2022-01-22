@@ -6,6 +6,9 @@ from users import mixins as user_mixins
 from django.views.generic import ListView, DetailView, View, UpdateView, FormView
 from . import models, forms
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
 
 
 
@@ -60,3 +63,23 @@ class EditProjectView(UpdateView):
         "git",
    
     )
+
+
+
+@login_required
+def delete_project(request, project_pk):
+    user = request.user
+    try:
+        room = models.Project.objects.get(pk=project_pk)
+        # 현재 pk획득
+        if room.host.pk != user.pk:
+            # 이 pk user 랑 pk 가 다를경우 
+            messages.error(request, "Cant delete that")
+            # 에러메세지
+        else:
+            models.Project.objects.filter(pk=project_pk).delete()
+            # pk 같은거 끼리 필터후 삭제
+            messages.success(request, "Photo Deleted")
+        return redirect(reverse("core:project", kwargs={"pk": project_pk}))
+    except models.Project.DoesNotExist:
+        return redirect(reverse("core:project_list"))

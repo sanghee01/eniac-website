@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
 .footer {
+<<<<<<< HEAD
   background-color: #2f2f2f;
   position: absolute;
   bottom: 0;
@@ -7,6 +8,13 @@
   height: 300px;
   display: flex;
   align-items: center;
+=======
+    background-color: #2f2f2f;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+>>>>>>> 5db9276fa09d85a396bdfb8ede9a40eddfe5b4e6
 }
 
 .footer__img {
