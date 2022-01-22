@@ -2,7 +2,7 @@ body {
   height: 100%;
 }
 
-#tab1 {
+.activity-main__wrap {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -11,14 +11,11 @@ body {
 }
 
 .activity-main {
+  width: 70%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
-
-#tab1 > main {
-  width: 70%;
 }
 
 .activity {
@@ -30,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 70%;
+  width: 100%;
 }
 
 .activity__dropdown {
@@ -71,7 +68,6 @@ body {
 ul,
 li {
   list-style: none;
-  padding-left: 0;
 }
 
 .activity__comment-list {
