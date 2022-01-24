@@ -30,11 +30,19 @@
 }
 
 .tab-menu__cont {
+<<<<<<< HEAD
   display: none;
   width: 100%;
   position: absolute;
   top: 120px;
   left: 0;
+=======
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    left: 0;
+>>>>>>> e07137040955e92521e07ad8d3d4c9bcc4ef398e
 }
 
 .is_on .tab-menu__btn {

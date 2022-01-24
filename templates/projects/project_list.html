@@ -1,12 +1,9 @@
 <style>
-    body,
-    html {
-        height: 160%;
-    }
+
 </style>
 
 {% load static %}
-<img style="position: absolute; top: 0; left: 0; width: 100%; height: 130%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
+<img style="position: absolute; top: 0; left: 0; width: 100%; height: 160%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
 <div id="Tab" style="height: 100%; position: relative; ">
     <ul class="project-menu">
         <li class="project-menu__list is_on">
@@ -19,7 +16,16 @@
                 <div class="project-cardlist">
                     {% for project in potato.object_list %}
                     <div class="project-cardlist__card">
-                        <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+                        {% if project.user == user %}
+                        <div class="project-cardlist__icon">
+                            <a href="{% url 'project:delete-project' project.id %}">
+                                <i class="fas fa-trash fa-2x"></i>
+                            </a>
+                        </div>
+                        {% endif %}
+                        <div>
+                            <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+                        </div>
                         <div class="project-cardlist__text">
                             <div class="home-cardlist__subtext">
                                 <h1>{{project.title | truncatechars:7}}</h1>
@@ -62,7 +68,7 @@
                 </div>
                 <section class="activity__comment">
                 </section>
-
+                {% include 'partials/footer.html' %}
 
         </li>
         <li class="project-menu__list">
@@ -74,7 +80,12 @@
                 <div class="project-cardlist">
                     {% for abc in fav.object_list %}
                     <div class="project-cardlist__card">
-                        <i class="fas fa-trash"></i>
+                        {% if project.user == user %}
+                        <div class="project-cardlist__icon">
+                            <i class="fas fa-trash fa-2x"></i>
+                        </div>
+                        {% endif %}
+
                         <div>
                             <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
                         </div>
@@ -97,12 +108,13 @@
                     {% endfor %}
                 </div>
             </div>
+
         </li>
 
 
 
     </ul>
-    {% include 'partials/footer.html' %}
+
     </div>
 
     <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>

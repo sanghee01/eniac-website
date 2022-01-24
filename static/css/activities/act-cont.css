@@ -65,6 +65,10 @@ body {
   display: block;
 }
 
+.activity__comment.show {
+  display: block;
+}
+
 ul,
 li {
   list-style: none;
