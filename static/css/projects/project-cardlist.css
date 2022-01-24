@@ -1,31 +1,3 @@
-/* project-menu */
-
-.project-menu {
-  list-style: none;
-  display: flex;
-  width: 100%;
-}
-
-.project-menu__cont {
-  display: none;
-  text-align: center;
-  left: 20%;
-}
-
-.project-menu__btn {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  width: 90px;
-  height: 60px;
-}
-
-.project-menu__btn span {
-  width: 40px;
-  margin-left: 8px;
-}
-
-/* project-card */
 .project-cardlist {
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +6,6 @@
 }
 
 .project-cardlist__card {
-  position: relative;
   margin-left: 100px;
   background-color: white;
   margin-bottom: 70px;
@@ -52,12 +23,6 @@
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
-.project-cardlist__icon {
-  position: absolute;
-  top: -15;
-  right: -10;
-}
-
 .project-cardlist__text {
   margin-left: 10px;
 }
@@ -69,9 +34,6 @@
 
 .project-cardlist__user {
   align-items: center;
-}
-
-.project-cardlist__card i {
 }
 
 .project-cardlist__user button {
@@ -98,7 +60,7 @@
   .project-cardlist {
     display: flex;
     flex-wrap: wrap;
-    margin: 3% 0% 0 10%;
+    margin: 3% 0% 0 6%;
     position: relative;
   }
 }

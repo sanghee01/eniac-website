@@ -3,12 +3,12 @@
 </style>
 
 {% load static %}
-<img style="position: absolute; top: 0; left: 0; width: 100%; height: 160%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
+<img style="position: absolute; top: 0; left: 0; width: 100%; height: 130%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
 <div id="Tab" style="height: 100%; position: relative; ">
     <ul class="project-menu">
         <li class="project-menu__list is_on">
             <a class="project-menu__btn" href="#">
-                <img style="width: 30px; height: 30px;" src="{% static 'img/Time.png' %}" alt="">
+                <img style="width: 50px; height: 50px;" src="{% static 'img/Time.png' %}" alt="">
                 <span>최신</span>
             </a>
             <div id="tab1" id="activity" class="project-menu__cont">
@@ -16,13 +16,6 @@
                 <div class="project-cardlist">
                     {% for project in potato.object_list %}
                     <div class="project-cardlist__card">
-                        {% if project.user == user %}
-                        <div class="project-cardlist__icon">
-                            <a href="{% url 'project:delete-project' project.id %}">
-                                <i class="fas fa-trash fa-2x"></i>
-                            </a>
-                        </div>
-                        {% endif %}
                         <div>
                             <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
                         </div>
@@ -73,19 +66,14 @@
         </li>
         <li class="project-menu__list">
             <a class="project-menu__btn" href="#">
-                <img style="width: 25px; height: 35px;" src="{% static 'img/Vector.png' %}" alt="">
+                <img src="{% static 'img/Vector.png' %}" alt="">
                 <span>인기</span>
             </a>
             <div id="tab2" id="attendence" class="project-menu__cont">
                 <div class="project-cardlist">
                     {% for abc in fav.object_list %}
                     <div class="project-cardlist__card">
-                        {% if project.user == user %}
-                        <div class="project-cardlist__icon">
-                            <i class="fas fa-trash fa-2x"></i>
-                        </div>
-                        {% endif %}
-
+                        <i class="fas fa-trash"></i>
                         <div>
                             <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
                         </div>
