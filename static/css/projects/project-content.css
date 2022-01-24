@@ -2,6 +2,13 @@ a {
     text-decoration: none;
 }
 
+#tab1 {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .project-content__list {
     list-style-type: none;
     display: flex;
@@ -86,7 +93,6 @@ li.is__on {
     position: relative;
     display: flex;
     margin-top: 80px;
-    margin-left: 7%;
 }
 
 .project-menu__cont {
@@ -95,7 +101,7 @@ li.is__on {
     text-align: center;
     position: absolute;
     top: 120px;
-    left: 20px;
+    left: 0;
 }
 
 .project-menu__btn {
@@ -114,7 +120,7 @@ li.is__on {
 }
 
 .project-menu__cont {
-    width: 90%;
+    width: 100%;
 }
 
 .is_on .project-menu__cont {
@@ -124,8 +130,5 @@ li.is__on {
 .project__pageparent {
     display: flex;
     justify-content: center;
-    position: absolute;
-    margin-top: 80px;
-    bottom: 0;
-    left: 50%;
+    margin-left: 10%;
 }

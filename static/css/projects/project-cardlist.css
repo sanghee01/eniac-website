@@ -1,8 +1,8 @@
 .project-cardlist {
     display: flex;
     flex-wrap: wrap;
-    margin: 3% 0% 0 0%;
-    position: relative;
+    margin: 3% 0% 0 10%;
+    width: 80%;
 }
 
 .project-cardlist__card {
@@ -45,6 +45,10 @@
 
 .is_on .project-menu__btn {
     border-bottom: 5px solid #7879f1;
+}
+
+.tab-menu__cont {
+    display: none;
 }
 
 .is_on .tab-menu__cont {

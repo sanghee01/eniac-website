@@ -1,8 +1,5 @@
 <style>
-    body,
-    html {
-        height: 160%;
-    }
+
 </style>
 
 {% load static %}
@@ -64,7 +61,7 @@
                 </div>
                 <section class="activity__comment">
                 </section>
-
+                {% include 'partials/footer.html' %}
 
         </li>
         <li class="project-menu__list">
@@ -99,12 +96,13 @@
                     {% endfor %}
                 </div>
             </div>
+
         </li>
 
 
 
     </ul>
-    {% include 'partials/footer.html' %}
+
     </div>
 
     <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
