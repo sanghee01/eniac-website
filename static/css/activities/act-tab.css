@@ -31,7 +31,7 @@
 
 .tab-menu__cont {
     display: none;
-    width: 60%;
+    width: 100%;
     position: absolute;
     top: 120px;
     left: 0;

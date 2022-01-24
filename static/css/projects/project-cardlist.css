@@ -6,6 +6,7 @@
 }
 
 .project-cardlist__card {
+    position: relative;
     margin-left: 100px;
     background-color: white;
     margin-bottom: 70px;
@@ -22,6 +23,12 @@
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
+.project-cardlist__icon {
+    position: absolute;
+    top: -15;
+    right: -10;
+}
+
 .project-cardlist__text {
     margin-left: 10px;
 }
@@ -34,6 +41,8 @@
 .project-cardlist__user {
     align-items: center;
 }
+
+.project-cardlist__card i {}
 
 .project-cardlist__user button {
     background: #2ecc71;
@@ -59,7 +68,7 @@
     .project-cardlist {
         display: flex;
         flex-wrap: wrap;
-        margin: 3% 0% 0 6%;
+        margin: 3% 0% 0 10%;
         position: relative;
     }
 }

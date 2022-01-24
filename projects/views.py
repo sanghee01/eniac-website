@@ -66,13 +66,13 @@ class EditProjectView(UpdateView):
 
 
 
-@login_required
+
 def delete_project(request, project_pk):
     user = request.user
     try:
-        room = models.Project.objects.get(pk=project_pk)
+        project = models.Project.objects.get(pk=project_pk)
         # 현재 pk획득
-        if room.host.pk != user.pk:
+        if project.user.pk != user.pk:
             # 이 pk user 랑 pk 가 다를경우 
             messages.error(request, "Cant delete that")
             # 에러메세지
