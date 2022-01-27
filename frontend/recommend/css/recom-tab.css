@@ -1,7 +1,8 @@
 /* middle tab-menu */
 .mid-tab-menu {
   list-style: none;
-  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   justify-content: right;
 }
@@ -28,11 +29,11 @@
 
 .mid-tab-menu__cont {
   display: none;
-  width: 60%;
+  width: 100%;
   text-align: center;
   position: absolute;
-  top: 120px;
-  left: 20%;
+  top: 70px;
+  left: 0;
 }
 
 .is_on > .mid-tab-menu__btn {
