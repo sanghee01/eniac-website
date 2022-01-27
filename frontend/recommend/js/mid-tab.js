@@ -5,6 +5,7 @@ for (let i = 0; i < midTabList.length; i++) {
   midTabBtn[i].addEventListener("click", function (e) {
     e.preventDefault();
     for (let j = 0; j < midTabList.length; j++) {
+      console.dir(midTabList);
       midTabList[j].classList.remove("is_on");
     }
     this.parentNode.classList.add("is_on");
