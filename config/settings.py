@@ -179,3 +179,18 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#email
+
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
+print(os.environ.get("MAILGUN_USERNAME"))
+
+EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
+print(os.environ.get("MAILGUN_PASSWORD"))
+
+EMAIL_FROM = "sssss@sandbox67029800135e4f9eac7b8688a7bbd8c5.mailgun.org"
+
+
+
+LOGIN_URL = "/users/login/"
