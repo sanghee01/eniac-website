@@ -23,7 +23,15 @@
         " src="{% static 'img/triangle.png' %}" /> {% include 'base.html' %}
         <div class="notice-content">
             <div class="notice-content__title">공지사항</div>
+            <form class="notice-content__search">
+                <div class="notice-content__search-box">
+                    <input class="notice-content__search-bar">
+                    <i class="fas fa-search"></i></input>
+                </div>
 
+
+
+            </form>
             {% for notices in notice.object_list %}
 
             <div class="notice-content__card">

@@ -25,7 +25,7 @@
     box-sizing: border-box;
     border-radius: 4px;
     height: 51px;
-    width: 90%;
+    width: 50%;
 }
 
 .project-create__content {
@@ -36,8 +36,6 @@
 
 .project-create__section {
     display: flex;
-    flex-direction: column;
-    width: 50%;
 }
 
 .project-create__button {
@@ -52,6 +50,12 @@
 
 .project-create__section {
     display: flex;
+}
+
+.project-create__section button {
+    display: inline-block;
+    width: 700px;
+    margin-right: 30px;
 }
 
 .project-create__section div {

@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 import activities
 from users.models import User
 
+
 # Create your views here.
 
 def all_notice(request):
@@ -17,6 +18,7 @@ def all_notice(request):
     return render(request,  "notices/notice.html", context={"notice": notices})
 
 
-# 시작하자
-
-# 그럼여기서 
+def search(request):
+    city = request.GET.get("city")
+    city = str.capitalize(city)
+    return render(request, "projects/search.html", {"city": city})

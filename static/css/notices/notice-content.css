@@ -84,3 +84,33 @@ body {}
     border: 0.04px solid #000000;
     width: 80%;
 }
+
+.notice-content__search {
+    margin-top: 80px;
+}
+
+.notice-content__search-bar {
+    border: 2px solid #6759f6;
+    border-radius: 50px;
+    width: 70%;
+    height: 55px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fa-search {
+    position: absolute;
+    right: 18%;
+    top: 20px;
+    margin: 0;
+}
+
+.notice-content__search-box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
