@@ -114,3 +114,8 @@ body {}
     display: flex;
     justify-content: center;
 }
+
+.notice-content__filter {
+    margin-left: 80%;
+    margin-top: 10px;
+}

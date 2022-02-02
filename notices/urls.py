@@ -5,5 +5,4 @@ app_name = "notice"
 
 urlpatterns = [
     path("search/", views.search, name="search"),
-  
 ]
