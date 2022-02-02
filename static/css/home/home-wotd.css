@@ -130,9 +130,4 @@
     background-color: #131255;
     color: white;
   }
-  body,
-  html {
-    height: 145%;
-    width: 150%;
-  }
 }
