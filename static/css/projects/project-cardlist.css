@@ -53,11 +53,16 @@
 
 /* project 모달 구현 => 추후 파일 분리해서 넣기 */
 .more {
-  background: #2ecc71;
+  background-color: #2ecc71;
   border-radius: 4px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+
+  transition: all 0.13s ease-in-out;
+}
+.more:hover {
+  background-color: #22a558;
 }
 .modal {
   display: flex;
