@@ -17,7 +17,7 @@
                     {% for project in potato.object_list %}
                     <div class="project-cardlist__card">
                         <div>
-                            <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
+                            <img style="width: 300px; height: 200px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
                         </div>
                         <div class="project-cardlist__text">
                             <div class="home-cardlist__subtext">
@@ -61,7 +61,9 @@
                 </div>
                 <section class="activity__comment">
                 </section>
-                {% include 'partials/footer.html' %}
+    {% include 'partials/footer.html' %}
+
+                </div>
 
         </li>
         <li class="project-menu__list">
@@ -75,7 +77,7 @@
                     <div class="project-cardlist__card">
                         <i class="fas fa-trash"></i>
                         <div>
-                            <img style="width: 360px; height: 240px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
+                            <img style="width: 300px; height: 200px; background-size: cover; background-position: center;" src="{{abc.get_photo_url}}"></img>
                         </div>
                         <div class="project-cardlist__text">
                             <div class="home-cardlist__subtext">
@@ -95,6 +97,8 @@
                     </div>
                     {% endfor %}
                 </div>
+    {% include 'partials/footer.html' %}
+
             </div>
 
         </li>

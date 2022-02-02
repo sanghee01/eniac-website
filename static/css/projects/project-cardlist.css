@@ -1,22 +1,18 @@
 .project-cardlist {
   display: flex;
   flex-wrap: wrap;
-  margin: 3% 0% 0 10%;
-  width: 80%;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .project-cardlist__card {
-  margin-left: 100px;
   background-color: white;
-  margin-bottom: 70px;
+  margin: 30px 1%;
   font-weight: 300;
   padding: 20px;
   border-radius: 5px;
   color: #adaeb9;
-  flex-direction: column;
-  width: 360px;
-  grid-template-columns: minmax(150px, 1fr) 2fr;
-  grid-gap: 20px;
+  width: 300px;
   text-decoration: none;
   color: inherit;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
@@ -56,11 +52,13 @@
   display: block;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
   .project-cardlist {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 3% 0% 0 6%;
-    position: relative;
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .project-cardlist {
+    max-width: 350px;
   }
 }
