@@ -1,4 +1,3 @@
-from os import major
 from django import forms
 from . import models
 

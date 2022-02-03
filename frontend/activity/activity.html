@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eniac - Activity</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <img src="../img/act-bg.png" alt="bg" id="act-bg" />
+    <!-- Header -->
+    <!-- Tab -->
+    <main id="Tab">
+      <ul class="tab-menu">
+        <li class="tab-menu__list is_on">
+          <a href="#tab1" class="tab-menu__btn">활동</a>
+          <div id="tab1" id="activity" class="tab-menu__cont">
+           
+            <section class="activity__cont-wrap">
+              <div class="dropdown">
+                <button type="button" class="dropdown-toggle">
+                  학기
+                </button>
+        
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <button type="button" value="1" class="dropdown-option">
+                      22년도 1학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="2" class="dropdown-option">
+                      22년도 2학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="3" class="dropdown-option">
+                      23년도 1학기
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <h1 class="activity__title">3월 활동 내역</h1>
+              <img src="../img/activity.JPG" class="activity__img" />
+              <p class="activity__content">
+                1학기 대면활동<br/>
+                동규팀 : 클론코딩 및 db수정 바람</br>
+                상희팀 : 이런거 이런거 앞으로 수정바람</br>
+                . </br> .</br> .</br>
+              </p>
+              <span class="activity__comment-tog">댓글 <i class="fas fa-chevron-up"></i></span>
+              <ul class="activity__comment">
+                <li class="activity__comment-list">
+                <span class="activity__comment-name">이상희</span>
+                <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span> 
+                </li>
+                <li class="activity__comment-list">
+                  <span class="activity__comment-name">윤동규</span>
+                  <span class="ctivity__comment-cont">네 알겠습니다~</span> 
+                  </li>
+                  <li class="activity__comment-list">
+                    <span class="activity__comment-name">홍길동</span>
+                    <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span> 
+                    </li>
+              </ul>
+            </section>
+            <section class="activity__comment">
+            </section>
+          </div>
+        </li>
+        <li class="tab-menu__list">
+          <a href="#tab2" class="tab-menu__btn">출석</a>
+          <div id="tab2" id="attendence" class="tab-menu__cont">
+            <section class="attend__wrap">
+              <div class="dropdown">
+                <button type="button" class="dropdown-toggle">
+                  학기
+                </button>
+        
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <button type="button" value="1" class="dropdown-option">
+                      22년도 1학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="2" class="dropdown-option">
+                      22년도 2학기
+                    </button>
+                  </li>
+                  <li class="dropdown-item">
+                    <button type="button" value="3" class="dropdown-option">
+                      23년도 1학기
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>이름</th>
+                    <th>기수</th>
+                    <th>학과</th>
+                    <th>분야</th>
+                    <th>Github</th>
+                    <th>Blog</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>이상희</td>
+                    <td>32기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Web</td>
+                    <td><a href="https://github.com/sanghee01" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>윤동규</td>
+                    <td>30기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Web</td>
+                    <td><a href="https://github.com/dongyu-youn" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="https://velog.io/@donghe1472" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>홍길동</td>
+                    <td>32기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>AI</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>길동이</td>
+                    <td>29기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Web / App</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>미길동</td>
+                    <td>31기</td>
+                    <td>시각디자인전공</td>
+                    <td>Web design</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>컴길동</td>
+                    <td>29기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Game</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>기길동</td>
+                    <td>31기</td>
+                    <td>기계공학과</td>
+                    <td>보안</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>길동쓰</td>
+                    <td>32기</td>
+                    <td>인공지능융합학과</td>
+                    <td>Web / 보안</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>기일동</td>
+                    <td>27기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>빅데이터 / AI</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>길똥길</td>
+                    <td>27기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Iot / AI</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>인길동</td>
+                    <td>32기</td>
+                    <td>정보통신공학과</td>
+                    <td>빅데이터</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>동길이</td>
+                    <td>31기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Game</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>인길동</td>
+                    <td>32기</td>
+                    <td>인공지능융합학과</td>
+                    <td>AI</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>경길동</td>
+                    <td>32기</td>
+                    <td>경영학과</td>
+                    <td>App</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>건길동</td>
+                    <td>31기</td>
+                    <td>건축학과</td>
+                    <td>Game</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>힘길동</td>
+                    <td>32기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>App</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>길동동</td>
+                    <td>30기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>클라우드</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>동동길</td>
+                    <td>31기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Web</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>낄낄동</td>
+                    <td>32기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Web / App</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>잉길동</td>
+                    <td>27기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>Web</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>밈길동</td>
+                    <td>32기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>App</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>하길동</td>
+                    <td>32기</td>
+                    <td>인공지능융합학과</td>
+                    <td>AI</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>동길동</td>
+                    <td>32기</td>
+                    <td>컴퓨터소프트웨어공학과</td>
+                    <td>보안</td>
+                    <td><a href="#" class="attend__git"><i class="fab fa-github-square"></i></a></td>
+                    <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+        <li class="tab-menu__list">
+          <a href="#tab3" class="tab-menu__btn">챌린지</a>
+          <div id="tab3" id="challenge" class="tab-menu__cont challenge">
+            <section class="hallenge__cont-wrap">
+            <ul>
+              <li class="challenge__list">
+              <h3 class="challenge__name">윤동규</h3>
+              <p class="challenge__cont">노마드 강의를 1강부터 들으면서 이렇게 공부했습니다</br>
+              굉장히 힘드네요</br>
+              앞으로 30일동안 이 챌린지를 통해 클론코딩을 완수해보려합니다.
+              </p>
+              <span class="challenge__date">2021/12/31</span>
+              <span class="challenge__comment-tog" id="tog-1">댓글 <i class="fas fa-chevron-up"></i></span>
+              <ul class="challenge__comment" id="comm-1">
+                <li class="challenge__comment-list">
+                <span class="challenge__comment-name">홍길동</span>
+                <span class="challenge__comment-cont">저도 그 강의 듣는데 같이 힘냅시다</span> 
+                </li>
+      
+              </ul>
+              </li>
+              <li class="challenge__list">
+                <h3 class="challenge__name">이상희</h3>
+                <p class="challenge__cont">이번주 부터 코코아톡 클론코딩 강의를 듣기 시작했고 </br>
+                html하고 css 파트까지 수강하였습니다.</br>
+                이해하는데 너무 오래걸리고 고통스러웠는데 완수하니까 너무 뿌듯하네요! 다들 오늘도 파이팅입니다
+                </p>
+                <span class="challenge__date">2021/12/31</span>
+                <span class="challenge__comment-tog" id="tog-2">댓글 <i class="fas fa-chevron-up"></i></span>
+              <ul class="challenge__comment" id="comm-2">
+                <li class="challenge__comment-list">
+                <span class="challenge__comment-name">홍길동</span>
+                <span class="challenge__comment-cont">ㅍㅇㅌㅍㅇㅌ</span> 
+                </li>
+              </ul>
+                </li>
+                <li class="challenge__list">
+                  <h3 class="challenge__name">홍길동</h3>
+                  <p class="challenge__cont">오늘 웹프론트에서 탭 만드는 방법을 드디어 터득했습니다 </br>
+                  블로그에 올려놨습니다~😉
+                  </p>
+                  <span class="challenge__date">2021/12/31</span>
+                  <span class="challenge__comment-tog" id="tog-3">댓글 <i class="fas fa-chevron-up"></i></span>
+                <ul class="challenge__comment" id="comm-3">
+                  <li class="challenge__comment-list">
+                  </li>
+                </ul>
+                  </li>
+            </ul>
+            <form class="challenge__enroll">              
+                  <input type= "text" placeholder="Write your challenge comment..."/>
+                  <button>
+                     등록
+                  </button>
+          </form>
+            </section>
+          </div>
+        </li>
+      </ul>
+
+    </main>
+
+    <!-- Footer -->
+    <script src="js/act-tab.js"></script>
+    <script src="js/act-tog.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/chall-tog.js"></script>
+  </body>
+</html>
