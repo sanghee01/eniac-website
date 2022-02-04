@@ -1,96 +1,122 @@
 .project-cardlist {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .project-cardlist__card {
-  background-color: white;
-  margin: 30px 1%;
-  font-weight: 300;
-  padding: 20px;
-  border-radius: 5px;
-  color: #adaeb9;
-  width: 300px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+    background-color: white;
+    margin: 30px 1%;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 5px;
+    color: #adaeb9;
+    width: 300px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
 .project-cardlist__text {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .project-cardlist__user {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .project-cardlist__user {
-  align-items: center;
+    align-items: center;
 }
 
 .tab-menu__cont {
-  display: none;
+    display: none;
 }
 
 .is_on .tab-menu__cont {
-  display: block;
+    display: block;
 }
 
 @media screen and (max-width: 1200px) {
-  .project-cardlist {
-    max-width: 720px;
-  }
+    .project-cardlist {
+        max-width: 720px;
+    }
 }
+
 @media screen and (max-width: 800px) {
-  .project-cardlist {
-    max-width: 350px;
-  }
+    .project-cardlist {
+        max-width: 350px;
+    }
 }
+
 
 /* project 모달 구현 => 추후 파일 분리해서 넣기 */
-.more {
-  background-color: #2ecc71;
-  border-radius: 4px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
 
-  transition: all 0.13s ease-in-out;
+.more {
+    background-color: #2ecc71;
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.13s ease-in-out;
 }
+
 .more:hover {
-  background-color: #22a558;
+    background-color: #22a558;
 }
+
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .modal__overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
 }
 
 .modal__content {
-  background-color: white;
-  padding: 50px 100px;
-  text-align: center;
-  position: relative;
-  border-radius: 10px;
-  width: 10%;
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px;
+}
+
+.modal__content i {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal__text {
+    margin-left: 30px;
+}
+
+.modal__text h3 {
+    margin-top: 370px;
+}
+
+.modal__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }

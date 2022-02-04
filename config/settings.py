@@ -61,6 +61,7 @@ PROJECT_APPS = [
     "notices.apps.NoticesConfig",
     "tags.apps.TagsConfig",
     'tagging.apps.TaggingConfig',
+    'recommends.apps.RecommendsConfig',
 ]
 
 

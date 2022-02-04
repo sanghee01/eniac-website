@@ -37,6 +37,13 @@
                 <span class="status-bar__circle "></span>
             </div>
 
+            <div class="status-bar__list">
+                <a class="status-bar__button">
+                    <a href="{% url 'core:recommend_list' %}">추천</a></a>
+                <span class="status-bar__circle "></span>
+            </div>
+
+
             {% if user.is_authenticated %}
             <div class="status-bar__profile">
                 <div class="status-bar__i">

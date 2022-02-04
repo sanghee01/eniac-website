@@ -63,6 +63,8 @@ class EditProjectView(UpdateView):
         "git",
    
     )
+    def get_success_url(self):
+        return reverse("core:project_list")
 
 
 
