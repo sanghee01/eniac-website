@@ -14,6 +14,8 @@ def all_recommends(request):
     all_recommend = models.Recommend.objects.all()
     paginator = Paginator(all_recommend, 20)
     recommend = paginator.get_page(page)
+
+    
    
     return render(request,  "recommends/recommend_list.html", context={"recom": recommend})
 
