@@ -16,6 +16,9 @@ if (this.location.href === "http://127.0.0.1:8000/notice") {
 } else if (this.location.href === "http://127.0.0.1:8000/activity") {
     // 잴 앞에거만 냄겨놓고 잴 앞에것만 is_on실행
     headerSpan[2].classList.add("is_on");
+} else if (this.location.href === "http://127.0.0.1:8000/recommend") {
+    // 잴 앞에거만 냄겨놓고 잴 앞에것만 is_on실행
+    headerSpan[3].classList.add("is_on");
 }
 
 console.log(headerSpan[2]);

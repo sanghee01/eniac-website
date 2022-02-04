@@ -1,137 +1,136 @@
 /* project Tab관련 CSS코드 */
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #tab1 {
-  width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 li.is__on {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .is__on a {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .tab_menu .list {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .project-menu {
-  list-style: none;
-  position: relative;
-  display: flex;
-  margin-top: 80px;
+    list-style: none;
+    position: relative;
+    display: flex;
+    margin-top: 80px;
 }
 
 .project-menu__cont {
-  display: none;
-  text-align: center;
-  position: absolute;
-  top: 160px;
-  left: 0;
+    display: none;
+    position: absolute;
+    top: 160px;
+    left: 0;
 }
 
 .project-menu__btn {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  height: 70px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    height: 70px;
 }
 
 .project-menu__btn span {
-  margin-left: 8px;
+    margin-left: 8px;
 }
 
 .project-menu__list {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .project-menu__cont {
-  width: 100%;
+    width: 100%;
 }
 
 .is_on .project-menu__cont {
-  display: block;
+    display: block;
 }
 
 .project__pageparent {
-  display: flex;
-  justify-content: center;
-  margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
 }
+
 
 /* 밑에는 무슨 코드지? - html에는 없음 근데 적용은 됨 */
 
 .project-content__list {
-  list-style-type: none;
-  display: flex;
+    list-style-type: none;
+    display: flex;
 }
 
 .project-content__tabs {
-  margin-left: 5%;
-  margin-top: 3%;
-  display: flex;
+    margin-left: 5%;
+    margin-top: 3%;
+    display: flex;
 }
 
 .project-content__a span {
-  margin-left: 6px;
+    margin-left: 6px;
 }
 
 .project-content__underline {
-  position: absolute;
-  left: 0;
-  height: 4px;
-  width: 0;
-  border-radius: 3px;
-  transition: 0.5s;
-  background-color: pink;
-  top: 0;
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    border-radius: 3px;
+    transition: 0.5s;
+    background-color: pink;
+    top: 0;
 }
 
 .project-content__tab_menu {
-  display: flex;
-  align-items: center;
-  margin: 2% 0 0 4%;
+    display: flex;
+    align-items: center;
+    margin: 2% 0 0 4%;
 }
 
 .project-content__tabA {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
 
 .project-content__tabA span {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .project-content__tabB {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .project-content__tabB span {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .project-content__list li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .project-content__a {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
 
 .project-content__a:nth-child(2) {
-  border-bottom: 2px solid black;
-  height: 60px;
+    border-bottom: 2px solid black;
+    height: 60px;
 }
