@@ -12,7 +12,6 @@
                 <span>최신</span>
             </a>
             <div id="tab1" id="activity" class="project-menu__cont">
-
                 <div class="project-cardlist">
                     {% for project in potato.object_list %}
                     <div class="project-cardlist__card">
@@ -47,7 +46,6 @@
                         </div>
                     </div>
                     {% endfor %}
-
                 </div>
                 <div class="project__pageparent">
                     <div class="project-page">
@@ -69,9 +67,9 @@
                 </div>
                 <section class="activity__comment">
                 </section>
-    {% include 'partials/footer.html' %}
+                {% include 'partials/footer.html' %}
 
-                </div>
+            </div>
 
         </li>
         <li class="project-menu__list">
@@ -105,7 +103,7 @@
                     </div>
                     {% endfor %}
                 </div>
-    {% include 'partials/footer.html' %}
+                {% include 'partials/footer.html' %}
 
             </div>
 
@@ -115,27 +113,11 @@
 
     </ul>
 
-    </div>
+</div>
 
-    <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
-    </img>
-    <!-- modal js => 추후 파일로 옮기기 -->
-    <script>
-        const modal = document.querySelectorAll(".modal");
-        const moreBtn = document.querySelectorAll(".more");
-        const overlay = document.querySelectorAll(".modal__overlay");
-        const closeBtn = document.querySelectorAll(".modal__close");
-        
-        for(let i =0;i<modal.length;i++){
-        moreBtn[i].addEventListener("click",(e)=>{
-        e.path[0].nextElementSibling.classList.remove("hidden")        })
-        
-        closeBtn[i].addEventListener("click",(e)=>{
-        e.path[2].classList.add("hidden");
-        })
-        overlay[i].addEventListener("click",(e)=>{
-            e.path[1].classList.add("hidden");
-        
-        })
-    }
-    </script>
+<script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/project-modal.js' %}"></script>
+</img>
+<!-- modal js => 추후 파일로 옮기기 -->
+<script>
+</script>
