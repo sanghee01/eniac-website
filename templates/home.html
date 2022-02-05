@@ -4,7 +4,6 @@
 
 
 {% load static %}
-<img class="home-img" style="" src="{% static 'img/triangle.png' %}" />
 <div class="home-topbox">
     <section class="home-wotd">
         {% include 'base.html' %}
@@ -31,6 +30,8 @@
         </div>
     </section>
     <section class="home-cardlist">
+<img class="home-img" style="" src="{% static 'img/triangle.png' %}" />
+
         {% for project in potato %}
         <div class="home-cardlist__card">
             <div class="home-cardlist__text">

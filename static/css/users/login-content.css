@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@100&display=swap");
-body {
+#login-page {
   background: linear-gradient(180deg, #fef6b2 0%, #fffce3 80%);
 }
 .login {

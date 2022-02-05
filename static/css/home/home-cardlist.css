@@ -1,99 +1,99 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@100&display=swap");
 .home-cardlist__card {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .home-cardlist__text:first-child {
-    width: 416.49px;
-    height: 203px;
-    text-align: start;
+  width: 416.49px;
+  height: 203px;
+  text-align: start;
 }
 
 .home-cardlist__text button {
-    width: 172px;
-    height: 41px;
-    background: #fff493;
-    border: none;
-    filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.12));
-    margin-top: 20px;
+  width: 172px;
+  height: 41px;
+  background: #fff493;
+  border: none;
+  filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.12));
+  margin-top: 20px;
 }
 
 .home-cardlist__text:nth-child(2) {
-    width: 416.49px;
-    height: 203px;
-    text-align: end;
+  width: 416.49px;
+  height: 203px;
+  text-align: end;
 }
 
 .home-cardlist__text:first-child {
-    margin-right: 200px;
+  margin-right: 200px;
 }
 
 .home-cardlist__text:nth-child(2) {
-    margin-left: 200px;
+  margin-left: 200px;
 }
 
 .home-cardlist__subtext h1 {
-    font-family: DM Serif Display;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 44px;
+  font-family: DM Serif Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 44px;
 }
 
 .home-cardlist__subtext h3 {
-    font-family: DM Serif Display;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
-    /* identical to box height, or 144% */
-    letter-spacing: 0.109091px;
+  font-family: DM Serif Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  /* identical to box height, or 144% */
+  letter-spacing: 0.109091px;
 }
 
 .home-cardlist__subtext span {
-    font-family: DM Serif Display;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 44px;
+  font-family: DM Serif Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 44px;
 }
 
 .home-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 140%;
-    z-index: -999;
+  position: absolute;
+  top: 590px;
+  left: 0;
+  width: 100%;
+  height: 900px;
+  z-index: -999;
 }
 
 @media screen and (max-width: 1000px) {
-    .home-cardlist__card {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        margin: 0 5% 0 5%;
-    }
-    .home-cardlist__card {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    .home-cardlist__text:first-child {
-        margin-right: 100px;
-    }
-    .home-cardlist__text:nth-child(2) {
-        margin-left: 100px;
-    }
-    .home-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 230%;
-        height: 140%;
-        z-index: -999;
-    }
+  .home-cardlist__card {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin: 0 5% 0 5%;
+  }
+  .home-cardlist__card {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .home-cardlist__text:first-child {
+    margin-right: 100px;
+  }
+  .home-cardlist__text:nth-child(2) {
+    margin-left: 100px;
+  }
+  .home-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230%;
+    height: 140%;
+    z-index: -999;
+  }
 }
