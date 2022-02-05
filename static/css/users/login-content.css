@@ -31,7 +31,6 @@ body {
 .login-content__form h1 {
   font-family: DM Serif Display;
   font-style: normal;
-  font-weight: normal;
   font-size: 40px;
   line-height: 90px;
   letter-spacing: 0.3px;
@@ -86,4 +85,16 @@ body {
 .login-content__signin a {
   font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 1000px) {
+  .login {
+    width: 400px;
+  }
+  .login-content__img {
+    width: 0;
+  }
+  .login-content__form {
+    width: 100%;
+  }
 }
