@@ -1,59 +1,14 @@
- {% load static %}
- {% include 'base.html' %}
-<div class="login-content">
-    <div class="login-content__form">
-        <div class="login-content__inputlist">
-            <div class="container">
-                <h1>Sign Up!</h1>
-                <form method="POST" action="{% url 'user:signup' %}">
-                    {% csrf_token %}
-                    <div class="login-content__input ">
-                        {{form.as_p}}
-                        <button>Sign up</button>
-                    </div>
-
-                    <!-- <div class="login-content__input ">
-                        <label for="name ">비밀번호</label>
-                        <input name="password1" type="password" value="">
-                    </div>
-                    <div class="login-content__input ">
-                        <label for="name ">비밀번호 확인</label>
-                        <input name="password2" type="password" value="">
-                    </div>
-
-                    <div class="login-content__input ">
-                        <label for="name ">학과</label>
-                        <input type="text " name="major" id=" " placeholder="Enter your major " />
-                    </div>
-                    <div class="login-content__input ">
-                        <label for="name ">깃허브 주소</label>
-                        <input type="text " name="git_url" id=" " placeholder="Enter your Git url " />
-                    </div>
-                    <div class="login-content__input ">
-                        <label for="name ">에니악 코드</label>
-                        <input type="text " name="eniac_code" id=" " placeholder="Enter your Code " />
-                    </div>
-                    <div class="login-content__input ">
-                        <label for="name ">좋아하는 분야</label>
-                        <select type="button" name="select">
-            <option value="xx ">분야선택</option>
-            <option value="0 ">웹</option>
-            <option value="1 ">앱</option>
-            <option value="2 ">인공지능</option>
-            <option value="3 ">예체능</option>
-          </select>
-                    </div>
-                    <div class="login-content__input ">
-                        <label for="name ">각오</label>
-                        <input type="text " name="desc" id=" " />
-                    </div> -->
-                    <br>
-
-
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</img>
+<body id="signup-page">
+  {% load static %} {% include 'base.html' %}
+  <div class="signup__form">
+    <h1 class="login__title">Sign Up Eniac</h1>
+    <form method="POST" action="{% url 'user:signup' %}">
+      {% csrf_token %}
+      <div class="signup__input">
+        {{form.as_p}}
+        <button class="login__btn signup__btn">회원가입</button>
+      </div>
+    </form>
+  </div>
+  {% include 'partials/footer.html' %}
+</body>

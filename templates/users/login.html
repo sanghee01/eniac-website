@@ -10,7 +10,7 @@
         alt=""
       />
       <div class="login-content__form">
-        <h1>Login Eniac</h1>
+        <h1 class="login__title">Login Eniac</h1>
         <form method="POST" action="{% url 'user:login'%}">
           {% csrf_token %}
           <input name="username" type="text" placeholder="이메일" />

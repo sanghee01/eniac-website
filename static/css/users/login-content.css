@@ -28,7 +28,7 @@
   text-align: center;
 }
 
-.login-content__form h1 {
+.login__title {
   font-family: DM Serif Display;
   font-style: normal;
   font-size: 40px;
