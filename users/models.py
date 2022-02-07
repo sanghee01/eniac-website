@@ -34,7 +34,8 @@ class User(AbstractUser):
     entered_eniac = models.CharField(default=32, max_length=10)
     fav_pro_genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
 
-  
+    email_confirmed = models.BooleanField(default=False)
+    email_secret = models.CharField(max_length=120, default="", blank=True)
 
     
 
@@ -42,11 +43,11 @@ class User(AbstractUser):
         return reverse("user:profile", kwargs={'pk': self.pk})
 
     def verify_email(self):
-        if self.email_verified is False:
+        if self.email_confirmed is False:
             secret = uuid.uuid4().hex[:20]
             self.email_secret = secret
             html_message = render_to_string(
-                "email/verify_email.html", {"secret": secret}
+                "emails/verify_email.html", {"secret": secret}
             )
             send_mail(
                 "Verify Hairbnb Account",

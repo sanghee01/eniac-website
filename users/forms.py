@@ -22,8 +22,7 @@ class LoginForm(forms.Form):
 
 class SignUpForm(forms.ModelForm):
     
-  
-   
+
     username = forms.CharField(help_text=False)
     password = forms.CharField(widget=forms.PasswordInput)
     password1 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
