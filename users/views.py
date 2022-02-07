@@ -4,6 +4,7 @@ from django.views.generic import FormView, DetailView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, reverse
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
 from . import forms
 from . import models
 
@@ -92,3 +93,18 @@ def complete_verification(request, key):
         pass
     return redirect(reverse("core:project"))
 
+class MyPasswordResetView(PasswordResetView):
+    success_url=reverse_lazy('core:project')
+    template_name = 'users/password_reset_form.html'
+    email_template_name = 'users/password_reset.html'
+    mail_title="비밀번호 재설정"
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+class MyPasswordResetConfirmView(PasswordResetConfirmView):
+    success_url=reverse_lazy('core:project')
+    template_name = 'users/password_reset_confirm.html'
+
+    def form_valid(self, form):
+        return super().form_valid(form)
