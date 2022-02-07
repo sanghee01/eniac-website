@@ -195,3 +195,13 @@ EMAIL_FROM = "sssss@sandbox67029800135e4f9eac7b8688a7bbd8c5.mailgun.org"
 
 
 LOGIN_URL = "/users/login/"
+
+
+
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = "587"		 # 서버 포트
+EMAIL_FROM = "eniac@gmail.com"
+EMAIL_HOST_USER = 'eniac@sandboxdc4080d45b074d5ea6e674de8264f54d.mailgun.org' 	 # 우리가 사용할 Gmail
+EMAIL_HOST_PASSWORD = '10e728642a4372be0cbf315ae9b3fadb-c250c684-8d072a71'		 # 우리가 사용할 Gmail p
+EMAIL_USE_TLS = True			 # TLS 보안 설정
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER	 # 응답 메일 관련 설정
