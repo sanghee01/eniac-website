@@ -26,7 +26,10 @@ class SignUpForm(forms.ModelForm):
     username = forms.CharField(help_text=False)
     password = forms.CharField(widget=forms.PasswordInput)
     password1 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
-    
+    email = forms.CharField()
+    git_url = forms.URLField()
+    fav_pro_genre = forms.ChoiceField()
+    major = forms.CharField()
     class Meta:
         model = models.User
         fields = ("email", "git_url", "fav_pro_genre", "major")
