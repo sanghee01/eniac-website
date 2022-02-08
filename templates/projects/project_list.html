@@ -1,9 +1,9 @@
 <style>
 
 </style>
-
+<body id="project-page">
 {% load static %}
-<img style="position: absolute; top: 0; left: 0; width: 100%; z-index: -999;" src="{% static 'img/triangle-project.png' %}"> {% include 'base.html' %}
+ {% include 'base.html' %}
 <div id="Tab" style="height: 100%; position: relative; ">
     <ul class="project-menu">
         <li class="project-menu__list is_on">
@@ -128,7 +128,4 @@
 
 <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/project-modal.js' %}"></script>
-</img>
-<!-- modal js => 추후 파일로 옮기기 -->
-<script>
-</script>
+</body>
