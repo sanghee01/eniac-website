@@ -43,3 +43,5 @@ class Act_Comment(TimeStampedModel):
 
     class Meta:
         db_table = 'comments'
+
+

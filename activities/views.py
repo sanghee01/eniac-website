@@ -5,6 +5,10 @@ from django.core.paginator import Paginator
 import activities
 from users.models import User
 from challenges.models import Challenge
+from users import mixins as user_mixins
+from django.views.generic import ListView, DetailView, View, UpdateView, FormView
+from . import forms
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 
@@ -29,3 +33,5 @@ def all_activity(request):
 
 
     return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges})
+
+

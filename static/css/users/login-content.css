@@ -30,13 +30,13 @@
     text-align: center;
 }
 
-.login-content__form h1 {
+.login__title {
     font-family: DM Serif Display;
     font-style: normal;
     font-size: 40px;
     line-height: 90px;
     letter-spacing: 0.3px;
-    margin-top: -26.22px;
+    margin-top: -60px;
 }
 
 .login-content__form form {

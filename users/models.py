@@ -31,9 +31,10 @@ class User(AbstractUser):
     major = models.CharField(max_length=20, blank=False, null=False)
     git_url = models.URLField(max_length=200)
     eniac_code = models.CharField(max_length=20, null=False, blank=False)
-    entered_eniac = models.CharField(default=32, max_length=10)
+    entered_eniac = models.IntegerField(default=32, max_length=10)
     fav_pro_genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
-
+    blog_url = models.URLField(default=32, max_length=200)
+    
     email_confirmed = models.BooleanField(default=False)
     email_secret = models.CharField(max_length=120, default="", blank=True)
 
