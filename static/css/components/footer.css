@@ -3,15 +3,19 @@
   background-color: #2f2f2f;
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 100px 0;
 }
 
 .footer__img {
-  margin-left: 25%;
-  padding: 60px;
+  width: 50%;
+  text-align: center;
 }
 
 .footer__text {
+  width: 50%;
+  text-align: center;
   color: white;
   margin-left: 60px;
   font-family: Source Serif Pro;
@@ -36,4 +40,10 @@
 
 .footer__per div {
   margin-bottom: 6px;
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+  }
 }

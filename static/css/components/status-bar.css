@@ -52,10 +52,10 @@ body {
   background-color: #ffbd2f;
   border: 1px solid white;
 }
-.status-bar__icon {
+.status-bar__hamburger {
   display: none;
   position: absolute;
-  margin-left: 40px;
+  right: 0;
 }
 
 .status-bar__login {
@@ -116,4 +116,18 @@ body {
 
 .status-bar__single-menu > a:hover {
   background-color: rgb(250, 249, 249);
+}
+
+/* 헤더 반응형 */
+
+@media screen and (max-width: 900px) {
+  .status-bar {
+    flex-direction: column;
+  }
+  .status-bar__menu {
+    flex-direction: column;
+  }
+  .status-bar__hamburger {
+    display: block;
+  }
 }
