@@ -26,9 +26,13 @@ body {
 }
 .status-bar.status-bar--dark {
   background-color: #ffd941fb;
-  padding: 15px 25px;
+  padding: 10px 25px;
 }
 
+.status-bar__logo {
+  display: flex;
+  align-items: center;
+}
 .status-bar__menu {
   display: flex;
   align-items: center;
@@ -55,7 +59,9 @@ body {
 .status-bar__hamburger {
   display: none;
   position: absolute;
-  right: 0;
+  right: 25px;
+  top: 23px;
+  font-size: 20px;
 }
 
 .status-bar__login {
@@ -122,10 +128,30 @@ body {
 
 @media screen and (max-width: 900px) {
   .status-bar {
+    padding: 17px 30px;
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-bar__logo {
+    align-items: center;
   }
   .status-bar__menu {
+    display: none;
+    width: 100%;
     flex-direction: column;
+    background-color: #ffd941fb;
+  }
+
+  .status-bar__menu.menu-on {
+    display: block;
+    border-radius: 10px;
+  }
+  .status-bar__list,
+  .status-bar__login {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
   }
   .status-bar__hamburger {
     display: block;

@@ -18,32 +18,22 @@
   text-align: center;
   color: white;
   margin-left: 60px;
-  font-family: Source Serif Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.footer__link a {
-  color: white;
-  font-family: Source Serif Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
-}
-
-.footer__link {
-  margin-top: 40px;
+  font-size: 15px;
 }
 
 .footer__per div {
-  margin-bottom: 6px;
+  margin: 15px 0;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   .footer {
     flex-direction: column;
+  }
+  .footer__img {
+    width: 100%;
+  }
+  .footer__text {
+    width: 100%;
+    margin: 15px 0;
   }
 }
