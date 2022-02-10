@@ -19,10 +19,11 @@
 .tab-menu__list a {
   text-decoration: none;
   color: black;
+  padding-bottom: 5px;
 }
 
 .tab-menu__list {
-  margin-right: 5%;
+  margin: 0 2.5%;
 }
 
 .tab-menu__btn {
