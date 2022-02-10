@@ -1,62 +1,64 @@
 <style></style>
 
-{% load static %}
-<div class="home-topbox">
-  <section class="home-wotd">
-    {% include 'base.html' %}
-    <div class="home-wotd__wrapper">
-      <div class="home-wotd__inside">
-        <div>"Hello<br /><span class="home-wotd__span">Eniac"</span></div>
-        <br />
-        <span>
-          에니악 홈페이지에 오신걸 환영합니다 <br />
-          저희는 프로젝트 활동 중심 동아리이며,<br />
-          동아리 회원분들의 개발자로서의 성장을 목표로 두고있는 동아리입니다
-        </span>
-        <a href="{% url 'user:login' %}">
-          <span class="home-wotd__button">Get Started</span>
-        </a>
-      </div>
-      <div class="home-wotd__photoside">
-        <div>
-          <img src="{% static 'img/coding.png' %}" alt="" />
+<div id="home-page">
+  {% load static %}
+  <div class="home-topbox">
+    <section class="home-wotd">
+      {% include 'base.html' %}
+      <div class="home-wotd__wrapper">
+        <div class="home-wotd__inside">
+          <div>"Hello<br /><span class="home-wotd__span">Eniac"</span></div>
+          <br />
+          <span>
+            에니악 홈페이지에 오신걸 환영합니다 <br />
+            저희는 프로젝트 활동 중심 동아리이며,<br />
+            동아리 회원분들의 개발자로서의 성장을 목표로 두고있는 동아리입니다
+          </span>
+          <a href="{% url 'user:login' %}">
+            <span class="home-wotd__button">Get Started</span>
+          </a>
         </div>
-        <br />
-        <div class="home-wotd__developer">개발자 윤동규 이상희</div>
-      </div>
-    </div>
-  </section>
-  <section class="home-cardlist">
-    {% for project in potato %}
-    <div class="home-cardlist__card">
-      <div class="home-cardlist__text">
-        <div class="home-cardlist__subtext">
-          <h1>{{project.title | truncatechars:20}}</h1>
-          <h3>{{project.desc | truncatechars:80}}</h3>
-          <span>{{project.user}}</span>
+        <div class="home-wotd__photoside">
+          <div>
+            <img src="{% static 'img/coding.png' %}" alt="" />
+          </div>
+          <br />
+          <div class="home-wotd__developer">개발자 윤동규 이상희</div>
         </div>
-        <button>자세히보기</button>
       </div>
-      <div class="home-cardlist__img">
-        <img src="{{project.get_photo_url}}" />
+    </section>
+    <section class="home-cardlist">
+      {% for project in potato %}
+      <div class="home-cardlist__card">
+        <div class="home-cardlist__text">
+          <div class="home-cardlist__subtext">
+            <h1>{{project.title | truncatechars:20}}</h1>
+            <h3>{{project.desc | truncatechars:80}}</h3>
+            <span>{{project.user}}</span>
+          </div>
+          <button>자세히보기</button>
+        </div>
+        <div class="home-cardlist__img">
+          <img src="{{project.get_photo_url}}" />
+        </div>
       </div>
-    </div>
-    {% endfor %} {% for project in second %}
-    <div class="home-cardlist__card">
-      <div class="home-cardlist__img">
-        <img src="{{project.get_photo_url}}" />
-      </div>
+      {% endfor %} {% for project in second %}
+      <div class="home-cardlist__card">
+        <div class="home-cardlist__img">
+          <img src="{{project.get_photo_url}}" />
+        </div>
 
-      <div class="home-cardlist__text">
-        <div class="home-cardlist__subtext">
-          <h1>{{project.title | truncatechars:20}}</h1>
-          <h3>{{project.desc | truncatechars:80}}</h3>
-          <span>{{project.user}}</span>
+        <div class="home-cardlist__text">
+          <div class="home-cardlist__subtext">
+            <h1>{{project.title | truncatechars:20}}</h1>
+            <h3>{{project.desc | truncatechars:80}}</h3>
+            <span>{{project.user}}</span>
+          </div>
+          <button>자세히보기</button>
         </div>
-        <button>자세히보기</button>
       </div>
-    </div>
-    {% endfor %}
-  </section>
-  {% include 'partials/footer.html' %}
+      {% endfor %}
+    </section>
+    {% include 'partials/footer.html' %}
+  </div>
 </div>

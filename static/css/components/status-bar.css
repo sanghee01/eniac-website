@@ -24,6 +24,20 @@ body {
   z-index: 1000;
   transition: all 0.3s ease-in-out;
 }
+
+#home-page .status-bar,
+#login-page .status-bar,
+#signup-page .status-bar {
+  background-color: transparent;
+  box-shadow: none;
+}
+#home-page .status-bar.status-bar--dark,
+#login-page .status-bar.status-bar--dark,
+#signup-page .status-bar.status-bar--dark {
+  background-color: #ffd941fb;
+  padding: 10px 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
 .status-bar.status-bar--dark {
   background-color: #ffd941fb;
   padding: 10px 25px;
