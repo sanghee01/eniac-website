@@ -15,6 +15,9 @@
 }
 .home-wotd__inside {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 70px;
 }
 
 .home-wotd__inside div:first-child {
@@ -51,4 +54,10 @@
 
 .home-wotd__span {
   margin-left: 80px;
+}
+
+@media screen and (max-width: 900px) {
+  .home-wotd__inside {
+    padding-left: 0px;
+  }
 }
