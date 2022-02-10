@@ -12,6 +12,7 @@ body {
 
 .status-bar {
   background-color: #ffd941fb; /* 적용안됨 */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   left: 0;
@@ -20,8 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  z-index: 100;
+  z-index: 1000;
   transition: all 0.3s ease-in-out;
 }
 .status-bar.status-bar--dark {
