@@ -23,7 +23,7 @@
 }
 
 .mid-tab-menu__btn:hover {
-  background-color: #daf4fa;
+  background-color: #fdf2c6fb;
   border-radius: 5px;
 }
 
@@ -52,6 +52,7 @@
   display: flex;
   justify-content: center;
   margin-top: 200px;
+  padding: 0;
 }
 
 .mid-tab-menu__list a,
@@ -76,10 +77,11 @@
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 3px;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .tab-menu__btn:hover {
-  background-color: #daf4fa;
+  background-color: #fdf2c6fb;
   border-radius: 5px;
 }
 
@@ -93,9 +95,19 @@
 }
 
 .is_on .tab-menu__btn {
-  border-bottom: 5px solid #7be7ff;
+  border-bottom: 5px solid #ffaf1bfb;
 }
 
 .is_on .tab-menu__cont {
   display: block;
+}
+@media screen and (max-width: 700px) {
+  .tab-menu__list {
+    margin-right: 3px;
+  }
+  .tab-menu__list:first-child {
+    margin-left: 3px;
+  }
+.tab-menu__btn {
+  width: 55px;
 }
