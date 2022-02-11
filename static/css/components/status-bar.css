@@ -111,7 +111,7 @@ body {
   position: absolute;
   margin-top: 10px;
   top: 60px;
-  right: 10;
+  right: 10px;
 }
 
 .status-bar__single-menu {
@@ -170,5 +170,13 @@ body {
   }
   .status-bar__hamburger {
     display: block;
+  }
+  .status-bar__i {
+    position: absolute;
+    top: 24px;
+    right: -65px;
+  }
+  .status-bar__i i:first-child {
+    font-size: 27px;
   }
 }
