@@ -103,6 +103,10 @@ body {
   align-items: center;
   width: 170px;
 }
+.status-bar__i i:first-child {
+  background-color: white;
+  border-radius: 100%;
+}
 
 .stauts-bar__profile-menu {
   display: none;
