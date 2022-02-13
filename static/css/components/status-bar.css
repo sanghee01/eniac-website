@@ -175,6 +175,7 @@ body {
   .status-bar__hamburger {
     display: block;
   }
+
   .status-bar__i {
     position: absolute;
     top: 24px;
