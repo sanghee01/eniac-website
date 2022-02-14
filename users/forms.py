@@ -39,19 +39,8 @@ class SignUpForm(forms.ModelForm):
 
     class Meta:
         model = models.User
-        fields = ()
+        fields = ("username", "major", "entered_eniac", "fav_pro_genre", "git_url", "blog_url", "email", "password", "password1")
 
-
-    widgets = {
-            username: forms.TextInput(attrs={'placeholder':'15자 이내로 입력 가능합니다.'}),
-            'email': forms.EmailInput(attrs={}),
-            'password' : forms.PasswordInput(attrs={}),
-        }
-    labels = {
-            username: '닉네임',
-            'email': '이메일',
-            'password': '패스워드'
-        }
     
     def clean_email(self):
         email = self.cleaned_data.get("email")

@@ -15,3 +15,13 @@ class ActivitiyAdmin(admin.ModelAdmin):
 @admin.register(models.Act_Comment)
 class CommentAdmin(admin.ModelAdmin):
     pass
+
+
+# Register your models here.
+@admin.register(models.Challenge)
+class ChallengeAdmin(admin.ModelAdmin):
+    list_display = (
+    
+        "desc",
+       
+    )

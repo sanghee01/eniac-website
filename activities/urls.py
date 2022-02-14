@@ -9,6 +9,7 @@ from . import views
 
 app_name = "activity"
 
-urlpatterns = [path("activity/", views.all_activity, name="activities")]
+urlpatterns = [path("activity/", views.all_activity, name="activities"),
+ path("creates", views.CreateChallengeView.as_view(), name="create"),]
 
 
