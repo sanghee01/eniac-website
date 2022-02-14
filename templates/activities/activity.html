@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="{% static 'css/activities/act-tab.css' %}" />
     <link rel="stylesheet" href="{% static 'css/activities/act-cont.css' %}" />
     <link rel="stylesheet" href="{% static 'css/activities/attend.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/activities/dropdown.css' %}" />
 </head>
 
 
 <div class="activity">
     {% load static %}
-    <img style="position: absolute; top: 0; left: 0; width: 100%; z-index: -999;" src="{% static 'img/tri-blue.png' %}">
     <!-- Tab -->
     {% include 'base.html' %}
     <div id="Tab">
@@ -29,17 +29,42 @@
                     <main class="activity-main__wrap">
                         <div class="activity-main">
                         <section class="activity__cont-wrap">
-                            <select name="term" class="activity__dropdown">
-                <option value="1">22년 1학기</option>
-                <option value="2">22년 2학기</option>
-              </select> {% for activity in act.object_list %}
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle">
+                                  학기
+                                </button>
+                        
+                                <ul class="dropdown-menu">
+                                  <li class="dropdown-item">
+                                    <button type="button" value="1" class="dropdown-option">
+                                      22년도 1학기
+                                    </button>
+                                  </li>
+                                  <li class="dropdown-item">
+                                    <button type="button" value="2" class="dropdown-option">
+                                      22년도 2학기
+                                    </button>
+                                  </li>
+                                  <li class="dropdown-item">
+                                    <button type="button" value="3" class="dropdown-option">
+                                      23년도 1학기
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div> {% for activity in act.object_list %}
+              <main class="activity-cont">
                             <h1 class="activity__title">{{activity.title}}</h1>
                             <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
                             <p class="activity__content">
                                 {{activity.desc}}
                             </p>
+
                             <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
                             <ul class="activity__comment">
+                                <div class="activity__comment-input">
+                                    <input type="text" placeholder="댓글을 입력하시오..."/>
+                                    <button>입력</button>
+                                </div>
                                 <li class="activity__comment-list">
                                     <span class="activity__comment-name">이상희</span>
                                     <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
@@ -52,13 +77,13 @@
                                     <span class="activity__comment-name">홍길동</span>
                                     <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span>
                                 </li>
+                               
                             </ul>
+                        </main>
                             {% endfor %}
 
 
-                        </section>
-                        <section class="activity__comment">
-                        </section>
+
 
 
                         <!-- 페이지 -->
@@ -80,6 +105,8 @@
 
                             </div>
                         </div>
+                    </section>
+
                     </main>
                     {% include 'partials/footer.html' %}
                 </div>
@@ -92,10 +119,7 @@
                         <div class="activity-main">
 
                     <div class="attend__wrap">
-                        <select name="term" class="attend__dropdown" onchange="setValues()">
-              <option value="1">22년 1학기</option>
-              <option value="2">22년 2학기</option>
-            </select>
+                        
                         <table>
                             <thead>
                                 <tr>
@@ -136,7 +160,7 @@
                                     <td><a href="#" class="attend__blog"><i class="fas fa-book"></i></a></td>
                                 </tr>
                                 <tr>
-                                    <td>동동길<0/td>
+                                    <td>동동길</td>
                                     <td>31기</td>
                                     <td>컴퓨터소프트웨어공학과</td>
                                     <td>Web</td>
@@ -171,6 +195,10 @@
                         </p>
                         <div class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></div>
                         <ul class="activity__comment">
+                            <div class="activity__comment-input">
+                                <input type="text" placeholder="댓글을 입력하시오..."/>
+                                <button>입력</button>
+                            </div>
                             <li class="activity__comment-list">
                                 <span class="activity__comment-name">이상희</span>
                                 <span class="activity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
@@ -202,7 +230,7 @@
 
         <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/act-option.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>
 
     </div>
 

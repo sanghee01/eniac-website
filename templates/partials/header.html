@@ -13,34 +13,25 @@
 <body>
 
     <div class="status-bar">
-        <div class="status-bar__column">
+        <div class="status-bar__logo">
             <a href="{% url 'core:project' %}">
                 <img src="{% static 'img/eniac-logo-db.png' %}" alt="My image"></img>
             </a>
         </div>
 
-        <div class="status-bar__column">
-
+        <div class="status-bar__menu">
             <div class="status-bar__list">
-                <a class="status-bar__button ">
-                    <a href="{% url 'core:notice_list' %}">공지사항</a></a>
-                <span class="status-bar__circle "></span>
+                    <a href="{% url 'core:notice_list' %}">공지사항</a>
             </div>
             <div class="status-bar__list">
-                <a class="status-bar__button">
-                    <a href="{% url 'core:project_list' %}">프로젝트</a></a>
-                <span class="status-bar__circle "></span>
+                    <a href="{% url 'core:project_list' %}">프로젝트</a>
             </div>
             <div class="status-bar__list">
-                <a class="status-bar__button">
-                    <a href="{% url 'core:activity_list' %}">활동</a></a>
-                <span class="status-bar__circle "></span>
+                    <a href="{% url 'core:activity_list' %}">활동</a>
             </div>
 
             <div class="status-bar__list">
-                <a class="status-bar__button">
-                    <a href="{% url 'core:recommend_list' %}">추천</a></a>
-                <span class="status-bar__circle "></span>
+                    <a href="{% url 'core:recommend_list' %}">추천</a>
             </div>
 
 
@@ -50,7 +41,6 @@
 
                     <i class="fas fa-user-circle fa-2x"></i>
                     <i style="margin-left: 5px;" class="fas fa-chevron-down"></i>
-
                 </div>
                 <span class="stauts-bar__profile-menu">
               
@@ -66,23 +56,24 @@
                 </span>
             </div>
             {% else %}
-            <div class="status-bar__signup">
-
+            <div class="status-bar__login">
                 <a style="text-decoration: none; color: white;" href="{% url 'user:login' %}">Log in </a>
             </div>
             {% endif %}
 
-            <span class="status-bar__icon">
+            
+        </div>
+        <div class="status-bar__hamburger">
 
-                <i class="fas fa-bars fa-lg"></i>
-            </span>
-
+            <i class="fas fa-bars fa-lg"></i>
         </div>
 
     </div>
 
     <script type="text/javascript" src="{% static 'js/header-tog.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/header-tab.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/header-scroll.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/header-hamburger.js' %}"></script>
 
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 </body>

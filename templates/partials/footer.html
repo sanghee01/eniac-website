@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+  {% load static %}
 
-<head>
+  <head>
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/components/status-bar.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/components/nav.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/components/status-bar.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/components/nav.css' %}"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="footer">
-        <div class="footer__img">
-            <img src="{% static 'img/footer_4.png' %}" alt="" />
-        </div>
-        <div class="footer__text">
-            <div class="footer__per">
-                <div>22기 에니악 임원진</div>
-                <span>회장 이주현 | 학술 황예지 성제민 | 총무 이상희 | 기획 윤동규</span
+      <div class="footer__img">
+        <img src="../../static/img/eniac-logo-white.png" alt="" />
+      </div>
+      <div class="footer__text">
+        <div class="footer__per">
+          <div>22기 에니악 임원진</div>
+          <span
+            >회장 - 이주현 | 학술 - 황예지, 성제민 | 총무 - 이상희 | 기획 -
+            윤동규</span
           >
-        </div>
-        <div class="footer__link">
-          <a>GitHub</a> | <a>KaKaoTalk</a> | <a>Facebook</a>
         </div>
       </div>
     </div>

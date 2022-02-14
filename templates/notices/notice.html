@@ -13,14 +13,7 @@
 
 <body>
     <div class="notice-parent">
-        <img style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 90%;
-          z-index: -999;
-        " src="{% static 'img/triangle.png' %}" /> {% include 'base.html' %}
+         {% include 'base.html' %}
         <div class="notice-content">
             <div class="notice-content__title">공지사항</div>
             <form method="get" action="{% url 'notice:search' %}" class="notice-content__search">

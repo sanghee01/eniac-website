@@ -1,18 +1,18 @@
+#project-page {
+}
+
 .project-page {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   margin-top: 20px;
-  margin-left: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  margin-top: 5%;
-  margin-right: 60px;
+  margin: 100px 60px;
 }
 
 .project-page span {
-  font-size: 25px;
+  font-size: 20px;
 }
