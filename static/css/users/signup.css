@@ -1,12 +1,14 @@
 #signup-page {
+    margin-top: 200px;
     background: linear-gradient(180deg, #fef6b2 0%, #fffce3 80%);
+    min-height: 100% !important;
 }
 
 .signup__form {
     background-color: #ffffff;
     border: 1.5px solid rgba(0, 0, 0, 0.2);
     width: 470px;
-    height: 1000px;
+    height: 1200px;
     margin: 70px auto;
     display: flex;
     flex-direction: column;

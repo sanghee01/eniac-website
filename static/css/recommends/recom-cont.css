@@ -1,19 +1,21 @@
 .lecture__wrap {
   display: flex;
-  width: 100%;
+  width: 60%;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 50px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .lecture__class {
-  margin-left: 10%;
+  margin-left: 20%;
   display: block;
   text-align: start;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   opacity: 0.7;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 .lecture {
   position: relative;
@@ -65,4 +67,12 @@
   margin-left: -12px;
   margin-top: 8px;
   background-color: #bdbdbd;
+}
+@media screen and (max-width: 700px) {
+  .lecture__wrap {
+    width: 100%;
+  }
+  .lecture__class {
+    margin-left: 10%;
+  }
 }

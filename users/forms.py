@@ -39,12 +39,15 @@ class SignUpForm(forms.ModelForm):
     password1 = forms.CharField(widget=forms.PasswordInput, label="패스워드확인")
     class Meta:
         model = models.User
-        fields = ("username", "major", "entered_eniac", "email", "password")
+        fields = ("username", "major", "student_id", "phone_number", "entered_eniac", "email", "password")
 
         widgets = {
             "username": forms.TextInput(attrs={'placeholder': '이름을 입력해주세요'}),
             "major": forms.TextInput(attrs={'placeholder': '전공을 입력해주세요'}),
             "entered_eniac": forms.TextInput(attrs={'placeholder': '기수를 입력해주세요'}),
+
+            "student_id": forms.TextInput(attrs={'placeholder': '학번을 입력해주세요'}),
+            "phone_number": forms.TextInput(attrs={'placeholder': '전화번호를 입력해주세요'}),
          
          
             "password": forms.PasswordInput,
@@ -54,6 +57,11 @@ class SignUpForm(forms.ModelForm):
             "username": "이름",
             "major": "전공",
             "entered_eniac": "에니악기수", 
+
+
+            "student_id": "학번",
+            "phone_number": "전화번호",
+
          
             "email": "이메일", 
             "password": "패스워드", 
@@ -90,6 +98,11 @@ class SignUpForm(forms.ModelForm):
         entered_eniac = self.cleaned_data.get("entered_eniac")
         blog_url = self.cleaned_data.get("blog_url")
 
+        student_id = self.cleaned_data("student_id")
+        phone_number = self.cleaned_data("phone_number")
+
+        user.studend_id = student_id
+        user.phone_number = phone_number
         user.username = username
         user.email = email     
         user.major = major

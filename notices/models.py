@@ -18,7 +18,9 @@ class Notice(TimeStampedModel):
     tag = models.ManyToManyField('tags.Tag', verbose_name='학년별')
     # activity_tag = models.ManyToManyField('tags.ActivityTag', verbose_name='활동별')
     # seme_tag = models.ManyToManyField('tags.SemeTag', verbose_name='학기별')
-    
+    user = models.ForeignKey(
+        "users.User", on_delete=models.CASCADE, related_name="notices",  null=True, blank=False
+    ) 
     class Meta:
         ordering = ["-created"]
 

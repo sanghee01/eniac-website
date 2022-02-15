@@ -21,6 +21,9 @@ class Activity(TimeStampedModel):
     semester = models.CharField(choices=SEMI_CHOICES, default = '', max_length=10, blank=False, null=True)
     thumnail_img = models.ImageField(default = '')
     desc = models.TextField(max_length=300)
+    user = models.ForeignKey(
+        "users.User", on_delete=models.CASCADE, related_name="activity",  null=True, blank=False
+    ) 
 
     class Meta:
         ordering = ["-created"]

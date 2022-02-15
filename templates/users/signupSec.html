@@ -6,7 +6,6 @@
         <form method="POST" action="{% url 'user:signup' %}">
             {% csrf_token %}
             <div class="signup__input">
-                {{form.as_p}}
                 <button class="login__btn signup__btn">다음</button>
             </div>
         </form>
