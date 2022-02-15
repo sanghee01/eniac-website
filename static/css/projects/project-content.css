@@ -31,6 +31,7 @@ li.is__on {
   list-style: none;
   position: relative;
   display: flex;
+  width: 100%;
 }
 
 .project-menu__cont {
@@ -43,12 +44,20 @@ li.is__on {
 .project-menu__btn {
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 5px;
   height: 70px;
+  width: 60px;
+  color: black;
 }
 
 .project-menu__btn span {
-  margin-left: 8px;
+  display: inline-block;
+  margin-left: 5px;
+  width: 80px;
+  font-size: 18px;
+}
+.project-menu__btn svg {
+  width: 40px;
 }
 
 .project-menu__list:first-child {
