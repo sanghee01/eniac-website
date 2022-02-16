@@ -98,13 +98,17 @@
     align-items: center;
   }
   .profile-left {
+    width: 55%;
     margin-top: 90px;
     border: none;
     height: 30%;
   }
+  .profile-right {
+    width: 55%;
+  }
   .profile__info {
     margin: 0;
-    font-size: 14px;
+    font-size: 15px;
   }
   .profile__btn {
     margin-top: 30px;
@@ -126,9 +130,9 @@
   }
   .profile__info {
     margin: 0;
-    font-size: 12px;
+    font-size: 13px;
   }
   .profile__btn > button {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
