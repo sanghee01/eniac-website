@@ -50,7 +50,6 @@
 .profile__info > span {
   padding: 0px 20px 5px 10px;
   margin-left: 5px;
-  border-bottom: 2.5px solid rgba(0, 0, 0, 0.2);
 }
 .profile__info-long {
   height: 100px;
@@ -127,7 +126,7 @@
   }
   .profile__info {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
   }
   .profile__btn > button {
     font-size: 10px;
