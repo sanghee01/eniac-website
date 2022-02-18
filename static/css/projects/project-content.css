@@ -1,7 +1,7 @@
 /* project Tab관련 CSS코드 */
 
 #project-page {
-  margin-top: 200px;
+  margin-top: 250px;
 }
 
 a {
@@ -37,31 +37,35 @@ li.is__on {
 .project-menu__cont {
   display: none;
   position: absolute;
-  top: 160px;
+  top: 100px;
   left: 0;
 }
 
 .project-menu__btn {
   display: flex;
   align-items: center;
-  margin-right: 5px;
-  height: 70px;
-  width: 60px;
+  padding: 10px;
   color: black;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0.4;
+  transition: background-color 0.15s ease-in;
 }
 
+.is_on > .project-menu__btn {
+  opacity: 1;
+}
 .project-menu__btn span {
   display: inline-block;
-  margin-left: 5px;
-  width: 80px;
-  font-size: 18px;
+  width: 60px;
+  font-size: 20px;
 }
 .project-menu__btn svg {
-  width: 40px;
+  width: 30px;
 }
 
 .project-menu__list:first-child {
-  margin-left: 200px;
+  margin-left: 71%;
 }
 .project-menu__list {
   margin-left: 5px;
