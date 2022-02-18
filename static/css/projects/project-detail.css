@@ -1,6 +1,7 @@
 .more {
   background-color: #2ecc71;
   border-radius: 4px;
+  width: 80px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
