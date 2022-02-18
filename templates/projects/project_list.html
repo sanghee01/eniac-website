@@ -1,4 +1,11 @@
-
+<head>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+</head>
 <body id="project-page">
 {% load static %}
  {% include 'base.html' %}
@@ -32,22 +39,21 @@
                                     <button class="more">자세히</button>
                                     <div class="modal hidden">
                                         <div class="modal__overlay"></div>
-                                        <div class="modal__content">
-                                            <div>
-                                                <img style="width: 400px; height: 500px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
-                                            </div>
-                                            <div class="modal__text">
-                                                <h1>{{project.title}}</h1>
-                                                <h2>{{project.desc}}</h2>
-                                                <h3>개발자 윤동규 이상희 어쩌고 홍길동</h3>
-                                            </div>
-                                            <div class="modal__button">
-                                                <button>깃허브 바로가기</button>
-                                                <button>개발자에게 질문하기</button>
-
-                                            </div>
-
-                                            <i class="modal__close fas fa-times fa-3x"></i>
+                                        <div class="modal__box">
+                                            <i class="modal__close fas fa-times fa-2x"></i>
+                                            <div class="modal__content">
+                                                <img  src="{{project.get_photo_url}}"></img>
+                                                <div class="modal__text">
+                                                    <h2 class="modal__title">{{project.title}}</h2>
+                                                    <p class="modal__cont">{{project.desc}}</p>
+                                                    <div class="modal__text-bottom">
+                                                        <span class="modal__developer">개발자 윤동규 이상희 어쩌고 홍길동</span>
+                                                        <div class="modal__link">
+                                                            <a href="https://github.com/eniac-hompage/website"><i class="fa a-brands fa-github fa-3x"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>
