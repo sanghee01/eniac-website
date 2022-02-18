@@ -83,6 +83,27 @@ li.is__on {
   justify-content: center;
 }
 
+@media screen and (max-width: 900px) {
+  .project-menu__list:first-child {
+    margin-left: 60%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .project-menu__list:first-child {
+    margin-left: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .project-menu__list:first-child {
+    margin-left: 35%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .project-menu__list:first-child {
+    margin-left: 25%;
+  }
+}
+
 /* 밑에는 무슨 코드지? - html에는 없음 근데 적용은 됨 */
 
 .project-content__list {
