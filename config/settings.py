@@ -57,7 +57,6 @@ PROJECT_APPS = [
     "core.apps.CoreConfig",
     "projects.apps.ProjectsConfig",
     "activities.apps.ActivitiesConfig",
-    "challenges.apps.ChallengesConfig",
     "notices.apps.NoticesConfig",
     "tags.apps.TagsConfig",
     'tagging.apps.TaggingConfig',

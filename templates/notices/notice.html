@@ -13,7 +13,7 @@
 
 <body>
     <div class="notice-parent">
-         {% include 'base.html' %}
+        {% include 'base.html' %}
         <div class="notice-content">
             <div class="notice-content__title">공지사항</div>
             <form method="get" action="{% url 'notice:search' %}" class="notice-content__search">
@@ -40,6 +40,13 @@
                         <div class="notice-content__card-desc">
                             {{notices.desc| truncatechars:80}}
                         </div>
+                        <div>
+                            {{notices.updated}}
+                        </div>
+                        <div>
+                            {{notices.user}}
+                        </div>
+
                     </div>
                     <!-- {% for tag in notice.object_list.tags.all %} -->
 
