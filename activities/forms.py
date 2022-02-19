@@ -15,3 +15,10 @@ class CreateChallengeForm(forms.ModelForm):
     def save(self, *args, **kwargs):
         project = super().save(commit=False)
         return project
+
+class CreateCommentForm(forms.ModelForm):
+    class Meta:
+        model = models.Act_Comment
+        fields = (
+            "desc",
+        )

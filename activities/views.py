@@ -43,3 +43,6 @@ class CreateChallengeView(user_mixins.LoggedInOnlyView, FormView):
         activity.save()
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("core:project"))
+
+def create_ActComment(request, act  ):
+    pass
