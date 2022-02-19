@@ -10,33 +10,45 @@
   background-color: white;
   margin: 30px 25px;
   font-weight: 300;
-  padding: 20px;
-  border-radius: 5px;
+  padding-bottom: 20px;
+  border-radius: 10px;
   color: #adaeb9;
   width: 300px;
   text-decoration: none;
   color: inherit;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  overflow: hidden;
 }
 .project__img {
   width: 100%;
-  height: 200px;
+  height: 300px;
 }
 
 .project-cardlist__text {
   margin-left: 10px;
+  padding: 0 15px;
+  height: 140px;
 }
-
-.project-cardlist__user {
+.project-cardlist__subtext {
+  margin: 20px 0 30px 0;
+}
+.project-cardlist__subtext span {
+  font-size: 18px;
+  font-weight: 600;
+}
+.project-cardlist__subtext p {
+  font-size: 13px;
+  height: 40px;
+}
+.project-cardlist__bottom {
   display: flex;
   justify-content: space-between;
-}
-
-.project-cardlist__user {
   align-items: center;
 }
-
+.project__user {
+  font-size: 15px;
+}
 .tab-menu__cont {
   display: none;
 }
@@ -55,75 +67,4 @@
   .project-cardlist {
     max-width: 350px;
   }
-}
-
-/* project 모달 구현 => 추후 파일 분리해서 넣기 */
-
-.more {
-  background-color: #2ecc71;
-  border-radius: 4px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.13s ease-in-out;
-}
-
-.more:hover {
-  background-color: #22a558;
-}
-
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
-.modal__overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-}
-
-.modal__content {
-  background-color: white;
-  position: relative;
-  border-radius: 10px;
-  width: 70%;
-  height: 80%;
-  display: flex;
-  justify-content: flex-start;
-  padding: 25px;
-}
-
-.modal__content i {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 20px;
-}
-
-.modal__text {
-  margin-left: 30px;
-}
-
-.modal__text h3 {
-  margin-top: 370px;
-}
-
-.modal__button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 20px;
-}
-
-.hidden {
-  display: none;
 }

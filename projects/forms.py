@@ -20,8 +20,11 @@ class CreateProjectForm(forms.ModelForm):
             "tag": forms.TextInput(attrs={'placeholder': '태그를 ,로 구분해주세요'}),
             "git": forms.TextInput(attrs={'placeholder': '깃허브 링크를 적어주세요'}),
           
-           
+        
+        }
 
+        lables = {
+            
         }
 
     def save(self, *args, **kwargs):

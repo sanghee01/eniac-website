@@ -1,6 +1,11 @@
-<style>
-
-</style>
+<head>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+</head>
 <body id="project-page">
 {% load static %}
  {% include 'base.html' %}
@@ -8,7 +13,7 @@
     <ul class="project-menu">
         <li class="project-menu__list is_on">
             <a class="project-menu__btn" href="#">
-                <img style="width: 50px; height: 50px;" src="{% static 'img/Time.png' %}" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C201.7 512 151.2 495 109.7 466.1C95.2 455.1 91.64 436 101.8 421.5C111.9 407 131.8 403.5 146.3 413.6C177.4 435.3 215.2 448 256 448C362 448 448 362 448 256C448 149.1 362 64 256 64C202.1 64 155 85.46 120.2 120.2L151 151C166.1 166.1 155.4 192 134.1 192H24C10.75 192 0 181.3 0 168V57.94C0 36.56 25.85 25.85 40.97 40.97L74.98 74.98C121.3 28.69 185.3 0 255.1 0L256 0zM256 128C269.3 128 280 138.7 280 152V246.1L344.1 311C354.3 320.4 354.3 335.6 344.1 344.1C335.6 354.3 320.4 354.3 311 344.1L239 272.1C234.5 268.5 232 262.4 232 256V152C232 138.7 242.7 128 256 128V128z"/></svg>
                 <span>최신</span>
             </a>
             <div id="tab1" id="activity" class="project-menu__cont">
@@ -19,37 +24,36 @@
                             <img class="project__img" src="{{project.get_photo_url}}"></img>
                         </div>
                         <div class="project-cardlist__text">
-                            <div class="home-cardlist__subtext">
-                                <h1>{{project.title | truncatechars:7}}</h1>
-                                <h3>{{project.desc | truncatechars:30}}</h3>
+                            <div class="project-cardlist__subtext">
+                                <span>{{project.title | truncatechars:15}}</span>
+                                <p>{{project.desc | truncatechars:35}}</p>
                             </div>
-                            <div class="project-cardlist__user">
-                                <span>{{project.user}}</span>
+                            <div class="project-cardlist__bottom">
+                                <span class="project__user">{{project.user}}</span>
                                 <div>{% if project.user == user %}
                                     <a href="{% url 'project:edit' project.id %}" class="btn-link block">
-                                        <button>
+                                        <button class="more">
                                수정 {% endif %}
                                 </button>
                                     </a>
                                     <button class="more">자세히</button>
                                     <div class="modal hidden">
                                         <div class="modal__overlay"></div>
-                                        <div class="modal__content">
-                                            <div>
-                                                <img style="width: 400px; height: 500px; background-size: cover; background-position: center;" src="{{project.get_photo_url}}"></img>
-                                            </div>
-                                            <div class="modal__text">
-                                                <h1>{{project.title}}</h1>
-                                                <h2>{{project.desc}}</h2>
-                                                <h3>개발자 윤동규 이상희 어쩌고 홍길동</h3>
-                                            </div>
-                                            <div class="modal__button">
-                                                <button>깃허브 바로가기</button>
-                                                <button>개발자에게 질문하기</button>
-
-                                            </div>
-
-                                            <i class="modal__close fas fa-times fa-3x"></i>
+                                        <div class="modal__box">
+                                            <i class="modal__close fas fa-times fa-2x"></i>
+                                            <div class="modal__content">
+                                                <img  src="{{project.get_photo_url}}"></img>
+                                                <div class="modal__text">
+                                                    <h2 class="modal__title">{{project.title}}</h2>
+                                                    <p class="modal__cont">{{project.desc}}</p>
+                                                    <div class="modal__text-bottom">
+                                                        <span class="modal__developer">개발자: 윤동규 이상희 어쩌고 홍길동</span>
+                                                        <div class="modal__link">
+                                                            <a href="https://github.com/eniac-hompage/website"><i class="fa a-brands fa-github fa-3x"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +89,7 @@
         </li>
         <li class="project-menu__list">
             <a class="project-menu__btn" href="#">
-                <img src="{% static 'img/Vector.png' %}" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"/></svg>
                 <span>인기</span>
             </a>
             <div id="tab2" id="attendence" class="project-menu__cont">
@@ -125,7 +129,7 @@
     </ul>
 
 </div>
-
+<script src="https://kit.fontawesome.com/dd5b2018a9.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="{% static 'js/project-tab.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/project-modal.js' %}"></script>
 </body>
