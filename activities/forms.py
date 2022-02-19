@@ -22,3 +22,6 @@ class CreateCommentForm(forms.ModelForm):
         fields = (
             "desc",
         )
+    def save(self):
+        review = super().save(commit=False)
+        return review

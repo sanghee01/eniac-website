@@ -65,26 +65,22 @@
                                         {{activity.user}}
                                     </p>
 
-                                    <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="activity__comment">
-                                        <div class="activity__comment-input">
-                                            <input type="text" placeholder="댓글을 입력하시오..." />
-                                            <button>입력</button>
-                                        </div>
+                                    <div>
+                                        <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
+                                        <form class="activity__comment" action="{% url 'activity:create_Actcomment' activity.id %}">
+                                            {% csrf_token %}
+                                            <div class="activity__comment-input">
+                                                {{form}}
+                                                <button>입력</button>
+                                            </div>
+                                        </form>
+                                        {% for abc in act.act_comments.all %}
                                         <li class="activity__comment-list">
-                                            <span class="activity__comment-name">이상희</span>
-                                            <span class="ctivity__comment-cont">알겠습니다. 다음 회의 때는 반영할게요.</span>
+                                            <span class="activity__comment-name">{{abc.user}}</span>
+                                            <span class="ctivity__comment-cont">{{abc.desc}}</span>
                                         </li>
-                                        <li class="activity__comment-list">
-                                            <span class="activity__comment-name">윤동규</span>
-                                            <span class="ctivity__comment-cont">네 알겠습니다~</span>
-                                        </li>
-                                        <li class="activity__comment-list">
-                                            <span class="activity__comment-name">홍길동</span>
-                                            <span class="ctivity__comment-cont">이런거 이런거도 수정하면 좋을 것 같습니다</span>
-                                        </li>
-
-                                    </ul>
+                                        {% endfor %}
+                                    </div>
                                 </main>
                                 {% endfor %}
 
