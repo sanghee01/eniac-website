@@ -18,6 +18,8 @@ path("verify/<str:key>", views.complete_verification, name="complete-verificatio
 path('password_reset/', views.MyPasswordResetView.as_view(), name='password_reset'),
 path('reset/<uidb64>/<token>/', views.MyPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 path("sigupSec/", views.SignUpSecView.as_view(), name="signupSec"),
+path("update-profile/", views.UpdateProfileView.as_view(), name="update"),
+path("update-passwod/", views.UpdatePasswordView.as_view(), name="password"),
 ]
 
 

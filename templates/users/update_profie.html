@@ -1,0 +1,9 @@
+<body id="profile-page">
+    {% include "base.html" %} {% load static %} {% block content %}
+
+    <div class="profile">
+        {% include 'mixins/auth/auth_form.html' with form=form cta="Update profile" %}
+        <img src="../../static/img/user.png" alt="" class="profile-img" />
+    </div>
+    {% endblock content %} {% include 'partials/footer.html' %}
+</body>
