@@ -1,13 +1,15 @@
 <form method="POST" class="w-full" enctype="multipart/form-data">
-    {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %}
-    <span>{{error}}</span> {% endfor %} {% endif %}
-    <div class="project-field">
-        {% for field in form %} {% include 'mixins/project/project_input.html' with field=field %} {% endfor %}
-    </div>
-    <div class="project-create__section">
-        <button class="project-create__button">{{cta}}</button>
-        <a>
-            <button class="project-create__button">{{cba}}</button>
-        </a>
-    </div>
+  {% csrf_token %} {% if form.non_field_errors %} {% for error in
+  form.non_field_errors %}
+  <span>{{error}}</span> {% endfor %} {% endif %}
+  <div class="project-field">
+    {% for field in form %} {% include 'mixins/project/project_input.html' with
+    field=field %} {% endfor %}
+  </div>
+  <div class="project-create__section">
+    <button class="project-create__button">{{cta}}</button>
+    <a>
+      <button class="project-create__button">{{cba}}</button>
+    </a>
+  </div>
 </form>
