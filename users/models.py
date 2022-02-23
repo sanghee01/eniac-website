@@ -35,8 +35,8 @@ class User(AbstractUser):
     fav_pro_genre = models.CharField(max_length=20, blank=True, null=True)
     blog_url = models.URLField(default=32, max_length=200)
 
-    student_id = models.IntegerField( max_length=20)
-    phone_number = models.CharField(max_length=40)
+    student_id = models.IntegerField( max_length=20, blank=True, null=True)
+    phone_number = models.CharField(max_length=40, blank=True, null=True)
     
     email_confirmed = models.BooleanField(default=False)
     email_secret = models.CharField(max_length=120, default="", blank=True)

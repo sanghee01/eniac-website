@@ -14,7 +14,6 @@ class Notice(TimeStampedModel):
     title = models.CharField(max_length=100)
     thumnail_img = models.ImageField()
     desc = models.TextField(max_length=300)
-  
     tag = models.ManyToManyField('tags.Tag', verbose_name='학년별')
     # activity_tag = models.ManyToManyField('tags.ActivityTag', verbose_name='활동별')
     # seme_tag = models.ManyToManyField('tags.SemeTag', verbose_name='학기별')

@@ -6,8 +6,7 @@ from users.models import User
 from projects.models import Project
 from notices.models import Notice
 from activities.models import Activity
-from challenges.models import Challenge
-from challenges.models import Challenge_Comment
+
 from faker import Faker
 
 class Command(BaseCommand):
@@ -23,7 +22,7 @@ class Command(BaseCommand):
         projects_seeder = Seed.seeder()
         projects_seeder.add_entity(
             Project,
-            150,
+            50,
             {
                "title": lambda x: projects_seeder.faker.text(),
                "desc": lambda x: projects_seeder.faker.text(),
@@ -39,11 +38,11 @@ class Command(BaseCommand):
         notice_seeder = Seed.seeder()
         notice_seeder.add_entity(
             Notice,
-            150,
+            50,
             {
                "title": lambda x: projects_seeder.faker.text(),
                "desc": lambda x: projects_seeder.faker.text(),
-               "tag": lambda x: projects_seeder.faker.words(),
+          
            },
         )
         notice_seeder.execute()
@@ -51,26 +50,16 @@ class Command(BaseCommand):
         activity_seeder = Seed.seeder()
         activity_seeder.add_entity(
             Activity,
-            150,
+            50,
             {
                "title": lambda x: projects_seeder.faker.text(),
                "desc": lambda x: projects_seeder.faker.text(),
-               
+
            },
         )
         activity_seeder.execute()
 
 
-        challenge_seeder = Seed.seeder()
-        challenge_seeder.add_entity(
-            Challenge,
-            150,
-            {
-               "users" : lambda x: random.choice(users), 
-               "desc": lambda x: projects_seeder.faker.text(), 
-           },
-        )
-        challenge_seeder.execute()
 
 
 

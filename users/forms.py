@@ -23,19 +23,6 @@ class LoginForm(forms.Form):
 
 class SignUpForm(forms.ModelForm):
 
-    # 이메일 비번 성명 전번 학과 기수
-    # 관심분야 깃주소 블로그주소
-    # username = forms.CharField(help_text=False, widget=forms.TextInput(attrs={'placeholder': '이름을 입력해주세요'}), label='이름')
-    # major = forms.CharField(widget=forms.TextInput(attrs={'placeholder': '전공을 입력해주세요'}), label='전공')
-
-    # entered_eniac = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': '기수를 입력해주세요'}), label='에니악기수')
-    # fav_pro_genre = forms.CharField(widget=forms.TextInput(attrs={'placeholder': '선호분야를 입력해주세요'}), label='선호분야(예: 웹, 앱 등)')
-    # git_url = forms.URLField(widget=forms.TextInput(attrs={'placeholder': '깃주소를 입력해주세요'}), label='깃허브주소')
-    # blog_url = forms.URLField(widget=forms.TextInput(attrs={'placeholder': '블로그주소를 입력해주세요'}), label='블로그주소')
-    # email = forms.CharField(label='이메일주소')
-    # password = forms.CharField(widget=forms.PasswordInput, label="패스워드")
-    # password1 = forms.CharField(widget=forms.PasswordInput, label="패스워드확인")
-
     password1 = forms.CharField(widget=forms.PasswordInput, label="패스워드확인")
     class Meta:
         model = models.User

@@ -1,3 +1,4 @@
+from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -25,6 +26,8 @@ class Activity(TimeStampedModel):
         "users.User", on_delete=models.CASCADE, related_name="activity",  null=True, blank=False
     ) 
 
+    comment = models.ManyToManyField('Act_Comment', verbose_name="댓글", null=True, blank=True)
+
     class Meta:
         ordering = ["-created"]
 
@@ -35,7 +38,7 @@ class Activity(TimeStampedModel):
       else:
           return "/static/images/user.jpg"
 class Act_Comment(TimeStampedModel):
-    activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
+    # activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
     desc = models.TextField(max_length=300)
     user = models.ForeignKey(
         "users.User", on_delete=models.PROTECT, related_name="comment_users",   null=True, blank=False
