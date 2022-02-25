@@ -11,61 +11,58 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
 </head>
 
-<body>
-    <div class="notice-parent">
+<body id ="notice-page">
         {% include 'base.html' %}
-        <div class="notice-content">
-            <div class="notice-content__title">공지사항</div>
-            <form method="get" action="{% url 'notice:search' %}" class="notice-content__search">
-                {% csrf_token %}
-                <div class="notice-content__search-box">
-                    <input name="city" placeholder="공지사항을 검색하세요" class="notice-content__search-bar">
-                    <i class="fas fa-search"></i></input>
-                </div>
+        <div class="notice">
+            <div class="notice__title">공지사항</div>
 
-            </form>
 
 
             {% for notices in notice.object_list %} {% for notices in notice.object_list %}
 
-            <div class="notice-content__card">
-                <div class="notice-content__img">
-                    <img src="{{notices.get_photo_url}}" style="width: 200px; height: 190px" alt="" />
+            <div class="notice__card">
+                <div class="notice__img">
+                    <img src="{{notices.get_photo_url}}" />
                 </div>
-                <div class="notice-content__text">
-                    <div>
-                        <div class="notice-content__card-title">
-                            {{notices.title| truncatechars:20}}
-                        </div>
-                        <div class="notice-content__card-desc">
+                <div class="notice__text">
+                    <div class="notice__card-title">
+                        {{notices.title| truncatechars:20}}
+                    </div>
+                        <div class="notice__card-desc">
                             {{notices.desc| truncatechars:80}}
                         </div>
-                        <div>
-                            {{notices.updated}}
+                        <div class="notice__tags">
+                            {% for tag in notices.tag.all %}
+                            <div class="notice__tag">
+                                <div>{{tag}}</div>
+                                <div>{{tag}}</div>
+                            </div>
+                            {% endfor %}
                         </div>
-                        <div>
-                            {{notices.user}}
-                        </div>
-
-                    </div>
+                        <div class="notice__card-buttom">
+                            <div>
+                                {{notices.user}}
+                            </div>
+                            <div>
+                                {{notices.updated}}
+                            </div>
+                         </div>
                     <!-- {% for tag in notice.object_list.tags.all %} -->
 
                     <!-- {% endfor %} -->
-                    <div class="notice-content__tags">
-                        {% for tag in notices.tag.all %}
-                        <div class="notice-content__tag">
-                            <div>{{tag}}</div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                      
                 </div>
             </div>
 
-            <div class="notice-content__border">
-                <div></div>
-            </div>
+         
             {% endfor %} {% endfor %}
-        </div>
+            <form method="get" action="{% url 'notice:search' %}" class="notice__search">
+                {% csrf_token %}
+                <div class="notice__search-box">
+                    <input name="city" placeholder="공지사항을 검색하세요." class="notice__search-bar">
+                    <i class="fas fa-search"></i></input>
+                </div>
+            </form>
         <div class="project-page">
             {% if notice.has_previous %}
             <a class="project-page__a" href="?page={{notice.previous_pre_number}}">
@@ -78,8 +75,10 @@
             </a>
             {% endif %}
         </div>
-        {% include 'partials/footer.html' %}
+        
     </div>
+
+        {% include 'partials/footer.html' %}
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
