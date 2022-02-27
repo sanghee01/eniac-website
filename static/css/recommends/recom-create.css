@@ -1,0 +1,16 @@
+.recom-create {
+}
+
+.recom__dropdown {
+  left: 0;
+}
+
+.recom__dropdown-menu {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .recom__dropdown {
+    left: -35%;
+  }
+}
