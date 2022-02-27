@@ -1,35 +1,31 @@
 <head>
   <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
-  <link rel="stylesheet" href="../../static/css/notices/notice-create.css" />
+  <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+  <link rel="stylesheet" href="../../static/css/components/button.css" />
 </head>
-<body id="notice-create-page">
+<body class="create-page">
   <main>
-    <div class="notice-create__title">📌 공지사항 작성</div>
-    <form class="notice-create">
-      <div class="notice-create-wrap">
-        <label for="notice-create__title">제목:</label>
-        <input
-          id="notice-create__title"
-          type="text"
-          required
-          placeholder="제목"
-        />
+    <div class="create__title">📌 공지사항 작성</div>
+    <form class="create">
+      <div class="create-wrap">
+        <label for="create__title">제목:</label>
+        <input id="create__title" type="text" required placeholder="제목" />
       </div>
-      <div class="notice-create-wrap">
-        <label for="notice-create__img">이미지 첨부:</label>
-        <input id="notice-create__img" type="file" accept=".png" />
+      <div class="create-wrap">
+        <label for="create__img">이미지 첨부:</label>
+        <input id="create__img" type="file" accept=".png" />
       </div>
-      <div class="notice-create-wrap">
-        <label for="notice-create__file">자료 첨부:</label>
-        <input id="notice-create__file" type="file" />
+      <div class="create-wrap">
+        <label for="create__file">자료 첨부:</label>
+        <input id="create__file" type="file" />
       </div>
       <textarea
-        id="notice-create__text"
+        id="create__text"
         type="text"
         required
         placeholder="내용을 입력하시오."
       ></textarea>
-      <div class="notice-create-btn">
+      <div class="btn-component create-btn">
         <button>완료</button>
       </div>
     </form>
