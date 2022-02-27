@@ -41,7 +41,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  #create-page main {
+  .create-page main {
     width: 500px;
   }
   .create {
@@ -49,7 +49,7 @@
   }
 }
 @media screen and (max-width: 600px) {
-  #create-page main {
+  .create-page main {
     width: 400px;
   }
   .create {
