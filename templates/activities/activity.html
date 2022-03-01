@@ -52,7 +52,7 @@
                                         </li>
                                     </ul>
                                 </div> {% for activity in act.object_list %}
-                                <main class="activity-cont">
+                                <section class="activity-cont">
                                     <h1 class="activity__title">{{activity.title}}</h1>
                                     <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
                                     <p class="activity__content">
@@ -81,13 +81,11 @@
                                         </li>
                                         {% endfor %}
                                     </div>
-                                </main>
+                                </section>
                                 {% endfor %}
-
-
-
-
-
+                                <div class="btn-component goto-create__btn">
+                                    <button>활동 작성</button>
+                                </div>
                                 <!-- 페이지 -->
                                 <div class="activity__pageparent">
                                     <div class="activity-page">
@@ -107,6 +105,8 @@
 
                                     </div>
                                 </div>
+           
+
                             </section>
 
                     </main>

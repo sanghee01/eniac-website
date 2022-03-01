@@ -20,12 +20,6 @@
   margin-bottom: 70px;
 }
 
-.notice__create {
-  display: flex;
-  justify-content: right;
-  margin-top: 30px;
-}
-
 .notice__card {
   display: flex;
   justify-content: center;
