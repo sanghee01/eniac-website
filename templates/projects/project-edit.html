@@ -1,29 +1,33 @@
 <head>
   <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
-  <link rel="stylesheet" href="../../static/css/components/button.css" />
   <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+  <link rel="stylesheet" href="../../static/css/components/button.css" />
 </head>
 <body class="create-page">
   <main>
-    <div class="create__title">📝 활동 수정</div>
+    <div class="create__title">💻 프로젝트 수정</div>
     <form class="create">
       <div class="create-wrap">
         <label for="create__cont-title">제목:</label>
         <input
           id="create__cont-title"
-          class="create__cont-title"
+          class="create__write"
           type="text"
           required
           placeholder="제목"
         />
       </div>
       <div class="create-wrap">
+        <label for="create__developer">개발자:</label>
+        <input id="create__developer" class="create__write" type="text" />
+      </div>
+      <div class="create-wrap">
         <label for="create__img">이미지 첨부:</label>
         <input id="create__img" type="file" accept=".png" />
       </div>
       <div class="create-wrap">
-        <label for="create__file">자료 첨부:</label>
-        <input id="create__file" type="file" />
+        <label for="create__link">Github 주소:</label>
+        <input id="create__link" class="create__write" type="url" />
       </div>
       <textarea
         id="create__text"

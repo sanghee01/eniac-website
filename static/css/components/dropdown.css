@@ -5,12 +5,11 @@ li {
   margin-left: 0;
 }
 
-button {
+.dropdown button {
   font-size: 10px;
   line-height: 1;
   color: #3f4150;
   background-color: #fff;
-  border: none;
   cursor: pointer;
 }
 

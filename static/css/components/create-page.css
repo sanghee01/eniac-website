@@ -24,6 +24,22 @@
   background-color: white;
   border: 1.5px solid rgba(0, 0, 0, 0.2);
 }
+
+.create input:focus,
+#create__text:focus {
+  outline: none;
+}
+
+.create__cont-title {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+.create__write {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
 .create-btn {
   display: flex;
   justify-content: right;
@@ -38,6 +54,19 @@
   height: 500px;
   resize: none;
   padding: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.goto-create__btn {
+  display: flex;
+  justify-content: right;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.goto-create__btn button {
+  font-size: 13px;
 }
 
 @media screen and (max-width: 800px) {
