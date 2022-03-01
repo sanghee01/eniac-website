@@ -23,7 +23,6 @@ def search(request):
     query = None
     if 'city' in request.GET: 
         query = request.GET.get('city') 
-     
         products = models.Notice.objects.all().filter(Q(title__contains=query) | Q(desc__contains=query) | Q(tag__name__contains=query))
     
     return render(request, "notices/search.html", {"query": query, "products": products})

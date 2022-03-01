@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
 from . import forms
 from . import models
-
+from django.contrib.auth.views import PasswordChangeView
 from django.core.paginator import Paginator
 from django.views.generic import FormView
 from django.urls import reverse_lazy
@@ -20,6 +20,7 @@ from django.views.generic.edit import CreateView # 오브젝트를 생성하는 
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.views import PasswordChangeView
 
 # Create your views here.
 
@@ -102,6 +103,26 @@ def email_verify(request):
     return render(request, "users/email_verify.html")
 
 
+
+class UpdateProfileView(UpdateView):
+
+    model = models.User
+    template_name = "users/update_profie.html"
+    fields = (
+        "username", "major", "student_id", "phone_number", "entered_eniac", "email", "password"
+    )
+    
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=form_class)
+      
+        
+        return form
+
+
 def complete_verification(request, key):
     try:
         user = models.User.objects.get(email_secret=key)
@@ -131,3 +152,7 @@ class MyPasswordResetConfirmView(PasswordResetConfirmView):
 
     def form_valid(self, form):
         return super().form_valid(form)
+
+class UpdatePasswordView(PasswordChangeView):
+
+    template_name = "users/update-password.html"

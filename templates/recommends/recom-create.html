@@ -1,0 +1,72 @@
+<head>
+  <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
+  <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+  <link rel="stylesheet" href="../../static/css/components/button.css" />
+  <link rel="stylesheet" href="../../static/css/components/dropdown.css" />
+  <link rel="stylesheet" href="../../static/css/recommends/recom-create.css" />
+</head>
+<body class="create-page">
+  <main>
+    <div class="create__title">👍 추천 작성</div>
+    <form class="create recom-create">
+      <div class="create-wrap">
+        <label for="create__title">제목:</label>
+        <input id="create__title" type="text" required placeholder="제목" />
+      </div>
+      <div class="create-wrap">
+        <label for="create__img">이미지 첨부:</label>
+        <input id="create__img" type="file" accept=".png" />
+      </div>
+      <div class="create-wrap">
+        <label for="create__link">링크:</label>
+        <input id="create__link" type="url" />
+      </div>
+      <div class="dropdown recom__dropdown">
+        <button type="button" class="dropdown-toggle">분야</button>
+
+        <ul class="dropdown-menu recom__dropdown-menu">
+          <li class="dropdown-item recm__dropdown-item">
+            <button type="button" value="1" class="dropdown-option">웹</button>
+          </li>
+          <li class="dropdown-item">
+            <button type="button" value="2" class="dropdown-option">앱</button>
+          </li>
+          <li class="dropdown-item">
+            <button type="button" value="3" class="dropdown-option">
+              게임
+            </button>
+          </li>
+          <li class="dropdown-item">
+            <button type="button" value="4" class="dropdown-option">AI</button>
+          </li>
+          <li class="dropdown-item">
+            <button type="button" value="5" class="dropdown-option">
+              보안
+            </button>
+          </li>
+          <li class="dropdown-item">
+            <button type="button" value="6" class="dropdown-option">
+              기타
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="create-wrap">
+        <input id="lecture" type="checkbox" />
+        <label for="lecture">강의</label>
+        <input id="book" type="checkbox" />
+        <label for="book">책</label>
+      </div>
+      <textarea
+        id="create__text"
+        type="text"
+        required
+        placeholder="내용을 입력하시오."
+      ></textarea>
+      <div class="btn-component create-btn">
+        <button>완료</button>
+      </div>
+    </form>
+  </main>
+  <script src="../../static/js/dropdown.js"></script>
+</body>
