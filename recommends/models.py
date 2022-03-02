@@ -22,6 +22,21 @@ class Recommend(TimeStampedModel):
       (GENRE_OTHER, "OTHER")
     )
 
+    LEC_BOOK = "강의"
+    LEC_BOOK = "책"
+
+    LEC_BOOK_CHOICES = (
+      (LEC_BOOK, "강의"),
+      (LEC_BOOK, "책"),
+    )
+
+    LEVEL_A = "입문"
+    LEVEL_B = "주니어"
+
+    LEVEL_CHOICES = (
+      (LEVEL_A, "입문"),
+      (LEVEL_B, "주니어"),
+    )
 
 
     title = models.CharField(max_length=100)
@@ -29,6 +44,15 @@ class Recommend(TimeStampedModel):
     img = models.ImageField(null=True)
 
     genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
+
+    lec_book = models.CharField(choices=LEC_BOOK_CHOICES, max_length=20, blank=True, null=True)
+
+
+    level = models.CharField(choices=LEVEL_CHOICES, max_length=20, blank=True, null=True)
+
+
+    # 여기서 강의냐 책이냐 이거를 또 구분해야한다
+
 
     class Meta:
         ordering = ["-created"]

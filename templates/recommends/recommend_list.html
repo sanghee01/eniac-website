@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,93 +9,62 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/recommends/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'css/recommends/recom-tab.css' %}" />
-    <link
-      rel="stylesheet"
-      href="{% static 'css/recommends/recom-cont.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-  </head>
+    <link rel="stylesheet" href="{% static 'css/recommends/recom-cont.css' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+</head>
 
-  <body id="recom-page">
+<body id="recom-page">
     {% include 'base.html' %}
     <!-- Header -->
     <!-- Tab -->
 
     <main id="Tab">
-      <ul class="tab-menu">
-        <li class="tab-menu__list is_on">
-          <a href="#tab1" class="tab-menu__btn">웹</a>
-          <div id="tab1" id="web" class="tab-menu__cont">
-            <ul class="mid-tab-menu">
-              <li class="mid-tab-menu__list is_on mlist-1">
-                <a href="#mid-tab1" class="mid-tab-menu__btn mbtn-1"
-                  ><i class="fas fa-desktop"></i>강의</a
+        <ul class="tab-menu">
+            <li class="tab-menu__list is_on">
+                <a href="#tab1" class="tab-menu__btn">웹</a>
+                <div id="tab1" id="web" class="tab-menu__cont">
+                    <ul class="mid-tab-menu">
+                        <li class="mid-tab-menu__list is_on mlist-1">
+                            <a href="#mid-tab1" class="mid-tab-menu__btn mbtn-1"><i class="fas fa-desktop"></i>강의</a
                 >
                 <div id="mid-tab1" class="mid-tab-menu__cont">
                   <section class="lectures">
                     <span class="lecture__class">입문</span>
                     <div class="lecture__wrap">
-                      {% for recommend in recom.object_list %}
+                      {% for abc in web_a.object_list %}
                       <a
                         href="https://nomadcoders.co/kokoa-clone"
                         class="lecture"
                         target="blank"
                       >
                         <img
-                          src="{{recommend.get_photo_url}}"
+                          src="{{abc.get_photo_url}}"
                           alt=""
                           class="lecture__img"
                         />
                         <div class="lecture__description">
-                          <h3>{{recommend.title}}</h3>
-                          <span>{{recommend.desc}}</span>
+                          <h3>{{abc.title}}</h3>
+                          <span>{{abc.desc}}</span>
                         </div>
-                      </a>
-                      {% endfor %}
-                    </div>
-                    <span class="lecture__class">주니어</span>
-                    <div class="lecture__wrap">
-                      <a href="#" class="lecture" target="blank">
-                        <img
-                          src="img/lecture6.JPG"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>노마드코더 - 코코아톡 클론코딩</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
-                            학습해보자!! 입문자가 듣기에도 좋다.</span
-                          >
-                        </div>
-                      </a>
-                      <a href="#" class="lecture" target="blank">
-                        <img
-                          src="img/lecture7.JPG"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>노마드코더 - 코코아톡 클론코딩</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
-                            학습해보자!! 입문자가 듣기에도 좋다.</span
-                          >
-                        </div>
-                      </a>
-                    </div>
-                  </section>
-                  {% include 'partials/footer.html' %}
+                      </a> {% endfor %}
                 </div>
-              </li>
-              <li class="mid-tab-menu__list mlist-1">
-                <a href="#mid-tab2" class="mid-tab-menu__btn mbtn-1"
-                  ><i class="fas fa-book"></i>책</a
+                <span class="lecture__class">주니어</span>
+                <div class="lecture__wrap">
+                    {% for abcd in web_b.object_list %}
+                    <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
+                        <img src="{{abcd.get_photo_url}}" alt="" class="lecture__img" />
+                        <div class="lecture__description">
+                            <h3>{{abcd.title}}</h3>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                </section>
+                {% include 'partials/footer.html' %}
+                </div>
+                </li>
+                <li class="mid-tab-menu__list mlist-1">
+                    <a href="#mid-tab2" class="mid-tab-menu__btn mbtn-1"><i class="fas fa-book"></i>책</a
                 >
                 <div id="mid-tab2" class="mid-tab-menu__cont">
                   <section class="lectures">
@@ -115,25 +85,23 @@
                         </div>
                       </a>
 
-                      <a href="#" class="lecture" target="blank">
+                    <a href="#" class="lecture" target="blank">
                         <img src="img/book4.jpg" alt="" class="lecture__img" />
                         <div class="lecture__description">
-                          <h3>생활코딩 웹프로그래밍</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
+                            <h3>생활코딩 웹프로그래밍</h3>
+                            <span>코코아톡을 직접 클론코딩해보며 html/css를 재밌게
                             학습해보자!! 입문자가 듣기에도 좋다.</span
                           >
                         </div>
                       </a>
                     </div>
                     <span class="lecture__class">주니어</span>
-                    <div class="lecture__wrap">
-                      <a href="#" class="lecture" target="blank">
-                        <img src="img/book3.JPG" alt="" class="lecture__img" />
-                        <div class="lecture__description">
-                          <h3>제로초 - Node.js교과서</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
+                            <div class="lecture__wrap">
+                                <a href="#" class="lecture" target="blank">
+                                    <img src="img/book3.JPG" alt="" class="lecture__img" />
+                                    <div class="lecture__description">
+                                        <h3>제로초 - Node.js교과서</h3>
+                                        <span>코코아톡을 직접 클론코딩해보며 html/css를 재밌게
                             학습해보자!! 입문자가 듣기에도 좋다.</span
                           >
                         </div>
@@ -167,41 +135,20 @@
                 <div id="mid-tab1" class="mid-tab-menu__cont">
                   <section class="lectures">
                     <span class="lecture__class">입문</span>
-                    <div class="lecture__wrap">
-                      <a
-                        href="https://nomadcoders.co/nomadcoin"
-                        class="lecture"
-                        target="blank"
-                      >
-                        <img
-                          src="img/lecture2.png"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>노마드코더 - Go로 암호화폐 만들기</h3>
-                          <span
-                            >블록체인을 제대로 배우려면 결국 직접 만들어보는
-                            것이 가장 빠르고. 정확합니다! 작업증명 부터 채굴.
-                            보상. P2P 거래. 그리고 지갑까지 나만의 암호화폐를
-                            만들어 보세요!
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        href="https://academy.dream-coding.com/courses/portfolio"
-                        class="lecture"
-                        target="blank"
-                      >
-                        <img
-                          src="img/lecture3.png"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>드림코딩 - 포폴 웹사이트 클론코딩</h3>
-                          <span
-                            >반응형 동적 웹사이트 따라 만들기<br />
+                                        <div class="lecture__wrap">
+                                            <a href="https://nomadcoders.co/nomadcoin" class="lecture" target="blank">
+                                                <img src="img/lecture2.png" alt="" class="lecture__img" />
+                                                <div class="lecture__description">
+                                                    <h3>노마드코더 - Go로 암호화폐 만들기</h3>
+                                                    <span->블록체인을 제대로 배우려면 결국 직접 만들어보는 것이 가장 빠르고. 정확합니다! 작업증명 부터 채굴. 보상. P2P 거래. 그리고 지갑까지 나만의 암호화폐를 만들어 보세요!
+                                                        </span>
+                                                </div>
+                                            </a>
+                                            <a href="https://academy.dream-coding.com/courses/portfolio" class="lecture" target="blank">
+                                                <img src="img/lecture3.png" alt="" class="lecture__img" />
+                                                <div class="lecture__description">
+                                                    <h3>드림코딩 - 포폴 웹사이트 클론코딩</h3>
+                                                    <span>반응형 동적 웹사이트 따라 만들기<br />
                             HTML,CSS,JS</span
                           >
                         </div>
@@ -236,17 +183,12 @@
                       </a>
                     </div>
                     <span class="lecture__class">주니어</span>
-                    <div class="lecture__wrap">
-                      <a href="#" class="lecture" target="blank">
-                        <img
-                          src="img/lecture6.JPG"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>노마드코더 - 코코아톡 클론코딩</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
+                                                    <div class="lecture__wrap">
+                                                        <a href="#" class="lecture" target="blank">
+                                                            <img src="img/lecture6.JPG" alt="" class="lecture__img" />
+                                                            <div class="lecture__description">
+                                                                <h3>노마드코더 - 코코아톡 클론코딩</h3>
+                                                                <span>코코아톡을 직접 클론코딩해보며 html/css를 재밌게
                             학습해보자!! 입문자가 듣기에도 좋다.</span
                           >
                         </div>
@@ -276,17 +218,12 @@
                 <div id="mid-tab2" class="mid-tab-menu__cont">
                   <section class="lectures">
                     <span class="lecture__class">입문</span>
-                    <div class="lecture__wrap">
-                      <a
-                        href="https://nomadcoders.co/kokoa-clone"
-                        class="lecture"
-                        target="blank"
-                      >
-                        <img src="img/book1.JPG" alt="" class="lecture__img" />
-                        <div class="lecture__description">
-                          <h3>모던 자바스크립트 Deep Dive</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
+                                                                <div class="lecture__wrap">
+                                                                    <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
+                                                                        <img src="img/book1.JPG" alt="" class="lecture__img" />
+                                                                        <div class="lecture__description">
+                                                                            <h3>모던 자바스크립트 Deep Dive</h3>
+                                                                            <span>코코아톡을 직접 클론코딩해보며 html/css를 재밌게
                             학습해보자!! 입문자가 듣기에도 좋다.</span
                           >
                         </div>
@@ -304,13 +241,12 @@
                       </a>
                     </div>
                     <span class="lecture__class">주니어</span>
-                    <div class="lecture__wrap">
-                      <a href="#" class="lecture" target="blank">
-                        <img src="img/book3.JPG" alt="" class="lecture__img" />
-                        <div class="lecture__description">
-                          <h3>제로초 - Node.js교과서</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
+                                                                            <div class="lecture__wrap">
+                                                                                <a href="#" class="lecture" target="blank">
+                                                                                    <img src="img/book3.JPG" alt="" class="lecture__img" />
+                                                                                    <div class="lecture__description">
+                                                                                        <h3>제로초 - Node.js교과서</h3>
+                                                                                        <span>코코아톡을 직접 클론코딩해보며 html/css를 재밌게
                             학습해보자!! 입문자가 듣기에도 좋다.</span
                           >
                         </div>
