@@ -1,0 +1,87 @@
+.create-page {
+  margin-top: 200px;
+  width: 100%;
+}
+.create-page main {
+  width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.create__title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+.create {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 700px;
+  height: 600px;
+  margin: auto;
+  padding: 40px 50px;
+  background-color: white;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.create input:focus,
+#create__text:focus {
+  outline: none;
+}
+
+.create__cont-title {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+.create__write {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+.create-btn {
+  display: flex;
+  justify-content: right;
+  margin-top: 30px;
+}
+
+.create-wrap {
+  margin-bottom: 15px;
+}
+
+#create__text {
+  height: 500px;
+  resize: none;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.goto-create__btn {
+  display: flex;
+  justify-content: right;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.goto-create__btn button {
+  font-size: 13px;
+}
+
+@media screen and (max-width: 800px) {
+  .create-page main {
+    width: 500px;
+  }
+  .create {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .create-page main {
+    width: 400px;
+  }
+  .create {
+    width: 400px;
+  }
+}

@@ -1,6 +1,5 @@
 <form method="POST" class="w-full" enctype="multipart/form-data">
-    {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %}
-    <span>{{error}}</span> {% endfor %} {% endif %}
+    {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %} {{error}} {% endfor %} {% endif %}
     <div class="project-field">
         {% for field in form %} {% include 'mixins/project/project_input.html' with field=field %} {% endfor %}
     </div>

@@ -11,6 +11,9 @@ from . import forms
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 
+from django.shortcuts import render, redirect, reverse
+from users.models import User
+
 # Create your views here.
 
 def all_activity(request):
@@ -60,3 +63,15 @@ def create_ActComment(request, act):
             review.save()
             messages.success(request, "Room reviewed")
             return redirect(reverse("activity:activities", kwargs={"pk": room.pk}))
+
+
+class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
+
+    form_class = forms.CreateActivityForm
+    template_name = "activities/activity-create.html"
+    def form_valid(self, form):
+        notice = form.save()
+        notice.user = self.request.user
+        notice.save()
+        # project.success(self.request, "Photo Uploaded")
+        return redirect(reverse("activity:activities"))

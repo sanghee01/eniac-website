@@ -1,133 +1,158 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@100&display=swap");
-body {
-}
 
-.notice-parent {
+#notice-page {
   margin-top: 200px;
   min-height: 130%;
   width: 100%;
   position: relative;
 }
 
-.notice-content {
-  width: 80%;
+.notice {
+  width: 60%;
   margin: auto;
 }
 
-.notice-content__tags {
-  display: flex;
-  margin-top: 30px;
+.notice__title {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 70px;
 }
 
-.notice-content__title {
+.notice__card {
   display: flex;
   justify-content: center;
-  font-family: Roboto Mono;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 52px;
-  line-height: 20px;
-  /* identical to box height, or 34% */
-  letter-spacing: -0.133333px;
-  margin-top: 5%;
+  align-items: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.notice__card:hover {
+  cursor: pointer;
+  background-color: #f7f2e4;
 }
 
-.notice-content__card {
+.notice__img {
+  width: 20%;
+  height: 160px;
+}
+.notice__img img {
+  width: 160px;
+  height: 160px;
+}
+.notice__text {
   display: flex;
-  margin: 5% 0 0 10%;
-}
-
-.notice-content__text {
-  margin-top: 10px;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: 40px;
-  width: 70%;
+  height: 160px;
+  width: 700px;
 }
 
-.notice-content__card-title {
+.notice__card-title {
   font-family: DM Serif Display;
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
   /* identical to box height, or 50% */
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
 }
 
-.notice-content__card-desc {
+.notice__card-desc {
   font-family: DM Serif Display;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
   /* identical to box height, or 62% */
 }
 
-.notice-content__tag {
+.notice__tag {
+  margin-top: 15px;
   display: flex;
-  height: 40%;
-  align-items: flex-end;
+  justify-content: right;
 }
 
-.notice-content__tag div {
-  width: 100px;
-  height: 50px;
+.notice__tag div {
+  width: 40px;
+  height: 25px;
   background: #c7b6e3;
-  border-radius: 15px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
+  margin-right: 7px;
+  font-size: 12px;
 }
 
-.notice-content__border {
+.notice__card-bottom {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+.notice-edit-btn {
+  display: flex;
+  justify-content: right;
+  margin-top: 5px;
+}
+
+.notice__search {
+  margin-top: 50px;
+}
+
+.notice__search-box {
+  position: relative;
   width: 100%;
-  margin-top: 60px;
+  display: flex;
+  justify-content: right;
 }
 
-.notice-content__border div {
-  border: 0.04px solid #000000;
-  width: 80%;
-}
-
-.notice-content__search {
-  margin-top: 80px;
-}
-
-.notice-content__search-bar {
+.notice__search-bar {
   border: 2px solid #6759f6;
   border-radius: 50px;
-  width: 70%;
-  height: 55px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  width: 35%;
+  height: 40px;
+  padding-left: 20px;
 }
 
 .fa-search {
   position: absolute;
-  right: 18%;
-  top: 20px;
+  right: 1.5%;
+  top: 12px;
   margin: 0;
 }
 
-.notice-content__search-box {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.notice-content__search-bar::placeholder {
+.notice__search-bar::placeholder {
   margin-left: 20px;
 }
 
-.notice-content__filter {
+.notice__filter {
   margin-left: 80%;
-  margin-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .notice {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .notice__text {
+    margin-left: 80px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .notice__text {
+    height: 200px;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .notice__img {
+    display: none;
+  }
+  .notice__search-bar {
+    width: 60%;
+  }
+  .fa-search {
+    right: 3.5%;
+  }
 }

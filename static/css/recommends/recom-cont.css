@@ -1,6 +1,10 @@
+.lectures {
+  width: 60%;
+  margin: auto;
+}
 .lecture__wrap {
   display: flex;
-  width: 60%;
+  width: 100%;
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,7 +12,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .lecture__class {
-  margin-left: 20%;
   display: block;
   text-align: start;
   font-size: 24px;
@@ -68,6 +71,7 @@
   margin-top: 8px;
   background-color: #bdbdbd;
 }
+
 @media screen and (max-width: 700px) {
   .lecture__wrap {
     width: 100%;
