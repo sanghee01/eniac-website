@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
+    <link rel="stylesheet" href="../../static/css/components/button.css" />
+    <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+</head>
+
+<body class="create-page">
+    {% include "base.html" %}
+    <main>
+        <div class="create__title">📢 공지사항 수정</div>
+        {% include 'mixins/notice/notice_form.html' with form=form cta="Update notice" cba="Delete notice" %}
+        <!-- <form class="create">
+            <div class="create-wrap">
+                <label for="create__title">제목:</label>
+                <input id="create__title" type="text" required placeholder="제목" />
+            </div>
+            <div class="create-wrap">
+                <label for="create__img">이미지 첨부:</label>
+                <input id="create__img" type="file" accept=".png" />
+            </div>
+            <div class="create-wrap">
+                <label for="create__file">자료 첨부:</label>
+                <input id="create__file" type="file" />
+            </div>
+            <textarea id="create__text" type="text" required placeholder="내용을 입력하시오."></textarea>
+            <div class="btn-component create-btn">
+                <button>수정</button>
+                <button>삭제</button>
+            </div>
+        </form> -->
+    </main>
+</body>

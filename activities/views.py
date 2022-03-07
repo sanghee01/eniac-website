@@ -1,3 +1,4 @@
+from cProfile import label
 from django.views import View
 from . import models
 from django.shortcuts import render
@@ -75,3 +76,23 @@ class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
         notice.save()
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("activity:activities"))
+
+class EditActivityView(UpdateView):
+
+    model = models.Activity
+    template_name = "activities/activity-edit.html"
+    fields = (
+       "title",
+       "semester",
+       "thumnail_img",
+       "desc",
+    )
+    labels = {
+        "title": "제목",
+    }
+  
+    
+    def get_success_url(self):
+        return reverse("core:activity_list")
+
+

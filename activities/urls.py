@@ -13,6 +13,7 @@ urlpatterns = [path("activity/", views.all_activity, name="activities"),
  path("creates", views.CreateChallengeView.as_view(), name="create"),
  path("create/<int:act>", views.create_ActComment, name="create_Actcomment"),
  path("createAct", views.CreateActivityView.as_view(), name="createAct"),
+ path("<int:pk>/edit", views.EditActivityView.as_view(), name="edit"),
  ]
 
 

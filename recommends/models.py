@@ -42,12 +42,8 @@ class Recommend(TimeStampedModel):
     title = models.CharField(max_length=100)
     desc = models.TextField(max_length=300)
     img = models.ImageField(null=True)
-
     genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
-
     lec_book = models.CharField(choices=LEC_BOOK_CHOICES, max_length=20, blank=True, null=True)
-
-
     level = models.CharField(choices=LEVEL_CHOICES, max_length=20, blank=True, null=True)
 
 

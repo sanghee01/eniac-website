@@ -82,9 +82,13 @@
                                         {% endfor %}
                                     </div>
                                     <!-- 글 작성자만 수정버튼 보이도록 -->
-                                    <div class="edit-button notice-edit-btn">
-                                        <button>수정</button>
-                                    </div>
+                                    {% if activity.user == user %}
+                                    <a href="{% url 'activity:edit' activity.pk %}">
+                                        <div class="edit-button notice-edit-btn">
+                                            <button>수정</button>
+                                        </div>
+                                    </a>
+                                    {% endif %}
                                 </section>
                                 {% endfor %}
                                 <div class="btn-component goto-create__btn">

@@ -43,13 +43,13 @@
                         {{notices.updated}}
                     </div>
                 </div>
-                <!-- 글 작성자 수정버튼 보이도록 -->
-                <!-- <div class="edit-button notice-edit-btn">
-                            <button>수정</button>
-                        </div> -->
-                <!-- {% for tag in notice.object_list.tags.all %} -->
-                <!-- {% endfor %} -->
-            </a>
+                {% if notices.user == user %}
+                <a href="{% url 'notice:edit' notices.pk %}">
+                    <div class="edit-button notice-edit-btn">
+                        <button>수정</button>
+                    </div>
+                </a>
+                {% endif %}
         </div>
         {% endfor %}
         <div class="btn-component goto-create__btn">

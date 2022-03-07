@@ -54,5 +54,22 @@ def search(request):
 class NoticeDetail(DetailView):
 
     """ RoomDetail Definition """
-    
+
     model = models.Notice
+
+class EditNoticeView(UpdateView):
+
+    model = models.Notice
+    template_name = "notices/notice_edit.html"
+    fields = (
+        "title",
+        "thumnail_img",
+        "desc",
+        "tag",
+   
+    )
+    def get_success_url(self):
+        return reverse("core:notice_list")
+
+
+
