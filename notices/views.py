@@ -54,5 +54,5 @@ def search(request):
 class NoticeDetail(DetailView):
 
     """ RoomDetail Definition """
-
+    
     model = models.Notice
