@@ -31,7 +31,9 @@
                   <section class="lectures">
                     <span class="lecture__class">입문</span>
                     <div class="lecture__wrap">
-                      {% for abc in web_a.object_list %}
+                     
+                      {% for abc in potato.object_list %}
+                      {% if potato.genre == "웹" %}
                       <a
                         href="https://nomadcoders.co/kokoa-clone"
                         class="lecture"
@@ -46,7 +48,7 @@
                           <h3>{{abc.title}}</h3>
                           <span>{{abc.desc}}</span>
                         </div>
-                      </a> {% endfor %}
+                      </a> {% endif %}{% endfor %}
                 </div>
                 <span class="lecture__class">주니어</span>
                 <div class="lecture__wrap">
@@ -60,7 +62,7 @@
                     {% endfor %}
                 </div>
                 </section>
-                {% include 'partials/footer.html' %}
+
                 </div>
                 </li>
                 <li class="mid-tab-menu__list mlist-1">

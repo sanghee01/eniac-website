@@ -77,7 +77,7 @@ class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("activity:activities"))
 
-class EditActivityView(UpdateView):
+class EditActivityView(UpdateView): 
 
     model = models.Activity
     template_name = "activities/activity-edit.html"
