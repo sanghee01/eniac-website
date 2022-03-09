@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" href="../../static/css/notices/notice-detail.css" />
+    <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
+</head>
+{% include 'base.html' %}
+
+<body id="notice-detail-page">
+    <main class="notice-detail">
+        <div class="notice-detail__title">{{notice.title}}</div>
+
+        <div class="notice-detail__info">
+            {% for tag in notice.tag.all %}
+            <div class="notice__tags">
+                <div class="notice__tag">
+                    <div>{{tag}}</div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="info__right">
+                <div class="notice-detail__user">{{notice.user}}</div>
+                <div class="notice-detail__update">{{notice.updated}}</div>
+            </div>
+            <a>수정하기</a>
+        </div>
+
+        <div class="notice-detail__content">
+            <img src="{{notice.get_photo_url}}" alt="" />
+            <div class="notice-detail__text">{{notice.desc}}</div>
+        </div>
+    </main>
+</body>
+<!-- {% include 'partials/footer.html' %} -->

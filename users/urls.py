@@ -5,6 +5,7 @@ from django.conf.urls import  include, url
 from django.conf import settings
 from django.urls import path
 from . import views
+from django.urls import reverse_lazy
 
 
 app_name = "user"
@@ -19,7 +20,7 @@ path('password_reset/', views.MyPasswordResetView.as_view(), name='password_rese
 path('reset/<uidb64>/<token>/', views.MyPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 path("sigupSec/", views.SignUpSecView.as_view(), name="signupSec"),
 path("update-profile/", views.UpdateProfileView.as_view(), name="update"),
-path("update-passwod/", views.UpdatePasswordView.as_view(), name="password"),
+path("update-passwod/", views.UpdatePasswordView.as_view(success_url=reverse_lazy('core:project')), name="password"),
 ]
 
 

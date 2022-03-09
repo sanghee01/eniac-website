@@ -11,12 +11,15 @@ from notices.models import Notice
 
 def all_recommends(request):
     page = request.GET.get("page")
-    all_recommend = models.Recommend.objects.all()
-    paginator = Paginator(all_recommend, 20)
-    recommend = paginator.get_page(page)
+    all_recommends = models.Recommend.objects.all()
+    paginator = Paginator(all_recommends, 20)
+    web = paginator.get_page(page)
 
+   
+
+   
     
    
-    return render(request,  "recommends/recommend_list.html", context={"recom": recommend})
+    return render(request,  "recommends/recommend_list.html", context={"potato": web})
 
 

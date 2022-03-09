@@ -1,0 +1,13 @@
+<head>
+    <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
+    <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+    <link rel="stylesheet" href="../../static/css/components/button.css" />
+</head>
+
+<body class="create-page">
+    {% include "base.html" %} {% load static %}
+    <main>
+        <div class="create__title">📢 공지사항 작성</div>
+        {% include 'mixins/notice/notice_form.html' %}
+    </main>
+</body>
