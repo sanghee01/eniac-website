@@ -79,3 +79,60 @@
 .link__icon:hover i {
   transform: rotate(-30deg) scale(1.1);
 }
+
+/* home-cont */
+#home-cont {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+.plan {
+  height: 400px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 200px;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
+}
+.plan__title {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.plan__title h1 {
+  font-size: 35px;
+  margin-right: 20px;
+}
+
+.plan__title span {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  margin-top: 15px;
+}
+.plan__cont {
+  display: flex;
+}
+.plan__cont-wrap {
+  text-align: center;
+  width: 220px;
+}
+.plan__cont-ect {
+  width: 270px;
+}
+.plan__cont-wrap img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.plan__desc h5 {
+  font-size: 20px;
+  margin: 0;
+}
+.plan__desc p {
+  font-size: 13px;
+}
