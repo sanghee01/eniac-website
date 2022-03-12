@@ -31,11 +31,19 @@ class Recommend(TimeStampedModel):
     )
 
     LEVEL_A = "입문"
-    LEVEL_B = "주니어"
+    LEVEL_B = "중급이상"
 
     LEVEL_CHOICES = (
       (LEVEL_A, "입문"),
-      (LEVEL_B, "주니어"),
+      (LEVEL_B, "중급이상"),
+    )
+
+    LEAD_A = "강의"
+    LEAD_B = "책"
+
+    LEAD_CHOICES = (
+      (LEAD_A, "강의"),
+      (LEAD_B, "책"),
     )
 
 
@@ -43,8 +51,9 @@ class Recommend(TimeStampedModel):
     desc = models.TextField(max_length=300)
     img = models.ImageField(null=True)
     genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
-    lec_book = models.CharField(choices=LEC_BOOK_CHOICES, max_length=20, blank=True, null=True)
+  
     level = models.CharField(choices=LEVEL_CHOICES, max_length=20, blank=True, null=True)
+    lead = models.CharField(choices=LEAD_CHOICES, max_length=20, blank=True, null=True)
 
 
     # 여기서 강의냐 책이냐 이거를 또 구분해야한다

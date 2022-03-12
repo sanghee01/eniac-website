@@ -85,8 +85,8 @@ class SignUpForm(forms.ModelForm):
         entered_eniac = self.cleaned_data.get("entered_eniac")
         blog_url = self.cleaned_data.get("blog_url")
 
-        student_id = self.cleaned_data("student_id")
-        phone_number = self.cleaned_data("phone_number")
+        student_id = self.cleaned_data.get("student_id")
+        phone_number = self.cleaned_data.get("phone_number")
 
         user.studend_id = student_id
         user.phone_number = phone_number

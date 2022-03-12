@@ -53,7 +53,7 @@ class SignUpView(FormView):
 
     template_name = "users/signup.html"
     form_class = forms.SignUpForm
-    success_url = reverse_lazy("user:signupSec")
+    success_url = reverse_lazy("user:verify")
     initial = {}
 
     # user를 생성하고 바로 로그인시
@@ -64,9 +64,9 @@ class SignUpView(FormView):
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
         user = authenticate(self.request, username=username, password=password)
-        # if user is not None:
-        #     auth.login(self.request, user)  
-        # user.verify_email()
+        if user is not None:
+            auth.login(self.request, user)  
+        user.verify_email()
         
         return super().form_valid(form)
 
