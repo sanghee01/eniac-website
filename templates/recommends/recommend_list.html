@@ -33,7 +33,7 @@
                     <div class="lecture__wrap">
                      
                       {% for abc in potato.object_list %}
-                      {% if abc.genre == "웹" and abc.lec_book == "강의" and abc.level == "입문" %}
+                      {% if abc.genre == "웹" and abc.lead == "강의" and abc.level == "입문" %}
                       <a
                         href="https://nomadcoders.co/kokoa-clone"
                         class="lecture"
@@ -50,9 +50,9 @@
                         </div>
                       </a> {% endif %}{% endfor %}
                 </div>
-                <span class="lecture__class">주니어</span>
+                <span class="lecture__class">중급이상</span>
                 <div class="lecture__wrap">
-                    {% for abc in potato.object_list %} {% if abc.genre == "웹" and abc.lec_book == "강의" and abc.level == "주니어" %}
+                    {% for abc in potato.object_list %} {% if abc.genre == "웹" and abc.lead == "강의" and abc.level == "중급이상" %}
                     <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
                         <img src="{{abc.get_photo_url}}" alt="" class="lecture__img" />
                         <div class="lecture__description">
