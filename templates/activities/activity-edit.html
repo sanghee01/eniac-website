@@ -1,12 +1,15 @@
 <head>
-  <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
-  <link rel="stylesheet" href="../../static/css/components/button.css" />
-  <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+    <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
+    <link rel="stylesheet" href="../../static/css/components/button.css" />
+    <link rel="stylesheet" href="../../static/css/components/create-page.css" />
 </head>
+
 <body class="create-page">
-  <main>
-    <div class="create__title">📝 활동 수정</div>
-    <form class="create">
+    {% include "base.html" %}
+    <main>
+        <div class="create__title">📝 활동 수정</div>
+        {% include 'mixins/activity/activity_form.html' with form=form cta="Update activity" cba="Delete activity" %}
+        <!-- <form class="create">
       <div class="create-wrap">
         <label for="create__cont-title">제목:</label>
         <input
@@ -35,6 +38,6 @@
         <button>수정</button>
         <button>삭제</button>
       </div>
-    </form>
-  </main>
+    </form> -->
+    </main>
 </body>
