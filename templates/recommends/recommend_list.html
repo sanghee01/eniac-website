@@ -119,68 +119,41 @@
                   <section class="lectures">
                     <span class="lecture__class">입문</span>
                                 <div class="lecture__wrap">
-                                    <a href="https://nomadcoders.co/nomadcoin" class="lecture" target="blank">
-                                        <img src="img/lecture2.png" alt="" class="lecture__img" />
-                                        <div class="lecture__description">
-                                            <h3>노마드코더 - Go로 암호화폐 만들기</h3>
-                                            <span->블록체인을 제대로 배우려면 결국 직접 만들어보는 것이 가장 빠르고. 정확합니다! 작업증명 부터 채굴. 보상. P2P 거래. 그리고 지갑까지 나만의 암호화폐를 만들어 보세요!
-                                                </span>
-                                        </div>
-                                    </a>
-                            <a href="https://academy.dream-coding.com/courses/portfolio" class="lecture" target="blank">
-                                <img src="img/lecture3.png" alt="" class="lecture__img" />
+                                      <a href="https://nomadcoders.co/nomadcoin" class="lecture" target="blank">
+                                          <img src="img/lecture2.png" alt="" class="lecture__img" />
+                                          <div class="lecture__description">
+                                              <h3>노마드코더 - Go로 암호화폐 만들기</h3>
+                                              <span->블록체인을 제대로 배우려면 결국 직접 만들어보는 것이 가장 빠르고. 정확합니다! 작업증명 부터 채굴. 보상. P2P 거래. 그리고 지갑까지 나만의 암호화폐를 만들어 보세요!
+                                                  </span>
+                                          </div>
+                                      </a> {% for abc in potato.object_list %} {% if abc.genre == "앱" and abc.lead == "강의" and abc.level == "입문" %}
+                            <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
+                                <img src="{{abc.get_photo_url}}" alt="" class="lecture__img" />
                                 <div class="lecture__description">
-                                    <h3>드림코딩 - 포폴 웹사이트 클론코딩</h3>
-                                    <span>반응형 동적 웹사이트 따라 만들기<br />
-                            HTML,CSS,JS</span
-                          >
-                        </div>
-                      </a>
-                      <a href="#" class="lecture" target="blank">
-                        <img
-                          src="img/lecture4.jpg"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>apple 클론코딩</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
-                            학습해보자!! 입문자가 듣기에도 좋다.</span
-                          >
-                        </div>
-                      </a>
-                      <a href="#" class="lecture" target="blank">
-                        <img
-                          src="img/lecture5.png"
-                          alt=""
-                          class="lecture__img"
-                        />
-                        <div class="lecture__description">
-                          <h3>노마드코더 - 코코아톡 클론코딩</h3>
-                          <span
-                            >코코아톡을 직접 클론코딩해보며 html/css를 재밌게
-                            학습해보자!! 입문자가 듣기에도 좋다.</span
-                          >
-                        </div>
-                      </a>
-                    </div>
-                    <span class="lecture__class">중급이상</span>
-                                    <div class="lecture__wrap">
-                                        {% for abc in potato.object_list %} {% if abc.genre == "앱" and abc.lead == "강의" and abc.level == "중급이상" %}
-                                        <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
-                                            <img src="{{abc.get_photo_url}}" alt="" class="lecture__img" />
-                                            <div class="lecture__description">
-                                                <h3>{{abc.title}}</h3>
-                                                <span>{{abc.desc}}</span>
-                                            </div>
-                                        </a> {% endif %}{% endfor %}
-                                    </div>
-                                    </section>
+                                    <h3>{{abc.title}}</h3>
+                                    <span>{{abc.desc}}</span>
                                 </div>
-                        </li>
-                        <li class="mid-tab-menu__list mlist-2">
-                            <a href="#mid-tab2" class="mid-tab-menu__btn mbtn-2"><i class="fas fa-book"></i>책</a
+                            </a> {% endif %}{% endfor %}
+
+
+
+                </div>
+                <span class="lecture__class">중급이상</span>
+                <div class="lecture__wrap">
+                    {% for abc in potato.object_list %} {% if abc.genre == "앱" and abc.lead == "강의" and abc.level == "중급이상" %}
+                    <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
+                        <img src="{{abc.get_photo_url}}" alt="" class="lecture__img" />
+                        <div class="lecture__description">
+                            <h3>{{abc.title}}</h3>
+                            <span>{{abc.desc}}</span>
+                        </div>
+                    </a> {% endif %}{% endfor %}
+                </div>
+                </section>
+                </div>
+                </li>
+                <li class="mid-tab-menu__list mlist-2">
+                    <a href="#mid-tab2" class="mid-tab-menu__btn mbtn-2"><i class="fas fa-book"></i>책</a
                 >
                 <div id="mid-tab2" class="mid-tab-menu__cont">
                   <section class="lectures">
@@ -203,20 +176,20 @@
                           <span>{{abc.desc}}</span>
                         </div>
                       </a> {% endif %}{% endfor %}
-                </div>
-                <span class="lecture__class">중급이상</span>
-                <div class="lecture__wrap">
-                    {% for abc in potato.object_list %} {% if abc.genre == "앱" and abc.lead == "책" and abc.level == "중급이상" %}
-                    <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
-                        <img src="{{abc.get_photo_url}}" alt="" class="lecture__img" />
-                        <div class="lecture__description">
-                            <h3>{{abc.title}}</h3>
-                            <span>{{abc.desc}}</span>
-                        </div>
-                    </a> {% endif %}{% endfor %}
-                </div>
-                </section>
-                </div>
+                    </div>
+                    <span class="lecture__class">중급이상</span>
+                    <div class="lecture__wrap">
+                        {% for abc in potato.object_list %} {% if abc.genre == "앱" and abc.lead == "책" and abc.level == "중급이상" %}
+                        <a href="https://nomadcoders.co/kokoa-clone" class="lecture" target="blank">
+                            <img src="{{abc.get_photo_url}}" alt="" class="lecture__img" />
+                            <div class="lecture__description">
+                                <h3>{{abc.title}}</h3>
+                                <span>{{abc.desc}}</span>
+                            </div>
+                        </a> {% endif %}{% endfor %}
+                    </div>
+                    </section>
+                    </div>
                 </li>
                 </ul>
                 <!-- Footer 들어갈 자리 -->
