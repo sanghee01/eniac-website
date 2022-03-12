@@ -192,6 +192,9 @@
 }
 
 @media screen and (max-width: 750px) {
+  .home__wrap--right {
+    width: 80%;
+  }
   .plan {
     width: 400px;
     height: 1200px;
@@ -202,8 +205,6 @@
   .ect__plan {
     height: 900px;
   }
-}
-@media screen and (max-width: 750px) {
   .plan__title {
     display: flex;
     flex-direction: column;
@@ -225,9 +226,7 @@
   .home {
     padding-top: 0px;
   }
-  .home__wrap--right {
-    width: 70%;
-  }
+
   .home__hello {
     font-size: 70px;
     margin-bottom: -170px;
