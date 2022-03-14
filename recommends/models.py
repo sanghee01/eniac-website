@@ -47,13 +47,12 @@ class Recommend(TimeStampedModel):
     )
 
 
-    title = models.CharField(max_length=100)
-    desc = models.TextField(max_length=300)
-    img = models.ImageField(null=True)
-    genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True)
-  
-    level = models.CharField(choices=LEVEL_CHOICES, max_length=20, blank=True, null=True)
-    lead = models.CharField(choices=LEAD_CHOICES, max_length=20, blank=True, null=True)
+    title = models.CharField(max_length=100, verbose_name="제목")
+    desc = models.TextField(max_length=300, verbose_name="내용")
+    img = models.ImageField(null=True, verbose_name="이미지")
+    genre = models.CharField(choices=GENRE_CHOICES, max_length=20, blank=True, null=True, verbose_name="장르")
+    level = models.CharField(choices=LEVEL_CHOICES, max_length=20, blank=True, null=True, verbose_name="레벨")
+    lead = models.CharField(choices=LEAD_CHOICES, max_length=20, blank=True, null=True, verbose_name="방식")
 
 
     # 여기서 강의냐 책이냐 이거를 또 구분해야한다

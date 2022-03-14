@@ -64,8 +64,8 @@ class SignUpView(FormView):
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
         user = authenticate(self.request, username=username, password=password)
-        if user is not None:
-            auth.login(self.request, user)  
+        # if user is not None:
+        #     auth.login(self.request, user)  
         user.verify_email()
         
         return super().form_valid(form)
@@ -144,13 +144,26 @@ class MyPasswordResetView(PasswordResetView):
     mail_title="비밀번호 재설정"
 
     def form_valid(self, form):
+        email = form.cleaned_data.get("email")
+        user = authenticate(self.request, email=email)
+        # if user is not None:
+        #     auth.login(self.request, user)  
+        user.password_verify_email()
+        
         return super().form_valid(form)
+
+
 
 class MyPasswordResetConfirmView(PasswordResetConfirmView):
     success_url=reverse_lazy('core:project')
     template_name = 'users/password_reset_confirm.html'
 
     def form_valid(self, form):
+        form.save()
+        email = form.cleaned_data.get("email")
+       
+        user = authenticate(self.request, email=email)
+        
         return super().form_valid(form)
 
 class UpdatePasswordView(PasswordChangeView):

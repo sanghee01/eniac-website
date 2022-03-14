@@ -6,12 +6,12 @@ from django.urls import reverse
 
 # Create your models here.
 class Project(TimeStampedModel): 
-    title = models.CharField(max_length=100, null=True,  default = '')
-    desc = models.TextField(max_length=300, default = '', null=True,)
+    title = models.CharField(max_length=100, null=True,  default = '', verbose_name='제목')
+    desc = models.TextField(max_length=300, default = '', null=True, verbose_name='내용')
     image = models.ImageField(blank=True)
-    thumnail_img = models.ImageField(upload_to="")
-    tag = models.CharField(max_length=40)
-    git = models.CharField(max_length=60)
+    thumnail_img = models.ImageField(upload_to="", verbose_name='썸네일 이미지')
+    tag = models.CharField(max_length=40, verbose_name='태그')
+    git = models.CharField(max_length=60, verbose_name='깃허브 주소')
     views = models.PositiveIntegerField(default=0, verbose_name='조회수')
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="project",  null=True, blank=False

@@ -523,12 +523,16 @@
                         </a> {% endif %}{% endfor %}
                     </div>
                     </section>
+
                     </div>
+
                 </li>
                 </ul>
                 </div>
             </li>
         </ul>
+
+        <a href="{% url 'recommends:create' %}">create</a>
     </main>
     <script type="text/javascript" src="{% static 'js/recom-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/mid-tab.js' %}"></script>

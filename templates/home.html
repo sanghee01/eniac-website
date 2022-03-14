@@ -1,64 +1,153 @@
-<style></style>
-
-<div id="home-page">
-  {% load static %}
-  <div class="home-topbox">
-    <section class="home-wotd">
-      {% include 'base.html' %}
-      <div class="home-wotd__wrapper">
-        <div class="home-wotd__inside">
-          <div>"Hello<br /><span class="home-wotd__span">Eniac"</span></div>
-          <br />
-          <span>
-            에니악 홈페이지에 오신걸 환영합니다 <br />
-            저희는 프로젝트 활동 중심 동아리이며,<br />
-            동아리 회원분들의 개발자로서의 성장을 목표로 두고있는 동아리입니다
-          </span>
-          <a href="{% url 'user:login' %}">
-            <span class="home-wotd__button">Get Started</span>
+{% load static %} {% include 'base.html' %}
+<body id="home-page">
+  <section class="home">
+    <div class="home__wrap home__wrap--left">
+      <div class="home__hello">
+        <div>"Hello</div>
+        <div>Eniac"</div>
+      </div>
+    </div>
+    <div class="home__wrap home__wrap--right">
+      <span class="home__desc">중앙동아리 학술분과</br>
+      컴퓨터•소프트웨어공학과 과 동아리</span>
+      <div class="home__link-wrap">
+        <div class="home__link">
+          <a href="https://open.kakao.com/o/seBezZ2d" class="link__icon" target="_blank">
+            <i class="fas fa-solid fa-comment"></i>
           </a>
+          <div class="link__title">Contact</div>
         </div>
-        <div class="home-wotd__photoside">
-          <div>
-            <img src="{% static 'img/coding.png' %}" alt="" />
-          </div>
-          <br />
-          <div class="home-wotd__developer">개발자 윤동규 이상희</div>
+        <div class="home__link">
+          <a href="https://www.facebook.com/groups/wku.eniac" class="link__icon" target="_blank">
+            <i class="fab fa-brands fa-facebook"></i>
+          </a>
+          <div href="" class="link__title">Facebook</div>
         </div>
-      </div>
+        <div class="home__link">
+          <a href="https://eniac.goorm.io/" class="link__icon" target="_blank">
+            <i class="fas fa-solid fa-cloud"></i>
+          </a>
+          <div class="link__title">Goorm</div>
+        </div>
     </section>
-    <section class="home-cardlist">
-      {% for project in potato %}
-      <div class="home-cardlist__card">
-        <div class="home-cardlist__text">
-          <div class="home-cardlist__subtext">
-            <h1>{{project.title | truncatechars:20}}</h1>
-            <h3>{{project.desc | truncatechars:80}}</h3>
-            <span>{{project.user}}</span>
+    <section id="home-cont">
+      <div class="plan__title">
+        <h1>1학기 - 스터디</h1>
+        <span>프로젝트를 위한 관심분야 공부</span>
+      </div>
+      <article class="plan">
+        <div class="plan__cont">
+          <div class="plan__cont-two">
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-act1.png"/>
+          <div class="plan__desc">
+            <h5>분야 선정</h5>
+            <p>관심 분야 탐색</p>
           </div>
-          <button>자세히보기</button>
         </div>
-        <div class="home-cardlist__img">
-          <img src="{{project.get_photo_url}}" />
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-act2.png"/>
+          <div class="plan__desc">
+            <h5>스터디 구성</h5>
+            <p>분야 별로 스터디 그룹 형성<br>
+            스터디 그룹별 멘토 지정<br>
+          스터디 진행 방식 계획</p>
+          </div>
+        </div>
+       </div> 
+       <div class="plan__cont-two">
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-act3.png"/>
+          <div class="plan__desc">
+            <h5>스터디 진행</h5>
+            <p>스터디 진행 상황 공유<br>그룹별 진행상황, 결과 발표</p>
+          </div>
+        </div>
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-act4.png"/>
+          <div class="plan__desc">
+            <h5>공유</h5>
+            <p>스터디 진행 과정, 최종 결과 발표</p>
+          </div>
+        </div>
         </div>
       </div>
-      {% endfor %} {% for project in second %}
-      <div class="home-cardlist__card">
-        <div class="home-cardlist__img">
-          <img src="{{project.get_photo_url}}" />
+      </article>
+      <div class="plan__title">
+        <h1>2학기 - 프로젝트</h1>
+        <span>기획부터 서비스까지</span>
+      </div>
+      <article class="plan">
+        <div class="plan__cont">
+          <div class="plan__cont-two">
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-project1.png"/>
+          <div class="plan__desc">
+            <h5>아이디어 구상</h5>
+            <p>만들고 싶은 제품, 서비스 구상</p>
+          </div>
         </div>
+        
+        <div class="plan__cont-two"></div>
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-project2.png"/>
+          <div class="plan__desc">
+            <h5>팀 구성</h5>
+            <p>서비스 제작시 필요한<br>
+            인원들과 팀 구성<br>
+          </div>
+        </div>
+        </div>
+        <div class="plan__cont-two">
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-project3.png"/>
+          <div class="plan__desc">
+            <h5>프로젝트 진행</h5>
+            <p>프로젝트 개발 진행 상황 공유<br>그룹별 진행상황, 결과 발표</p>
+          </div>
+        </div>
+        <div class="plan__cont-wrap">
+          <img src="../static/img/home-act4.png"/>
+          <div class="plan__desc">
+            <h5>공유</h5>
+            <p>프로젝트 개발 과정, 최종 결과물 발표</p>
+          </div>
+        </div>
+        </div>
+      </div>
+      </article>
+      <div class="plan__title ect__title">
+        <h1>그 외 활동</h1>
+      </div>
+      <article class="plan ect__plan">
+        <div class="plan__cont ect__cont">
+        <div class="plan__cont-wrap plan__cont-ect">
+          <img src="../static/img/home-ect1.png"/>
+          <div class="plan__desc">
+            <h5>한마음 자리</h5>
+            <p>ENIAC 출신 실무자 선배님들과의 대면 만남<br>
+            재학생들의 스터디, 프로젝트 결과 발표<br>
+          선배님들의 현 실무 현황 발표 및 정보공유</p>
+          </div>
+        </div>
+        <div class="plan__cont-wrap plan__cont-ect">
+          <img src="../static/img/home-ect2.png"/>
+          <div class="plan__desc">
+            <h5>학술 세미나</h5>
+            <p>선배들이 Git, 툴 사용법, IT분야 등을<br>
+            주제로 하여 강의 진행<br>
+          </div>
+        </div>
+        <div class="plan__cont-wrap plan__cont-ect">
+          <img src="../static/img/home-ect3.png"/>
+          <div class="plan__desc">
+            <h5>친목</h5>
+            <p>MT, 회식 등을 통한<br>동아리원간 친목 도모</p>
+          </div>
+        </div>
+      </div>
+      </article>
+    </section>
 
-        <div class="home-cardlist__text">
-          <div class="home-cardlist__subtext">
-            <h1>{{project.title | truncatechars:20}}</h1>
-            <h3>{{project.desc | truncatechars:80}}</h3>
-            <span>{{project.user}}</span>
-          </div>
-          <button>자세히보기</button>
-        </div>
-      </div>
-      {% endfor %}
-    </section>
-    {% include 'partials/footer.html' %}
-  </div>
-</div>
+  {% include 'partials/footer.html' %}
+</body>

@@ -26,6 +26,7 @@ class CreateNoticeForm(forms.ModelForm):
             "title": "제목",
             "thumnail_img": "이미지첨부",
             "tag": "태그",
+            "desc": "내용",
 
         }
 

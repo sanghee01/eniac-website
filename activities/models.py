@@ -18,10 +18,10 @@ class Activity(TimeStampedModel):
       (SEMI_B, "2학기"),
     )
 
-    title = models.CharField(max_length=100, default = '', null=True, blank=False)
-    semester = models.CharField(choices=SEMI_CHOICES, default = '', max_length=10, blank=False, null=True)
-    thumnail_img = models.ImageField(default = '')
-    desc = models.TextField(max_length=300)
+    title = models.CharField(max_length=100, default = '', null=True, blank=False, verbose_name='제목')
+    semester = models.CharField(choices=SEMI_CHOICES, default = '', max_length=10, blank=False, null=True, verbose_name='학기')
+    thumnail_img = models.ImageField(default = '', verbose_name='썸네일이미지')
+    desc = models.TextField(max_length=300, verbose_name='내용')
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="activity",  null=True, blank=False
     ) 

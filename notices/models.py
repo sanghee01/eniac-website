@@ -11,9 +11,9 @@ from taggit.models import (
 
 # Create your models here.
 class Notice(TimeStampedModel): 
-    title = models.CharField(max_length=100)
-    thumnail_img = models.ImageField()
-    desc = models.TextField(max_length=300)
+    title = models.CharField(max_length=100, verbose_name='제목')
+    thumnail_img = models.ImageField(verbose_name='썸네일')
+    desc = models.TextField(max_length=300, verbose_name='내용')
     tag = models.ManyToManyField('tags.Tag', verbose_name='학년별')
     # activity_tag = models.ManyToManyField('tags.ActivityTag', verbose_name='활동별')
     # seme_tag = models.ManyToManyField('tags.SemeTag', verbose_name='학기별')

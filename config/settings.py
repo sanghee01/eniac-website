@@ -197,9 +197,11 @@ LOGIN_URL = "/users/login/"
 
 
 
-EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_HOST = "smtp.naver.com"
 EMAIL_PORT = "587"		 # 서버 포트
-EMAIL_FROM = "eniac@gmail.com"
-EMAIL_HOST_USER = 'postmaster@sandboxdc4080d45b074d5ea6e674de8264f54d.mailgun.org' 	 # 우리가 사용할 Gmail
-EMAIL_HOST_PASSWORD = 'e8c5bca2e7f39cf05cebdc342a4dc156-1b237f8b-32ee2699'		 # 우리가 사용할 Gmail p
+EMAIL_FROM = "donghe1472@naver.com"
+EMAIL_HOST_USER = 'donghe1472@naver.com' 	 
+EMAIL_HOST_PASSWORD = 'aa12341472'		
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False 
+EMAIL_USE_TLS = 'eniac@naver.com'

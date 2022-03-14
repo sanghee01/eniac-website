@@ -54,7 +54,25 @@ class User(AbstractUser):
                 "emails/verify_email.html", {"secret": secret}
             )
             send_mail(
-                "Verify Hairbnb Account",
+                "에니악 인증호가인",
+                strip_tags(html_message),
+                settings.EMAIL_FROM,
+                [self.email],
+                html_message=html_message,
+            )
+
+            self.save()
+        return
+
+    def password_verify_email(self):
+        if self.email_confirmed is False:
+            secret = uuid.uuid4().hex[:20]
+            self.email_secret = secret
+            html_message = render_to_string(
+                "emails/verify_email.html", {"secret": secret}
+            )
+            send_mail(
+                "비밀번호 변경",
                 strip_tags(html_message),
                 settings.EMAIL_FROM,
                 [self.email],

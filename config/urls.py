@@ -25,6 +25,7 @@ urlpatterns = [
     path("", include("activities.urls", namespace="activity")),
     path("project", include("projects.urls", namespace="project")),
     path("notice/", include("notices.urls", namespace="notice")),
+    path("recommend/", include("recommends.urls", namespace="recommend")),
     path('admin/', admin.site.urls),
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
