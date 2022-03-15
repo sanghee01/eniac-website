@@ -35,8 +35,10 @@ def all_activity(request):
     paginator = Paginator(all_challenges, 6)
     challenges = paginator.get_page(page)
 
+    all_comment = models.Act_Comment.objects.all()
+  
 
-    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges})
+    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment})
 
 
 class CreateChallengeView(user_mixins.LoggedInOnlyView, FormView):

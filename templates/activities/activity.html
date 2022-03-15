@@ -67,19 +67,28 @@
 
                                     <div>
                                         <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
+
                                         <form class="activity__comment" action="{% url 'activity:create_Actcomment' activity.id %}">
-                                            {% csrf_token %}
+                                            {% for abc in activity.comment.all %}
+                                            <li class="activity__comment-list">
+                                                <span class="activity__comment-name">{{abc.user}}</span>
+                                                <span class="ctivity__comment-cont">{{abc.desc}}</span>
+                                            </li>
+                                            {% endfor %}
+                                            <!-- {% csrf_token %}
                                             <div class="activity__comment-input">
                                                 {{form}}
                                                 <button>입력</button>
+                                            </div> -->
+
+                                            {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %} {{error}} {% endfor %} {% endif %} {% for field in form %}
+                                            <div class="activity__comment-input">
+                                                {{field.label}} {{field}} {% if field.errors %} {% for error in field.errors %}
+                                                <span>{{error}}</span> {% endfor %} {% endif %}
                                             </div>
+                                            {% endfor %}
                                         </form>
-                                        {% for abc in act.comment.all %}
-                                        <li class="activity__comment-list">
-                                            <span class="activity__comment-name">{{abc.user}}</span>
-                                            <span class="ctivity__comment-cont">{{abc.desc}}</span>
-                                        </li>
-                                        {% endfor %}
+
                                     </div>
                                     <!-- 글 작성자만 수정버튼 보이도록 -->
                                     {% if activity.user == user %}
@@ -109,18 +118,12 @@
                                             <i style="margin-left: 10px;" class="fas fa-chevron-right"></i>
                                         </a>
                                         {% endif %}
-
-
                                     </div>
                                 </div>
-
-
                             </section>
-
                     </main>
                     {% include 'partials/footer.html' %}
                     </div>
-
             </li>
             <li class="tab-menu__list">
                 <a href="#tab2" class="tab-menu__btn">명단</a>
@@ -223,16 +226,12 @@
                                     </li>
                                 </ul>
                             </div>
-
                             {% endfor %}
-
                         </div>
                     </main>
                     {% include 'partials/footer.html' %}
-
                 </div>
             </li>
-
         </ul>
 
         </div>
