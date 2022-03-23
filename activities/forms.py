@@ -22,11 +22,13 @@ class CreateCommentForm(forms.ModelForm):
         fields = (
             "desc",
         )
-    def save(self):
-        review = super().save(commit=False)
-        return review
 
-        
+        widgets = {
+            "desc": forms.TextInput(attrs={'placeholder': '댓글을 입력헤주세요'}),  
+        }
+
+    
+    
 
 class CreateActivityForm(forms.ModelForm):
     class Meta:
@@ -36,7 +38,6 @@ class CreateActivityForm(forms.ModelForm):
           "desc",
           "semester",
           "thumnail_img",
-         
         )
         widgets = {
             "title": forms.TextInput(attrs={'placeholder': '프로젝트 이름'}),  

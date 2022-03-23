@@ -20,7 +20,6 @@ path("email_verify/", views.email_verify, name="verify"),
 path("verify/<str:key>", views.complete_verification, name="complete-verification"),
 
 path('password_reset/', views.MyPasswordResetView.as_view(), name='password_reset'),
-
 path('reset/<uidb64>/<token>/', views.MyPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 
 path("sigupSec/", views.SignUpSecView.as_view(), name="signupSec"),

@@ -21,7 +21,5 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(models.Challenge)
 class ChallengeAdmin(admin.ModelAdmin):
     list_display = (
-    
         "desc",
-       
     )

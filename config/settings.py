@@ -205,3 +205,7 @@ EMAIL_HOST_PASSWORD = 'aa12341472'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False 
 EMAIL_USE_TLS = 'eniac@naver.com'
+
+
+
+

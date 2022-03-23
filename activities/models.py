@@ -26,7 +26,7 @@ class Activity(TimeStampedModel):
         "users.User", on_delete=models.CASCADE, related_name="activity",  null=True, blank=False
     ) 
 
-    comment = models.ManyToManyField('Act_Comment', verbose_name="댓글", null=True, blank=True)
+    comment = models.ManyToManyField('Act_Comment', verbose_name="댓글")
 
     class Meta:
         ordering = ["-created"]
@@ -39,9 +39,14 @@ class Activity(TimeStampedModel):
           return "/static/images/user.jpg"
 class Act_Comment(TimeStampedModel):
     # activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
-    desc = models.TextField(max_length=300)
+    desc = models.TextField(max_length=300, null=True, blank=True)
+
+    activities = models.ForeignKey(
+        "Activity", on_delete=models.PROTECT, related_name="comm", null=True, blank=True
+    )
+
     user = models.ForeignKey(
-        "users.User", on_delete=models.PROTECT, related_name="comment_users",   null=True, blank=False
+        "users.User", on_delete=models.PROTECT, related_name="comment_users", null=True, blank=True
     )
 
     def __str__(self):

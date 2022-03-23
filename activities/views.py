@@ -9,8 +9,8 @@ from users.models import User
 from users import mixins as user_mixins
 from django.views.generic import ListView, DetailView, View, UpdateView, FormView
 from . import forms
-from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages 
 
 from django.shortcuts import render, redirect, reverse
 from users.models import User
@@ -36,9 +36,13 @@ def all_activity(request):
     challenges = paginator.get_page(page)
 
     all_comment = models.Act_Comment.objects.all()
-  
 
-    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment})
+    comment_form = forms.CreateCommentForm()
+
+
+
+   
+    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment, 'comment_form': comment_form})
 
 
 class CreateChallengeView(user_mixins.LoggedInOnlyView, FormView):
@@ -52,20 +56,20 @@ class CreateChallengeView(user_mixins.LoggedInOnlyView, FormView):
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("core:project"))
 
-def create_ActComment(request, act):
-    if request.method == "POST":
-        form = forms.CreateCommentForm(request.POST)
-        # form등록
-        room = models.Activity.objects.get_or_none(pk=act)
-        if not room:
-            return redirect(reverse("core:project"))
-        if form.is_valid():
-            review = form.save()
-            review.desc = room
-            review.user = request.user
-            review.save()
-            messages.success(request, "Room reviewed")
-            return redirect(reverse("activity:activities", kwargs={"pk": room.pk}))
+# def create_ActComment(request, act):
+#     if request.method == "POST":
+#         form = forms.CreateCommentForm(request.POST)
+#         # form등록
+#         room = models.Activity.objects.get_or_none(pk=act)
+#         if not room:
+#             return redirect(reverse("core:project"))
+#         if form.is_valid():
+#             review = form.save()
+#             review.desc = room
+#             review.user = request.user
+#             review.save()
+#             messages.success(request, "Room reviewed")
+#             return redirect(reverse("activity:activities", kwargs={"pk": room.pk}))
 
 
 class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
@@ -78,6 +82,17 @@ class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
         notice.save()
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("activity:activities"))
+
+class CreateCommentView(user_mixins.LoggedInOnlyView, FormView):
+    form_class = forms.CreateCommentForm
+    template_name = "activities/activity.html"
+    def form_valid(self, form):
+        notice = form.save()
+        notice.user = self.request.user
+        notice.save()
+        # project.success(self.request, "Photo Uploaded")
+        return redirect(reverse("activity:activities"))
+
 
 class EditActivityView(UpdateView): 
 
@@ -96,5 +111,21 @@ class EditActivityView(UpdateView):
     
     def get_success_url(self):
         return reverse("core:activity_list")
+
+
+
+def comment_new(request, act_pk):
+
+    filled_form = forms.CreateCommentForm(request.POST)
+    if filled_form.is_valid() : 
+        # 바로 저장하지 않고
+        finished_form = filled_form.save(commit=False)
+        # models.py > class Comment > post 정보 확인하여 연결된 게시글 확인
+        # 모델객체안에 필요한 정보를 채우고
+        finished_form.post = get_object_or_404(models.Activity, pk=act_pk)
+        finished_form.act_pk = act_pk
+        # 저장한다.
+        finished_form.save()
+    return None # 댓글작성한 상세페이지로 이동
 
 
