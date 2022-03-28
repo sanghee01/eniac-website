@@ -11,7 +11,7 @@ class CreateProjectForm(forms.ModelForm):
             "thumnail_img",
             "tag",
             "git",
- 
+            "developer"
         )
         widgets = {
             "title": forms.TextInput(attrs={'placeholder': '프로젝트 이름'}),          
@@ -19,8 +19,7 @@ class CreateProjectForm(forms.ModelForm):
             "thumnail_img": forms.FileInput(attrs={'placeholder': '사용할 이미지를 넣어주세요'}),
             "tag": forms.TextInput(attrs={'placeholder': '태그를 ,로 구분해주세요'}),
             "git": forms.TextInput(attrs={'placeholder': '깃허브 링크를 적어주세요'}),
-          
-        
+            "developer": forms.TextInput(attrs={'placeholder': '여러명일경우 ,로 구분해주세요'}),
         }
 
         lables = {

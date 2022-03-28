@@ -14,7 +14,6 @@ class LoginForm(forms.Form):
             if user.check_password(password):
                 return self.cleaned_data
             else:
-                print(user.check_password(password))
                 self.add_error("password", forms.ValidationError("Password is wrong"))
         except models.User.DoesNotExist:
             self.add_error("email", forms.ValidationError("User does not exist"))
@@ -26,19 +25,22 @@ class SignUpForm(forms.ModelForm):
     password1 = forms.CharField(widget=forms.PasswordInput, label="패스워드확인")
     class Meta:
         model = models.User
-        fields = ("username", "major", "student_id", "phone_number", "entered_eniac", "email", "password")
+        fields = ("username", "major", "student_id", "phone_number", "entered_eniac", "email", "password","git_url", "blog_url", "fav_pro_genre" )
 
         widgets = {
             "username": forms.TextInput(attrs={'placeholder': '이름을 입력해주세요'}),
+            "password": forms.PasswordInput,
+            "password1": forms.PasswordInput,
             "major": forms.TextInput(attrs={'placeholder': '전공을 입력해주세요'}),
             "entered_eniac": forms.TextInput(attrs={'placeholder': '기수를 입력해주세요'}),
 
             "student_id": forms.TextInput(attrs={'placeholder': '학번을 입력해주세요'}),
             "phone_number": forms.TextInput(attrs={'placeholder': '전화번호를 입력해주세요'}),
+            "git_url": forms.TextInput(attrs={'placeholder': '깃주소를 입력해주세요'}),
+            "blog_url": forms.TextInput(attrs={'placeholder': '블로그주소를 입력해주세요'}),
+            "fav_pro_genre": forms.TextInput(attrs={'placeholder': '선호분야를 입력해주세요'}),
          
-         
-            "password": forms.PasswordInput,
-            "password1": forms.PasswordInput,
+          
         }
         labels = {
             "username": "이름",
@@ -53,6 +55,9 @@ class SignUpForm(forms.ModelForm):
             "email": "이메일", 
             "password": "패스워드", 
             "password1":"패스워드 확인",
+            "git_url": "깃주소", 
+            "blog_url": "블로그주소", 
+            "fav_pro_genre": "좋아하는 장르", 
         }
     
     def clean_email(self):

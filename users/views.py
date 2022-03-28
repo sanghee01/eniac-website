@@ -24,25 +24,21 @@ from django.contrib.auth.views import PasswordChangeView
 
 # Create your views here.
 
-def login(request):
-    # POST method 요청이 들어올떄 
-    if request.method == 'POST':
-        # 입력받은 아이디와 비밀번호가 데이터베이스에 있는지 확인한다. 
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        email = request.POST.get('email')
-        user = auth.authenticate(request, email=email, password=password)
-        # 해당 데이터의 유저가 있다면 
-        if user is not None: 
-            # 로그인하고 index로 리다이렉트한다. 
-            auth.login(request, user)   
-            return redirect(reverse("core:project"))
-        else:
-            # 없다면, 에러를 표시하고, login페이지 로 이동(새로고침)
-            return render(request, 'users/login.html', {'error': 'username or password is incorrect.'})
-    else:
-        # POST 요청이 아닐경우 login 페이지 새로고침
-        return render(request, 'users/login.html', {'error': 'username or password is incorrect.'})
+class LoginView(View):
+    def get(self, request):
+        form = forms.LoginForm()
+        return render(request, "users/login.html", {"form": form})
+
+    def post(self, request):
+        form = forms.LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get("email")
+            password = form.cleaned_data.get("password")
+            user = authenticate(request, username=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect(reverse("core:project"))
+        return render(request, "users/login.html", {"form": form})
         
 def log_out(request):
     logout(request)

@@ -16,6 +16,9 @@ class Project(TimeStampedModel):
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="project",  null=True, blank=False
     ) 
+
+    developer = models.CharField(max_length=200, verbose_name='개발자')
+
     class Meta:
         ordering = ["-created"]
         

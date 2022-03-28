@@ -7,9 +7,9 @@
             <div class="login-content__form">
                 <h1 class="login__title">Login Eniac</h1>
                 <form method="POST" action="{% url 'user:login'%}">
-                    {% csrf_token %}
-                    <input name="username" type="text" placeholder="이메일" />
-                    <input name="password" type="password" placeholder="비밀번호" />
+                    {% csrf_token %} {{form.as_p}}
+                    <!-- <input name="username" type="text" placeholder="이메일" />
+                    <input name="password" type="password" placeholder="비밀번호" /> -->
                     <button class="login__btn" type="submit">로그인</button>
                     <div class="login-content__signin">
                         <a href="{% url 'user:signup'%}">회원가입</a>

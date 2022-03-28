@@ -11,5 +11,6 @@ class ProjectAdmin(admin.ModelAdmin):
                 "tag",
                 "git",
                 "user",
+                
             )
 
