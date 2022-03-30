@@ -1,4 +1,3 @@
-<div class="project-create__field {% if field.errors %}has_error{% endif %}">
-    {{field.label}} {{field}} {% if field.errors %} {% for error in field.errors %}
-    <span>{{error}}</span> {% endfor %} {% endif %}
+<div class="create-wrap {% if field.errors %}has_error{% endif %}">
+    <label for="create__cont-title">{{field.label}}</label> {{field}} {% if field.errors %} {% for error in field.errors %} <span>{{error}}</span> {% endfor %} {% endif %}
 </div>

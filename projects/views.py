@@ -67,6 +67,16 @@ class EditProjectView(UpdateView):
         return reverse("core:project_list")
 
 
+class DeleteProjectView(UpdateView):
+
+    model = models.Project
+    template_name = "projects/project_delete.html"
+    
+    def get_success_url(self):
+        return reverse("core:project_list")
+
+
+
 
 
 def delete_project(request, project_pk):

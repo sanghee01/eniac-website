@@ -35,12 +35,9 @@ def all_activity(request):
     paginator = Paginator(all_challenges, 6)
     challenges = paginator.get_page(page)
 
-    all_comment = models.Act_Comment.objects.all()
-
+    all_comment = models.Activity.objects.all()
+    
     comment_form = forms.CreateCommentForm()
-
-
-
    
     return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment, 'comment_form': comment_form})
 
@@ -114,18 +111,17 @@ class EditActivityView(UpdateView):
 
 
 
-def comment_new(request, act_pk):
-
-    filled_form = forms.CreateCommentForm(request.POST)
-    if filled_form.is_valid() : 
-        # 바로 저장하지 않고
-        finished_form = filled_form.save(commit=False)
-        # models.py > class Comment > post 정보 확인하여 연결된 게시글 확인
-        # 모델객체안에 필요한 정보를 채우고
-        finished_form.post = get_object_or_404(models.Activity, pk=act_pk)
-        finished_form.act_pk = act_pk
-        # 저장한다.
-        finished_form.save()
-    return None # 댓글작성한 상세페이지로 이동
+def comment_new(request, pk):
+    if request.user.is_authenticated:
+        article = get_object_or_404(models.Activity, pk=pk)
+        comment_form = forms.CreateCommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.activities = article
+          
+            comment.user = request.user
+            comment.save()
+        return redirect('activity:activities', article.pk)
+    return redirect('activity:activities')
 
 

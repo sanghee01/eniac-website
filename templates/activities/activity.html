@@ -66,15 +66,15 @@
                                     </p>
 
                                     <div>
-                                        <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a>
-
+                                        <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a> {% for abc in comment.comment.all %}
+                                        <li class="activity__comment-list ">
+                                            <span class="activity__comment-name ">{{abc.user}}</span>
+                                            <span class="activity__comment-name ">{{abc.user}}</span>
+                                            <span class="ctivity__comment-cont ">{{abc.desc}}</span>
+                                        </li>
+                                        {% endfor %}
                                         <form class="activity__comment" action="{% url 'activity:comments_new' activity.pk%}" method="POST">
-                                            {% for abc in comment %}
-                                            <li class="activity__comment-list ">
-                                                <span class="activity__comment-name ">{{abc.user}}</span>
-                                                <span class="ctivity__comment-cont ">{{abc.desc}}</span>
-                                            </li>
-                                            {% endfor %} {% csrf_token %} {% for field in comment_form %}{{field}}{% endfor %}
+                                            {% csrf_token %} {% for field in comment_form %}{{field}}{% endfor %}
                                             <input class="activity__submit" type="submit">
                                         </form>
 

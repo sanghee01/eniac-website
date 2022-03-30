@@ -8,18 +8,8 @@
     {% load static %} {% include 'base.html' %}
     <main>
         <div class="create__title">💻 프로젝트 작성</div>
-        <form class="create">
-            {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %} {{error}} {% endfor %} {% endif %}
-            <div class="create-wrap">
-                {% for field in form %}
-                <label for="create__cont-title">{{field.label}}</label> {{field}} {% if field.errors %} {% for error in field.errors %}
-                <span>{{error}}</span> {% endfor %} {% endif %}
-            </div>
-            {% endfor %}
 
-            <div class="btn-component create-btn">
-                <button>{{cta}}</button>
-            </div>
-        </form>
+        {% include 'mixins/project/project_form.html' %}
+        </div>
     </main>
 </body>
