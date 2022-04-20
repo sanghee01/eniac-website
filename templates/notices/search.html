@@ -11,79 +11,54 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
 </head>
 
-
 <body>
-    {% load static %}
+    {% include "base.html" %} {% load static %}
+    <div class="notice">
+        <div class="notice__title__search">공지사항</div>
+        {% for pro in products %}
 
-    <div class="notice-parent">
-        <img style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 90%;
-          z-index: -999;
-        " src="{% static 'img/triangle.png' %}" />{% include "base.html" %}
-        <div class="notice-content">
-            <div class="notice-content__title">공지사항</div>
-            <form method="get" action="{% url 'notice:search' %}" class="notice-content__search">
-                {% csrf_token %}
-                <div class="notice-content__search-box">
-                    <input name="city" placeholder="공지사항을 검색하세요" class="notice-content__search-bar">
-                    <i class="fas fa-search"></i></input>
-                </div>
-                <div class="notice-content__filter">
-                    <span>필터 <i class="fas fa-chevron-down"></i></span>
-                </div>
-            </form>
-
-
-            {% for pro in products %}
-
-            <div class="notice-content__card">
-                <div class="notice-content__img">
-                    <img src="{{pro.get_photo_url}}" style="width: 200px; height: 190px" alt="" />
-                </div>
-                <div class="notice-content__text">
-                    <div>
-                        <div class="notice-content__card-title">
-                            {{pro.title| truncatechars:20}}
-                        </div>
-                        <div class="notice-content__card-desc">
-                            {{pro.desc| truncatechars:80}}
-                        </div>
-                    </div>
-                    <!-- {% for tag in notice.object_list.tags.all %} -->
-
-                    <!-- {% endfor %} -->
-                    <div class="notice-content__tags">
-                        {% for pro in pro.tag.all %}
-                        <div class="notice-content__tag">
-                            <div>{{pro}}</div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
+        <div class="notice__card">
+            <div class="notice__img">
+                <img src="{{notices.get_photo_url}}" />
             </div>
-
-            <div class="notice-content__border">
-                <div></div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="project-page">
-            {% if notice.has_previous %}
-            <a class="project-page__a" href="?page={{notice.previous_pre_number}}">
-                <i style="margin-right: 10px" class="fas fa-chevron-left fa-lg"></i>
+            <a href="{% url 'notice:detail' pro.pk %}" class="notice__text">
+                <div class="notice__card-title">{{pro.title| truncatechars:20}}</div>
+                <div class="notice__card-desc">{{pro.desc| truncatechars:80}}</div>
+                <div class="notice__tags">
+                    {% for abc in pro.tag.all %}
+                    <div class="notice__tag">
+                        <div>{{abc}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="notice__card-bottom">
+                    <div>{{notices.user}}</div>
+                    <div>{{notices.updated}}</div>
+                </div>
+                {% if notices.user == user %}
+                <a href="{% url 'notice:edit' notices.pk %}">
+                    <div class="edit-button notice-edit-btn">
+                        <button>수정</button>
+                    </div>
+                </a>
+                {% endif %}
             </a>
-            {% endif %}
-            <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if notice.has_next %}
-            <a class="project-page__a" href="?page={{notice.next_page_number}}">
-                <i style="margin-left: 10px" class="fas fa-chevron-right fa-lg"></i>
-            </a>
-            {% endif %}
         </div>
-        {% include 'partials/footer.html' %}
+        {% endfor %}
+    </div>
+    <div class="project-page">
+        {% if notice.has_previous %}
+        <a class="project-page__a" href="?page={{notice.previous_pre_number}}">
+            <i style="margin-right: 10px" class="fas fa-chevron-left fa-lg"></i>
+        </a>
+        {% endif %}
+        <span> {{notice.number}} of {{notice.paginator.num_pages}}</span> {% if notice.has_next %}
+        <a class="project-page__a" href="?page={{notice.next_page_number}}">
+            <i style="margin-left: 10px" class="fas fa-chevron-right fa-lg"></i>
+        </a>
+        {% endif %}
+    </div>
+    {% include 'partials/footer.html' %}
     </div>
     <script type="text/javascript" src="{% static 'js/act-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/act-tog.js' %}"></script>
