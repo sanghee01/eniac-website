@@ -111,17 +111,37 @@ class EditActivityView(UpdateView):
 
 
 
-def comment_new(request, pk):
+def comment_create(request, pk):
     if request.user.is_authenticated:
+        # POST 요청인지 인증이 된 사용자인지를 처리해주고, 관계를 이을 article을 불러온다.
         article = get_object_or_404(models.Activity, pk=pk)
         comment_form = forms.CreateCommentForm(request.POST)
+        #  form에 작성된 데이터가 유효한지 검사하고 유효하다면 저장해준다
         if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.activities = article
-          
-            comment.user = request.user
+            comment = get_object_or_404(commit=False)
+            comment.article = article
+            comment.user= request.user
             comment.save()
-        return redirect('activity:activities', article.pk)
-    return redirect('activity:activities')
+        return 
+
+    return redirect('activity:detail', article.pk)
+
+
+
+class DetailActivity(DetailView):
+    
+    model = models.Activity
+
+    def get_context_data(self, **kwargs):
+        # 기본 구현을 호출해 context를 가져온다.
+        context = super(DetailActivity, self).get_context_data(**kwargs)
+        # 여기에 각자 id를 어떻게 내보내지?
+        # 
+
+        abc = models.Activity.objects.filter(id=self.kwargs['pk'])[0]
+        # 모든 책을 쿼리한 집합을 context 객체에 추가한다.
+        context['comment'] = abc.comm.all()
+        return context 
+
 
 

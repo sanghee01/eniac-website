@@ -1,0 +1,48 @@
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eniac - Activity</title>
+    <link rel="stylesheet" href="{% static 'css/activities/activity.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/activities/act-tab.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/activities/act-cont.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/activities/attend.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/activities/dropdown.css' %}" />
+</head>
+
+{% include 'base.html' %}
+
+<body id="notice-detail-page">
+    <main class="notice-detail">
+        <div class="notice-detail__title">{{activity.title}}</div>
+
+        <div class="notice-detail__info">
+            {% for tag in notice.tag.all %}
+            <div class="notice__tags">
+                <div class="notice__tag">
+                    <div>{{tag}}</div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="info__right">
+                <div class="notice-detail__user">{{activity.user}}</div>
+                <div class="notice-detail__update">{{activity.updated}}</div>
+            </div>
+            <a>수정하기</a>
+        </div>
+
+        <div class="notice-detail__content">
+            <img src="{{activity.get_photo_url}}" alt="" />
+            <div class="notice-detail__text">{{activity.desc}}</div>
+        </div>
+        <a class="activity__comment-tog">댓글 </a> {% for abc in comment %}
+        <li class="activity__comment-list">
+            <span class="activity__comment-name">{{abc.user}}</span>
+
+            <span class="ctivity__comment-cont">{{abc.desc}}</span>
+        </li>
+        {% endfor %}
+    </main>
+</body>
+<!-- {% include 'partials/footer.html' %} -->

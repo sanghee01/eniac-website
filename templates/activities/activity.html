@@ -52,44 +52,47 @@
                                         </li>
                                     </ul>
                                 </div> {% for activity in act.object_list %}
+
+
                                 <section class="activity-cont">
-                                    <h1 class="activity__title">{{activity.title}}</h1>
-                                    <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
-                                    <p class="activity__content">
-                                        {{activity.desc}}
-                                    </p>
-                                    <p class="activity__content">
-                                        {{activity.created}}
-                                    </p>
-                                    <p class="activity__content">
-                                        {{activity.user}}
-                                    </p>
+                                    <a href="{% url 'activity:detail' activity.pk %}">
+                                        <h1 class="activity__title">{{activity.title}}</h1>
+                                        <img src="{{activity.get_photo_url}}" style="" class="activity__img" />
+                                        <p class="activity__content">
+                                            {{activity.desc}}
+                                        </p>
+                                        <p class="activity__content">
+                                            {{activity.created}}
+                                        </p>
+                                        <p class="activity__content">
+                                            {{activity.user}}
+                                        </p>
 
-                                    <div>
-                                        <a class="activity__comment-tog">댓글 <i class="fas fa-chevron-down"></i></a> {% for abc in comment.comment.all %}
-                                        <li class="activity__comment-list ">
-                                            <span class="activity__comment-name ">{{abc.user}}</span>
-                                            <span class="activity__comment-name ">{{abc.user}}</span>
-                                            <span class="ctivity__comment-cont ">{{abc.desc}}</span>
-                                        </li>
-                                        {% endfor %}
-                                        <form class="activity__comment" action="{% url 'activity:comments_new' activity.pk%}" method="POST">
-                                            {% csrf_token %} {% for field in comment_form %}{{field}}{% endfor %}
-                                            <input class="activity__submit" type="submit">
-                                        </form>
+                                        <div>
+
+                                            <form class="activity__comment" method="POST">
+                                                {% csrf_token %} {% for field in comment_form %}{{field}}{% endfor %}
+                                                <input class="activity__submit" type="submit">
+                                            </form>
 
 
 
-                                    </div>
-                                    <!-- 글 작성자만 수정버튼 보이도록 -->
-                                    {% if activity.user == user %}
-                                    <a href="{% url 'activity:edit' activity.pk %} ">
-                                        <div class="edit-button notice-edit-btn ">
-                                            <button>수정</button>
                                         </div>
+                                        <!-- 글 작성자만 수정버튼 보이도록 -->
+                                        {% if activity.user == user %}
+                                        <a href="{% url 'activity:edit' activity.pk %} ">
+                                            <div class="edit-button notice-edit-btn ">
+                                                <button>수정</button>
+                                            </div>
+                                        </a>
+                                        {% endif %}
+
                                     </a>
-                                    {% endif %}
                                 </section>
+
+
+
+
                                 {% endfor %}
                                 <div class="btn-component goto-create__btn ">
                                     <a href="{% url 'activity:createAct' %} ">활동 작성</a>

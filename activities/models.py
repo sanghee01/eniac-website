@@ -39,7 +39,7 @@ class Activity(TimeStampedModel):
 class Act_Comment(TimeStampedModel):
     # activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
     desc = models.TextField(max_length=300, null=True, blank=True)
-    activities = models.ForeignKey(
+    activity = models.ForeignKey(
         "Activity", on_delete=models.PROTECT, related_name="comm", null=True, blank=True
     )
     user = models.ForeignKey(

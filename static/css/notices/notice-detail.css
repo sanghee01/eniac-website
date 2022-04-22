@@ -1,70 +1,85 @@
 #notice-detail-page {
-  margin-top: 200px;
-  width: 100%;
+    margin-top: 200px;
+    width: 100%;
 }
+
 .notice-detail {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
 }
+
 .notice-detail__title {
-  font-size: 35px;
+    font-size: 35px;
 }
 
 .notice-detail__info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
-  margin-top: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 .info__right {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
+
 .notice-detail__user {
-  margin-right: 10px;
+    margin-right: 10px;
 }
+
 .notice-detail__update {
-  font-size: 13px;
+    font-size: 13px;
 }
+
 .notice-detail__content img {
-  width: 70%;
-  height: 70%;
-  margin-bottom: 20px;
+    width: 70%;
+    height: 70%;
+    margin-bottom: 20px;
 }
+
 .notice-detail__text {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
+
 .notice__tags {
-  display: flex;
+    display: flex;
 }
+
+.notice-detail__content {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
 .notice__tag {
-  display: flex;
-  justify-content: right;
+    display: flex;
+    justify-content: right;
 }
 
 .notice__tag div {
-  width: 40px;
-  height: 25px;
-  background: #c7b6e3;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 7px;
-  font-size: 12px;
+    width: 40px;
+    height: 25px;
+    background: #c7b6e3;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7px;
+    font-size: 12px;
 }
+
 @media screen and (max-width: 700px) {
-  .notice-detail__title {
-    font-size: 30px;
-  }
-  .notice-detail__content img {
-    width: 100%;
-    height: 100%;
-  }
+    .notice-detail__title {
+        font-size: 30px;
+    }
+    .notice-detail__content img {
+        width: 100%;
+        height: 100%;
+    }
 }
