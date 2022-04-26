@@ -116,13 +116,14 @@ def comment_create(request, pk):
         article = get_object_or_404(models.Activity, pk=pk)
         comment_form = forms.CreateCommentForm(request.POST)
         if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.activities = article
-
+            comment = comment_form.save(commit=False) 
+            # 바로 저장하지는 않겠다
+            comment.activity = article
+           
             comment.user = request.user
             comment.save()
         return redirect('activity:detail', article.pk)
-    return redirect('activity:activities')
+    return redirect('user:login')
 
 
 
