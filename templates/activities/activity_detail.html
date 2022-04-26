@@ -36,11 +36,19 @@
             <img src="{{activity.get_photo_url}}" alt="" />
             <div class="notice-detail__text">{{activity.desc}}</div>
         </div>
-        <a class="activity__comment-tog">댓글 </a> {% for abc in comment %}
+        <a class="activity__comment-tog">댓글 </a>
+        <div class="activity__comment-input">
+            {% if request.user.is_authenticated %}
+            <form action="{% url 'activity:comments_create' activity.pk %}" method="POST">
+                {% csrf_token %} {% for field in form %}{{field}}{% endfor %}
+            </form>
+            {% endif %}
+        </div>
+        {% for abc in comment %}
         <li class="activity__comment-list">
             <span class="activity__comment-name">{{abc.user}}</span>
 
-            <span class="ctivity__comment-cont">{{abc.desc}}</span>
+            <span class="activity__comment-cont">{{abc.desc}}</span>
         </li>
         {% endfor %}
     </main>

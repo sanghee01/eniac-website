@@ -52,7 +52,6 @@ class CreateActivityForm(forms.ModelForm):
             "semester": "학기",
             "thumnail_img": "이미지첨부",
             "tag": "태그",
-
         }
 
     def save(self, *args, **kwargs):
