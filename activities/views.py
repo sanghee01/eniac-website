@@ -5,13 +5,11 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 import activities
 from users.models import User
-
 from users import mixins as user_mixins
 from django.views.generic import ListView, DetailView, View, UpdateView, FormView
 from . import forms
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages 
-
 from django.shortcuts import render, redirect, reverse
 from users.models import User
 
@@ -108,6 +106,7 @@ class EditActivityView(UpdateView):
     
     def get_success_url(self):
         return reverse("core:activity_list")
+
 
 
 

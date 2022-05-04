@@ -17,7 +17,7 @@
     font-size: 40px;
     margin-right: 50px;
 }
-
+ 
 .project-field {}
 
 .project-create__field {
@@ -26,7 +26,7 @@
 }
 
 .project-create__field input {
-    background: #ffffff;
+    background: #ffffff;    
     box-sizing: border-box;
     border-radius: 4px;
     height: 51px;

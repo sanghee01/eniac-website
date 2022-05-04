@@ -25,7 +25,7 @@ class SignUpForm(forms.ModelForm):
     password1 = forms.CharField(widget=forms.PasswordInput, label="패스워드확인")
     class Meta:
         model = models.User
-        fields = ("username", "major", "student_id", "phone_number", "entered_eniac", "email", "password","git_url", "blog_url", "fav_pro_genre" )
+        fields = ( "email", "password","password1","username",  "student_id", "phone_number", "major", "entered_eniac","git_url", "blog_url", "fav_pro_genre" )
 
         widgets = {
             "username": forms.TextInput(attrs={'placeholder': '이름을 입력해주세요'}),
