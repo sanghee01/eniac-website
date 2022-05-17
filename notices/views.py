@@ -2,7 +2,7 @@ from django.views import View
 from . import models
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from django.views.generic import ListView, DetailView, View, UpdateView, FormView
+from django.views.generic import ListView, DetailView, View, UpdateView, FormView, DeleteView
 import activities
 from users.models import User   
 from django.db.models import Q
@@ -19,13 +19,7 @@ def all_notice(request):
     all_notice = models.Notice.objects.all()
     paginator = Paginator(all_notice, 4)
     notices = paginator.get_page(page)
-
-   
     all_user = User.objects.filter(is_superuser=True)
-    
-   
-  
-   
     return render(request,  "notices/notice.html", context={"notice": notices, "superhost": all_user})
 
 
@@ -39,7 +33,6 @@ class CreateNoticetView(user_mixins.LoggedInOnlyView, FormView):
         notice.save()
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("core:notice_list"))
-
 
 def search(request):
     products = None
@@ -57,6 +50,8 @@ class NoticeDetail(DetailView):
 
     model = models.Notice
 
+
+
 class EditNoticeView(UpdateView):
 
     model = models.Notice
@@ -66,10 +61,17 @@ class EditNoticeView(UpdateView):
         "thumnail_img",
         "desc",
         "tag",
-   
     )
     def get_success_url(self):
         return reverse("core:notice_list")
 
+
+
+class DeletNoticeView(DeleteView): # DeleteView를 임포트하는것 잊지마세요.
+    model = models.Notice
+    template_name = "notices/notice-delete.html"
+    def get_success_url(self):
+        return reverse("core:notice_list")
+    
 
 

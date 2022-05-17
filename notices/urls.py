@@ -8,4 +8,6 @@ urlpatterns = [
     path("creates", views.CreateNoticetView.as_view(), name="create"),
     path("<int:pk>", views.NoticeDetail.as_view() , name="detail"),
     path("<int:pk>/edit", views.EditNoticeView.as_view(), name="edit"),
+    path('<int:pk>/delete', views.DeletNoticeView.as_view(), name='delete'),
+    
 ]

@@ -11,7 +11,7 @@ class Project(TimeStampedModel):
     image = models.ImageField(blank=True)
     thumnail_img = models.ImageField(upload_to="", verbose_name='썸네일 이미지')
     tag = models.CharField(max_length=40, verbose_name='태그')
-    git = models.CharField(max_length=60, verbose_name='깃허브 주소')
+    git =  models.CharField(max_length=60, verbose_name='깃허브 주소')
     views = models.PositiveIntegerField(default=0, verbose_name='조회수')
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="project",  null=True, blank=False
@@ -23,7 +23,7 @@ class Project(TimeStampedModel):
         ordering = ["-created"]
         
     @property
-    def get_photo_url(self):
+    def get_photo_url(self): 
       if self.thumnail_img:
           return self.thumnail_img.url
       else:

@@ -12,13 +12,14 @@ app_name = "activity"
 urlpatterns = [
  path("activity/<int:act_pk>", views.all_activity, name="activities"),
  path("creates", views.CreateChallengeView.as_view(), name="create"),
-
  path("createAct", views.CreateActivityView.as_view(), name="createAct"),
  path("<int:pk>/edit", views.EditActivityView.as_view(), name="edit"),
-
  path("<int:pk>", views.DetailActivity.as_view() , name="detail"),
-
  path('<int:pk>/comments/', views.comment_create, name='comments_create'),
+ path('<int:pk>/delete', views.DeleteActivityView.as_view(), name='delete'),
+ 
+
+
 
  ]
 

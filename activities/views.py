@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 import activities
 from users.models import User
 from users import mixins as user_mixins
-from django.views.generic import ListView, DetailView, View, UpdateView, FormView
+from django.views.generic import ListView, DetailView, View, UpdateView, FormView, DeleteView
 from . import forms
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages 
@@ -143,4 +143,10 @@ class DetailActivity(DetailView):
         return context 
 
 
+class DeleteActivityView(DeleteView): # DeleteView를 임포트하는것 잊지마세요.
+    model = models.Activity
+    template_name = "activities/activity-delete.html"
+    def get_success_url(self):
+        return reverse("core:activity_list")
+    
 

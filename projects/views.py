@@ -3,7 +3,7 @@ from . import models
 import projects
 from django.core.paginator import Paginator
 from users import mixins as user_mixins
-from django.views.generic import ListView, DetailView, View, UpdateView, FormView
+from django.views.generic import ListView, DetailView, View, UpdateView, FormView, DeleteView
 from . import models, forms
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
@@ -61,7 +61,6 @@ class EditProjectView(UpdateView):
         "thumnail_img",
         "tag",
         "git",
-   
     )
     def get_success_url(self):
         return reverse("core:project_list")
@@ -71,13 +70,8 @@ class DeleteProjectView(UpdateView):
 
     model = models.Project
     template_name = "projects/project_delete.html"
-    
     def get_success_url(self):
         return reverse("core:project_list")
-
-
-
-
 
 def delete_project(request, project_pk):
     user = request.user
@@ -95,3 +89,14 @@ def delete_project(request, project_pk):
         return redirect(reverse("core:project", kwargs={"pk": project_pk}))
     except models.Project.DoesNotExist:
         return redirect(reverse("core:project_list"))
+
+
+class DeletProjectView(DeleteView): # DeleteView를 임포트하는것 잊지마세요.
+    model = models.Project
+    template_name = "projects/project-delete.html"
+
+    def get_success_url(self):
+        return reverse("core:project_list")
+
+
+

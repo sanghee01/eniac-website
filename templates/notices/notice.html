@@ -44,9 +44,14 @@
                     </div>
                 </div>
                 {% if notices.user == user %}
-                <a href="{% url 'notice:edit' notices.pk %}">
+                <a href="{% url 'notice:edit' notices.pk %}" class="notice__card-button">
                     <div class="edit-button notice-edit-btn">
                         <button>수정</button>
+                    </div>
+                </a>
+                <a href="{% url 'notice:delete' notices.pk %}">
+                    <div class="edit-button notice-edit-btn">
+                        <button>삭제</button>
                     </div>
                 </a>
                 {% endif %}
