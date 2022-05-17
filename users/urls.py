@@ -27,10 +27,8 @@ path("update-profile/", views.UpdateProfileView.as_view(), name="update"),
 path("update-passwod/", views.UpdatePasswordView.as_view(success_url=reverse_lazy('core:project')), name="password"),
 
 # 비밀번호 초기화
- path('password_reset/', auth_views.PasswordResetView.as_view(), name="password_reset"),
- path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
- path('password_reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
- path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
+ path('password_reset/', views.MyPasswordResetView.as_view(), name='password_reset'),
+ path('reset/<uidb64>/<token>/', views.MyPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 ]
 
 

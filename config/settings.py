@@ -207,4 +207,4 @@ EMAIL_USE_SSL = False
 EMAIL_USE_TLS = 'eniac@naver.com'
 
 
-
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

@@ -135,19 +135,15 @@ class UpdatePasswordView(PasswordChangeView):
 
     template_name = "users/update-password.html"
 
-
+    
 class MyPasswordResetView(PasswordResetView):
     success_url=reverse_lazy("core:project")
     template_name = 'users/password_reset_form.html'
-    form_class = forms.PasswordResetForm
+    email_template_name = 'users/password_reset.html'
+    mail_title="비밀번호 재설정"
 
     def form_valid(self, form):
-        if User.objects.filter(email=self.request.POST.get("email")).exists():
-            return super().form_valid(form)
-        else:
-            return render(self.request, 'password_reset_done_fail.html')
-
-
+        return super().form_valid(form)
 
 class MyPasswordResetConfirmView(PasswordResetConfirmView):
     success_url=reverse_lazy("core:project")
@@ -155,4 +151,25 @@ class MyPasswordResetConfirmView(PasswordResetConfirmView):
 
     def form_valid(self, form):
         return super().form_valid(form)
+
+
+# class MyPasswordResetView(PasswordResetView):
+#     success_url=reverse_lazy("core:project")
+#     template_name = 'users/password_reset_form.html'
+#     form_class = forms.PasswordResetForm
+
+#     def form_valid(self, form):
+#         if User.objects.filter(email=self.request.POST.get("email")).exists():
+#             return super().form_valid(form)
+#         else:
+#             return render(self.request, 'password_reset_faill.html')
+
+
+
+# class MyPasswordResetConfirmView(PasswordResetConfirmView):
+#     success_url=reverse_lazy("core:project")
+#     template_name = 'users/password_reset_confirm.html'
+
+#     def form_valid(self, form):
+#         return super().form_valid(form)
 
