@@ -66,37 +66,14 @@ class EditProjectView(UpdateView):
         return reverse("core:project_list")
 
 
-class DeleteProjectView(UpdateView):
+class DeleteProjectView(DeleteView):
 
     model = models.Project
     template_name = "projects/project_delete.html"
     def get_success_url(self):
         return reverse("core:project_list")
 
-def delete_project(request, project_pk):
-    user = request.user
-    try:
-        project = models.Project.objects.get(pk=project_pk)
-        # 현재 pk획득
-        if project.user.pk != user.pk:
-            # 이 pk user 랑 pk 가 다를경우 
-            messages.error(request, "Cant delete that")
-            # 에러메세지
-        else:
-            models.Project.objects.filter(pk=project_pk).delete()
-            # pk 같은거 끼리 필터후 삭제
-            messages.success(request, "Photo Deleted")
-        return redirect(reverse("core:project", kwargs={"pk": project_pk}))
-    except models.Project.DoesNotExist:
-        return redirect(reverse("core:project_list"))
 
-
-class DeletProjectView(DeleteView): # DeleteView를 임포트하는것 잊지마세요.
-    model = models.Project
-    template_name = "projects/project-delete.html"
-
-    def get_success_url(self):
-        return reverse("core:project_list")
 
 
 
