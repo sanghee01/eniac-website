@@ -21,6 +21,7 @@ path("email_verify/", views.email_verify, name="verify"),
 path("verify/<str:key>", views.complete_verification, name="complete-verification"),
 
 
+path("password_verify/", views.password_verify, name="password-verify"),
 
 path("sigupSec/", views.SignUpSecView.as_view(), name="signupSec"),
 path("update-profile/", views.UpdateProfileView.as_view(), name="update"),

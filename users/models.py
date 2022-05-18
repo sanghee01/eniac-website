@@ -41,7 +41,6 @@ class User(AbstractUser):
     email_confirmed = models.BooleanField(default=False)
     email_secret = models.CharField(max_length=120, default="", blank=True)
 
-    
 
     def get_absolute_url(self):
         return reverse("user:profile", kwargs={'pk': self.pk})
@@ -52,6 +51,24 @@ class User(AbstractUser):
             self.email_secret = secret
             html_message = render_to_string(
                 "emails/verify_email.html", {"secret": secret}
+            )
+            send_mail(
+                "에니악 인증호가인",
+                strip_tags(html_message),
+                settings.EMAIL_FROM,
+                [self.email],
+                html_message=html_message,
+            )
+
+            self.save()
+        return
+
+    def verify_password(self):
+        if self.email_confirmed is False:
+            secret = uuid.uuid4().hex[:20]
+            self.email_secret = secret
+            html_message = render_to_string(
+                "users/password_reset.html", {"secret": secret}
             )
             send_mail(
                 "에니악 인증호가인",

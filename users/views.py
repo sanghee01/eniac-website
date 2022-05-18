@@ -52,7 +52,7 @@ class SignUpView(FormView):
     initial = {}
 
     # user를 생성하고 바로 로그인시
-    # 폼이 유효하다면 form.save를 실행시키자는거다
+    # 폼이 유효하다면 form.save를 실행시키자는거
     def form_valid(self, form):
         form.save()
         email = form.cleaned_data.get("email")
@@ -115,7 +115,7 @@ class UpdateProfileView(UpdateView):
         form = super().get_form(form_class=form_class)
         return form
 
-
+#
 def complete_verification(request, key):
     try:
         user = models.User.objects.get(email_secret=key)
@@ -137,7 +137,7 @@ class UpdatePasswordView(PasswordChangeView):
 
     
 class MyPasswordResetView(PasswordResetView):
-    success_url=reverse_lazy("core:project")
+    success_url=reverse_lazy("user:password-verify")
     template_name = 'users/password_reset_form.html'
     email_template_name = 'users/password_reset.html'
     mail_title="비밀번호 재설정"
@@ -153,12 +153,16 @@ class MyPasswordResetConfirmView(PasswordResetConfirmView):
         return super().form_valid(form)
 
 
+def password_verify(request):
+
+    return render(request, "users/password_reset_complete.html")
+
 # class MyPasswordResetView(PasswordResetView):
 #     success_url=reverse_lazy("core:project")
 #     template_name = 'users/password_reset_form.html'
 #     form_class = forms.PasswordResetForm
 
-#     def form_valid(self, form):
+#     def form_valid(self, form): 
 #         if User.objects.filter(email=self.request.POST.get("email")).exists():
 #             return super().form_valid(form)
 #         else:
@@ -172,4 +176,6 @@ class MyPasswordResetConfirmView(PasswordResetConfirmView):
 
 #     def form_valid(self, form):
 #         return super().form_valid(form)
+
+
 
