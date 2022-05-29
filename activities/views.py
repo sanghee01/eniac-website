@@ -28,43 +28,25 @@ def all_activity(request):
     next_all_activities = models.Activity.objects.filter(semester="2학기")
     paginator = Paginator(next_all_activities, 6)
     next_activities = paginator.get_page(page)
-
     all_challenges = models.Challenge.objects.all().order_by("-created")
     paginator = Paginator(all_challenges, 6)
     challenges = paginator.get_page(page)
-
     all_comment = models.Activity.objects.all()
-    
     comment_form = forms.CreateCommentForm()
-   
     return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment, 'comment_form': comment_form})
 
 
 class CreateChallengeView(user_mixins.LoggedInOnlyView, FormView):
 
-    form_class = forms
+    form_class = forms.CreateChallengeForm
     template_name = "activities/challenge_create.html"
     def form_valid(self, form):
-        activity = form.save() 
-        activity.user = self.request.user
-        activity.save()
+        notice = form.save()
+        notice.user = self.request.user
+        notice.save()
         # project.success(self.request, "Photo Uploaded")
-        return redirect(reverse("core:project"))
+        return redirect(reverse("activity:activities"))
 
-# def create_ActComment(request, act):
-#     if request.method == "POST":
-#         form = forms.CreateCommentForm(request.POST)
-#         # form등록
-#         room = models.Activity.objects.get_or_none(pk=act)
-#         if not room:
-#             return redirect(reverse("core:project"))
-#         if form.is_valid():
-#             review = form.save()
-#             review.desc = room
-#             review.user = request.user
-#             review.save()
-#             messages.success(request, "Room reviewed")
-#             return redirect(reverse("activity:activities", kwargs={"pk": room.pk}))
 
 
 class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
@@ -79,6 +61,7 @@ class CreateActivityView(user_mixins.LoggedInOnlyView, FormView):
         return redirect(reverse("activity:activities"))
 
 class CreateCommentView(user_mixins.LoggedInOnlyView, FormView):
+    
     form_class = forms.CreateCommentForm
     template_name = "activities/activity.html"
     def form_valid(self, form):
@@ -90,7 +73,6 @@ class CreateCommentView(user_mixins.LoggedInOnlyView, FormView):
 
 
 class EditActivityView(UpdateView): 
-
     model = models.Activity
     template_name = "activities/activity-edit.html"
     fields = (
@@ -102,12 +84,10 @@ class EditActivityView(UpdateView):
     labels = {
         "title": "제목",
     }
-  
-    
     def get_success_url(self):
         return reverse("core:activity_list")
 
-
+    
 
 
 def comment_create(request, pk):
@@ -118,7 +98,6 @@ def comment_create(request, pk):
             comment = comment_form.save(commit=False) 
             # 바로 저장하지는 않겠다
             comment.activity = article
-           
             comment.user = request.user
             comment.save()
         return redirect('activity:detail', article.pk)
@@ -127,9 +106,7 @@ def comment_create(request, pk):
 
 
 class DetailActivity(DetailView):
-    
     model = models.Activity
-
     def get_context_data(self, **kwargs):
         # 기본 구현을 호출해 context를 가져온다.
         context = super(DetailActivity, self).get_context_data(**kwargs)
@@ -150,3 +127,4 @@ class DeleteActivityView(DeleteView): # DeleteView를 임포트하는것 잊지�
         return reverse("core:activity_list")
     
 
+                                                                  

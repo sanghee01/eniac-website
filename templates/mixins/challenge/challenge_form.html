@@ -1,10 +1,20 @@
-<form method="POST" class="w-full" enctype="multipart/form-data">
-    {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %}
-    <span class="text-red-700 font-medium text-sm">{{error}}</span> {% endfor %} {% endif %}
-    <div class="project-field">
-        {% for field in form %} {% include 'mixins/project/project_input.html' with field=field %} {% endfor %}
+<form class="create" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {% if form.non_field_errors %} {% for error in form.non_field_errors %} {{error}} {% endfor %} {% endif %} {% for field in form %}
+    <div class="create-wrap">
+        {{field.label}} {{field}} {% if field.errors %} {% for error in field.errors %}
+        <span>{{error}}</span> {% endfor %} {% endif %}
     </div>
-    <div class="project-create__section">
+    {% endfor %}
+    <!-- <div class="create-wrap">
+                <label for="create__img">이미지 첨부:</label>
+                <input id="create__img" type="file" accept=".png" />
+            </div>
+            <div class="create-wrap">
+                <label for="create__file">자료 첨부:</label>
+                <input id="create__file" type="file" />
+            </div>
+            <textarea id="create__text" type="text" required placeholder="내용을 입력하시오."></textarea> -->
+    <div class="btn-component create-btn">
         <button class="project-create__button">{{cta}}</button>
         <a>
             <button class="project-create__button">{{cba}}</button>

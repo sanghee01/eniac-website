@@ -43,7 +43,7 @@
                         {{notices.updated}}
                     </div>
                 </div>
-                {% if notices.user == user %}
+                {% if notices.user == user and notices.user.is_staff == True %}
                 <a href="{% url 'notice:edit' notices.pk %}" class="notice__card-button">
                     <div class="edit-button notice-edit-btn">
                         <button>수정</button>
@@ -57,10 +57,11 @@
                 {% endif %}
             </a>
         </div>
-        {% endfor %}
+        {% endfor %} {% if notices.user.is_staff == True %}
         <div class="btn-component goto-create__btn">
             <a href="{% url 'notice:create' %}">공지 작성</a>
         </div>
+        {% endif %}
         <form method="get" action="{% url 'notice:search' %}" class="notice__search">
             {% csrf_token %}
             <div class="notice__search-box">

@@ -4,7 +4,7 @@ from . import models
 
 class CreateChallengeForm(forms.ModelForm):
     class Meta:
-        model = models.Activity
+        model = models.Challenge
         fields = (
             "desc",
         )
@@ -15,6 +15,14 @@ class CreateChallengeForm(forms.ModelForm):
     def save(self, *args, **kwargs):
         project = super().save(commit=False)
         return project
+
+
+class ActivityForm(forms.ModelForm):
+    class Meta:
+        model = models.Activity
+        fields = ['semester']
+
+
 
 class CreateCommentForm(forms.ModelForm):
     class Meta:

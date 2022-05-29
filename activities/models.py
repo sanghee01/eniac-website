@@ -12,10 +12,11 @@ class Activity(TimeStampedModel):
     SEMI_A = "1학기"
     SEMI_B = "2학기"
 
+
     
     SEMI_CHOICES = (
-      (SEMI_A, "1학기"),
-      (SEMI_B, "2학기"),
+      (SEMI_A, "22년도 1학기"),
+      (SEMI_B, "22년도 2학기"),
     )
     
     title = models.CharField(max_length=100, default = '', null=True, blank=False, verbose_name='제목')
@@ -54,7 +55,7 @@ class Act_Comment(TimeStampedModel):
 class Challenge(TimeStampedModel): 
     desc = models.TextField(max_length=300)
     users = models.ForeignKey(
-        "users.User", on_delete=models.CASCADE, related_name="challenge_user",  null=False, blank=False
+        "users.User", on_delete=models.CASCADE, related_name="challenge_user",  null=True, blank=True
     ) 
 
 class Challenge_Comment(TimeStampedModel):

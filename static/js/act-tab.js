@@ -10,3 +10,18 @@ for (let i = 0; i < tabList.length; i++) {
         this.parentNode.classList.add("is_on");
     });
 }
+
+function GetSelectedValue() {
+    var e = document.querySelectorAll(".activity__cont-wrap");
+    var result = e.options[e.selectedIndex].value;
+    console.log(result);
+}
+
+function GetSelectedText() {
+    var e = document.getElementById("country");
+    var result = e.options[e.selectedIndex].text;
+
+    document.getElementById("result").innerHTML = result;
+}
+
+//
