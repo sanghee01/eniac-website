@@ -532,8 +532,13 @@
             </li>
         </ul>
 
-        <a href="{% url 'recommends:create' %}">create</a>
+
+
     </main>
+    <div class="btn-component goto-create__btn ">
+        <a href="{% url 'recommends:create' %} "><button>추천강의작성</button></a>
+    </div>
+    {% include 'partials/footer.html' %}
     <script type="text/javascript" src="{% static 'js/recom-tab.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/mid-tab.js' %}"></script>
 </body>

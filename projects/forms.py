@@ -9,6 +9,7 @@ class CreateProjectForm(forms.ModelForm):
             "title",
             "desc",
             "thumnail_img",
+           
             "tag",
             "git",
             "developer"

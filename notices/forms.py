@@ -7,15 +7,21 @@ class CreateNoticeForm(forms.ModelForm):
         model = models.Notice
         fields = (
             "title",
-            "thumnail_img",           
+            "desc",
+            "thumnail_img",  
+            "img_a",   
+            "img_b", 
+            "img_c", 
             "tag",
-        
  
         )
         widgets = {
-            "title": forms.TextInput(attrs={'placeholder': '프로젝트 이름'}),          
-            "desc": forms.TextInput(attrs={'placeholder': '간단한 설명을 적어주세요'}),
+            "title": forms.TextInput(attrs={'placeholder': '공지제목'}),          
+          
             "thumnail_img": forms.FileInput(attrs={'placeholder': '사용할 이미지를 넣어주세요'}),
+            "img_a": forms.FileInput(attrs={'placeholder': '사용할 이미지를 넣어주세요'}),
+            "img_b": forms.FileInput(attrs={'placeholder': '사용할 이미지를 넣어주세요'}),
+            "img_c": forms.FileInput(attrs={'placeholder': '사용할 이미지를 넣어주세요'}),
             # "tag": forms.TextInput(attrs={'placeholder': '태그를 ,로 구분해주세요'}),
             
           
@@ -24,7 +30,7 @@ class CreateNoticeForm(forms.ModelForm):
 
         labels = {
             "title": "제목",
-            "thumnail_img": "이미지첨부",
+            "thumnail_img": "썸네일",
             "tag": "태그",
             "desc": "내용",
 

@@ -33,7 +33,10 @@
         </div>
 
         <div class="notice-detail__content">
-            <img src="{{activity.get_photo_url}}" alt="" />
+            <img src="{{activity.get_photo_url}}" alt="" /> {% if activity.img_a %}
+            <img src="{{activity.get_photo_url_a}}" alt="" /> {% endif %} {% if activity.get_photo_url_b %}
+            <img src="{{activity.get_photo_url_b}}" alt="" /> {% endif %} {% if activity.get_photo_url_c %}
+            <img src="{{activity.get_photo_url_c}}" alt="" /> {% endif %}
             <div class="notice-detail__text">{{activity.desc}}</div>
         </div>
         <a class="activity__comment-tog">댓글 </a>

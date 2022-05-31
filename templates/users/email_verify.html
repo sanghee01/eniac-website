@@ -1,13 +1,18 @@
-<body id="login-page">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/users/login-content.css' %}" /> {% include 'base.html' %}
-    <div class="login">
-        <div class="login-content">
-            <img class="login-content__img" src="{% static 'img/login-img.jpg' %}" alt="" />
-            <div class="login-content__form">
-                <div>이메일을 확인해주세요</div>
-            </div>
+<head>
+    <link rel="stylesheet" href="../../static/css/components/status-bar.css" />
+    <link rel="stylesheet" href="../../static/css/components/create-page.css" />
+    <link rel="stylesheet" href="../../static/css/components/button.css" />
+    <link rel="stylesheet" href="../../static/css/users/password-find.css" />
+</head>
+
+<body id="password-find-page">
+    <div class="password-find">
+        <div class="password-find-content__form">
+            <h1 class="password-find__title">Find password</h1>
+            <p>
+                입력하신 메일로<br /> 비밀번호 변경 페이지 링크를 보냈습니다.
+            </p>
+            <button class="password-find__btn" type="submit">확인</button>
         </div>
     </div>
-    {% include 'partials/footer.html' %}
 </body>

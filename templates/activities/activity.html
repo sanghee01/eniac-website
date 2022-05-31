@@ -86,7 +86,7 @@
                                 </section>
                                 {% endfor %}
                                 <div class="btn-component goto-create__btn ">
-                                    <a href="{% url 'activity:createAct' %} ">활동 작성</a>
+                                    <a href="{% url 'activity:createAct' %} "><button>활동 작성</button></a>
                                 </div>
                                 <!-- 페이지 -->
                                 <div class="activity__pageparent ">
@@ -188,32 +188,17 @@
                                 <p class="challenge__date ">
                                     {{challenge.created}}
                                 </p>
-                                <div class="activity__comment-tog ">댓글<i class="fas fa-chevron-down "></i></div>
-                                <ul class="activity__comment ">
-                                    <div class="activity__comment-input ">
-                                        <input type="text " placeholder="댓글을 입력하시오... " />
-                                        <button>입력</button>
-                                    </div>
-                                    <li class="activity__comment-list ">
-                                        <span class="activity__comment-name ">이상희</span>
-                                        <span class="activity__comment-cont ">알겠습니다. 다음 회의 때는 반영할게요.</span>
-                                    </li>
-                                    <li class="activity__comment-list ">
-                                        <span class="activity__comment-name ">윤동규</span>
-                                        <span class="activity__comment-cont ">네 알겠습니다~</span>
-                                    </li>
-                                    <li claㅁss="activity__comment-list ">
-                                        <span class="activity__comment-name ">홍길동</span>
-                                        <span class="activity__comment-cont ">이런거 이런거도 수정하면 좋을 것 같습니다</span>
-                                    </li>
-                                </ul>
+
+
                             </div>
                             {% endfor %}
                             <div class="btn-component goto-create__btn ">
-                                <a href="{% url 'activity:create' %} ">챌린지 작성</a>
+                                <a href="{% url 'activity:create' %} "><button>챌린지 작성</button></a>
                             </div>
                         </div>
                     </main>
+
+
                     {% include 'partials/footer.html' %}
                 </div>
             </li>
@@ -221,6 +206,7 @@
         </div>
         <script type="text/javascript " src="{% static 'js/act-tab.js' %} "></script>
         <script type="text/javascript " src="{% static 'js/act-tog.js' %} "></script>
+
         <script type="text/javascript " src="{% static 'js/dropdown.js' %} "></script>
         <script>
             function GetSelectedValue() {

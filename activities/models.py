@@ -22,6 +22,9 @@ class Activity(TimeStampedModel):
     title = models.CharField(max_length=100, default = '', null=True, blank=False, verbose_name='제목')
     semester = models.CharField(choices=SEMI_CHOICES, default = '', max_length=10, blank=False, null=True, verbose_name='학기')
     thumnail_img = models.ImageField(default = '', verbose_name='썸네일이미지')
+    img_a = models.ImageField(verbose_name='이미지1', null=True, blank=True)
+    img_b = models.ImageField(verbose_name='이미지2', null=True, blank=True)
+    img_c = models.ImageField(verbose_name='이미지3', null=True, blank=True)
     desc = models.TextField(max_length=300, verbose_name='내용')
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="activity",  null=True, blank=False
@@ -37,6 +40,27 @@ class Activity(TimeStampedModel):
           return self.thumnail_img.url
       else:
           return "/static/images/user.jpg"
+
+    @property
+    def get_photo_url_a(self):
+      if self.img_a:
+          return self.img_a.url
+      else:
+          return None
+
+    @property
+    def get_photo_url_b(self):
+      if self.img_b:
+          return self.img_b.url
+      else:
+          return None
+
+    @property
+    def get_photo_url_c(self):
+      if self.img_c:
+          return self.img_c.url
+      else:
+          return None 
 class Act_Comment(TimeStampedModel):
     # activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='act_comments', null=True)
     desc = models.TextField(max_length=300, null=True, blank=True)

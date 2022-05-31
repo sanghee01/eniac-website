@@ -21,17 +21,17 @@
 
         <div class="status-bar__menu">
             <div class="status-bar__list">
-                    <a href="{% url 'core:notice_list' %}">공지사항</a>
+                <a href="{% url 'core:notice_list' %}">공지사항</a>
             </div>
             <div class="status-bar__list">
-                    <a href="{% url 'core:project_list' %}">프로젝트</a>
+                <a href="{% url 'core:project_list' %}">프로젝트</a>
             </div>
             <div class="status-bar__list">
-                    <a href="{% url 'core:activity_list' %}">활동</a>
+                <a href="{% url 'core:activity_list' %}">활동</a>
             </div>
 
             <div class="status-bar__list">
-                    <a href="{% url 'core:recommend_list' %}">추천</a>
+                <a href="{% url 'core:recommend_list' %}">추천</a>
             </div>
 
 
@@ -47,9 +47,7 @@
                     <div class="status-bar__single-menu" >
                         <a href="{{user.get_absolute_url}}">프로필</a>
                     </div>
-                 <a href="{% url 'project:create' %}">
-                    <div class="status-bar__single-menu" >프로젝트 생성</div>
-                      </a>
+             
                  <a href="{% url 'user:logout' %}">
                     <div class="status-bar__single-menu" >로그아웃</div>
                 </a>
@@ -61,7 +59,7 @@
             </div>
             {% endif %}
 
-            
+
         </div>
         <div class="status-bar__hamburger">
 

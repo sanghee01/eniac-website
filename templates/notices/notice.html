@@ -57,9 +57,9 @@
                 {% endif %}
             </a>
         </div>
-        {% endfor %} {% if notices.user.is_staff == True %}
+        {% endfor %} {% if superhost %}
         <div class="btn-component goto-create__btn">
-            <a href="{% url 'notice:create' %}">공지 작성</a>
+            <a href="{% url 'notice:create' %}"><button>공지 작성</button></a>
         </div>
         {% endif %}
         <form method="get" action="{% url 'notice:search' %}" class="notice__search">

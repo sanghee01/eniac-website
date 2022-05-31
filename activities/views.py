@@ -79,6 +79,9 @@ class EditActivityView(UpdateView):
        "title",
        "semester",
        "thumnail_img",
+       "img_a",   
+       "img_b", 
+       "img_c", 
        "desc",
     )
     labels = {

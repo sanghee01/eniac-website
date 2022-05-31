@@ -46,6 +46,9 @@ class CreateActivityForm(forms.ModelForm):
           "desc",
           "semester",
           "thumnail_img",
+          "img_a",   
+          "img_b", 
+          "img_c", 
         )
         widgets = {
             "title": forms.TextInput(attrs={'placeholder': '프로젝트 이름'}),  

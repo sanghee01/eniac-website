@@ -46,6 +46,14 @@
         </div>
         {% endfor %}
     </div>
+    <form method="get" action="{% url 'notice:search' %}" class="notice__search">
+        {% csrf_token %}
+        <div class="notice__search-box">
+            <input name="city" placeholder="공지사항을 검색하세요." class="notice__search-bar">
+            <i class="fas fa-search"></i></input>
+        </div>
+        <!-- 글 작성 버튼은 관리자만 보이도록 해주세요 -->
+    </form>
     <div class="project-page">
         {% if notice.has_previous %}
         <a class="project-page__a" href="?page={{notice.previous_pre_number}}">

@@ -13,6 +13,9 @@ from taggit.models import (
 class Notice(TimeStampedModel): 
     title = models.CharField(max_length=100, verbose_name='제목')
     thumnail_img = models.ImageField(verbose_name='썸네일')
+    img_a = models.ImageField(verbose_name='이미지1', null=True, blank=True)
+    img_b = models.ImageField(verbose_name='이미지2', null=True, blank=True)
+    img_c = models.ImageField(verbose_name='이미지3', null=True, blank=True)
     desc = models.TextField(max_length=300, verbose_name='내용')
     tag = models.ManyToManyField('tags.Tag', verbose_name='학년별')
     # activity_tag = models.ManyToManyField('tags.ActivityTag', verbose_name='활동별')
@@ -30,6 +33,27 @@ class Notice(TimeStampedModel):
           return self.thumnail_img.url
       else:
           return "/static/images/coding.jpg"
+
+    @property
+    def get_photo_url_a(self):
+      if self.img_a:
+          return self.img_a.url
+      else:
+          return None
+
+    @property
+    def get_photo_url_b(self):
+      if self.img_b:
+          return self.img_b.url
+      else:
+          return None
+
+    @property
+    def get_photo_url_c(self):
+      if self.img_c:
+          return self.img_c.url
+      else:
+          return None 
 
 
     

@@ -198,7 +198,7 @@ LOGIN_URL = "/users/login/"
 
 
 EMAIL_HOST = "smtp.naver.com"
-EMAIL_PORT = "587"		 # 서버 포트
+EMAIL_PORT = "587"		 # 서버 
 EMAIL_FROM = "에니악"
 EMAIL_HOST_USER = 'donghe1472@naver.com' 	 
 EMAIL_HOST_PASSWORD = 'aa1234147236'		

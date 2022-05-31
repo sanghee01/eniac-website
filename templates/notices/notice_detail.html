@@ -24,7 +24,10 @@
         </div>
 
         <div class="notice-detail__content">
-            <img src="{{notice.get_photo_url}}" alt="" />
+            <img src="{{notice.get_photo_url}}" alt="" /> {% if notice.img_a %}
+            <img src="{{notice.get_photo_url_a}}" alt="" /> {% endif %} {% if notice.get_photo_url_b %}
+            <img src="{{notice.get_photo_url_b}}" alt="" /> {% endif %} {% if notice.get_photo_url_c %}
+            <img src="{{notice.get_photo_url_c}}" alt="" /> {% endif %}
             <div class="notice-detail__text">{{notice.desc}}</div>
         </div>
     </main>

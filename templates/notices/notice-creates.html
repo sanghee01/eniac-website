@@ -8,6 +8,6 @@
     {% include "base.html" %} {% load static %}
     <main>
         <div class="create__title">📢 공지사항 작성</div>
-        {% include 'mixins/notice/notice_form.html' %}
+        {% include 'mixins/notice/notice_form.html' with form=form cta="작성" %}
     </main>
 </body>
