@@ -14,7 +14,7 @@
 <body>
     {% include "base.html" %} {% load static %}
     <div class="notice">
-        <div class="notice__title__search">공지사항</div>
+        <div class="notice__title">공지사항</div>
         {% for pro in products %}
 
         <div class="notice__card">
@@ -48,7 +48,7 @@
     </div>
     <form method="get" action="{% url 'notice:search' %}" class="notice__search">
         {% csrf_token %}
-        <div class="notice__search-box">
+        <div class="notice__search-box-sec">
             <input name="city" placeholder="공지사항을 검색하세요." class="notice__search-bar">
             <i class="fas fa-search"></i></input>
         </div>

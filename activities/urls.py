@@ -20,6 +20,8 @@ urlpatterns = [
  path("<int:pk>", views.DetailActivity.as_view() , name="detail"),
  path('<int:pk>/comments/', views.comment_create, name='comments_create'),
  path('<int:pk>/delete', views.DeleteActivityView.as_view(), name='delete'),
+
+ path("search/", views.search, name="search"),
  ]
 
 

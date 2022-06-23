@@ -12,6 +12,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages 
 from django.shortcuts import render, redirect, reverse
 from users.models import User
+from django.db.models import Q
 
 # Create your views here.
 
@@ -28,12 +29,20 @@ def all_activity(request):
     next_all_activities = models.Activity.objects.filter(semester="2학기")
     paginator = Paginator(next_all_activities, 6)
     next_activities = paginator.get_page(page)
+
     all_challenges = models.Challenge.objects.all().order_by("-created")
     paginator = Paginator(all_challenges, 6)
     challenges = paginator.get_page(page)
+
     all_comment = models.Activity.objects.all()
     comment_form = forms.CreateCommentForm()
-    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment, 'comment_form': comment_form})
+    if request.GET.get('featured'):
+        featured_filter = request.GET.get('featured')
+        listings = models.Activity.objects.filter(featured_choices=featured_filter)
+    else:
+        listings = models.Activity.objects.all()
+
+    return render(request,  "activities/activity.html", context={"act": activities,"potato":users,  "next_act": next_activities, "chall": challenges, "comment": all_comment, 'comment_form': comment_form, 'listings': listings})
 
 
 class CreateChallengeView(user_mixins.LoggedInOnlyView, FormView):
@@ -129,5 +138,15 @@ class DeleteActivityView(DeleteView): # DeleteView를 임포트하는것 잊지�
     def get_success_url(self):
         return reverse("core:activity_list")
     
+                                                                                                                
+def search(request):
+   city = request.GET.get("city", "Anywhere")
+   city = str.capitalize(city)
+   semester = models.Activity.objects.all()
+   return render(request, "activities/search.html", {"city": city, "sem": semester})
 
-                                                                  
+
+
+                                                              
+
+                                                    

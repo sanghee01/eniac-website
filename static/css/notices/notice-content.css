@@ -10,7 +10,7 @@
 
 .notice {
     width: 60%;
-    margin: auto;
+    margin: 150px auto;
 }
 
 .notice__title {
@@ -118,6 +118,14 @@
     width: 100%;
     display: flex;
     justify-content: right;
+}
+
+.notice__search-box-sec {
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: right;
+    margin-left: 300px;
 }
 
 .notice__search-bar {

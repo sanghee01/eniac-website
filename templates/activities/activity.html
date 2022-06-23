@@ -26,10 +26,19 @@
                         <div class="activity-main">
                             <section class="activity__cont-wrap">
                                 <div class="dropdown">
-                                    <button type="button" class="dropdown-toggle">
+                                    <form method="get">
+                                        <label for="featured">Format</label>
+                                        <select name="featured">
+        {% for adoption in typeList %} 
+            <option value="{{ adoption }}">{{ adoption }}</option>
+        {% endfor %}
+     </select>
+                                        <input type="submit" value="Filter" />
+                                    </form>
+                                    <!-- <button type="button" class="dropdown-toggle">
                                   학기
-                                </button>
-                                    <ul class="dropdown-menu">
+                                </button> -->
+                                    <!-- <ul class="dropdown-menu">
                                         <li class="dropdown-item">
                                             <button type="button" value="1" class="dropdown-option" onclick="GetSelectedValue()">
                                       22년도 1학기
@@ -45,7 +54,15 @@
                                       23년도 1학기
                                     </button>
                                         </li>
-                                    </ul>
+                                    </ul> -->
+                                    <div>
+                                        <label for="room_type">Room Type</label>
+                                        <select id="room_type" name="room_type">
+                {% for semester in sem %}
+                    <option value="{{room_type.pk}}">{{semester}}</option>
+                {% endfor %}
+            </select>
+                                    </div>
                                 </div> {% for activity in act.object_list %}
                                 <section class="activity-cont">
                                     <a href="{% url 'activity:detail' activity.pk %}">
@@ -89,15 +106,16 @@
                                     <a href="{% url 'activity:createAct' %} "><button>활동 작성</button></a>
                                 </div>
                                 <!-- 페이지 -->
+                                <form method="get" action="{% url 'activity:search' %}">
+                                    <input name="city" placeholder="Search by City" />
+                                </form>
                                 <div class="activity__pageparent ">
                                     <div class="activity-page ">
-
                                         {% if act.has_previous %}
                                         <a class="activity-page__a " href="?page={{act.previous_pre_number}} ">
                                             <i style="margin-right: 10px; " class="fas fa-chevron-left "></i>
                                         </a>
                                         {% endif %}
-
                                         <span> {{act.number}} of {{act.paginator.num_pages}}</span> {% if act.has_next %}
                                         <a class="activity-page__a " href="?page={{act.next_page_number}} ">
                                             <i style="margin-left: 10px; " class="fas fa-chevron-right "></i>
@@ -115,11 +133,8 @@
                 <div id="tab2 " id="attendence " class="tab-menu__cont ">
                     <main class="activity-main__wrap ">
                         <div class="activity-main ">
-
                             <div class="attend__wrap ">
-
                                 <table>
-
                                     <tr>
                                         <th>이름</th>
                                         <th>기수</th>
@@ -146,24 +161,24 @@
                                             <td>32기</td>
                                             <td>컴퓨터소프트웨어공학과</td>
                                             <td>App</td>
-                                            <td><a href="# " class="attend__git "><i class="fab fa-github-square "></i></a></td>
-                                            <td><a href="# " class="attend__blog "><i class="fas fa-book "></i></a></td>
+                                            <td><a href="#" class="attend__git"><i class="fab fa-github-square "></i></a></td>
+                                            <td><a href="#" class="attend__blog"><i class="fas fa-book "></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>길동동</td>
                                             <td>30기</td>
                                             <td>컴퓨터소프트웨어공학과</td>
                                             <td>클라우드</td>
-                                            <td><a href="# " class="attend__git "><i class="fab fa-github-square "></i></a></td>
-                                            <td><a href="# " class="attend__blog "><i class="fas fa-book "></i></a></td>
+                                            <td><a href="#" class="attend__git"><i class="fab fa-github-square "></i></a></td>
+                                            <td><a href="#" class="attend__blog"><i class="fas fa-book "></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>동동길</td>
                                             <td>31기</td>
                                             <td>컴퓨터소프트웨어공학과</td>
                                             <td>Web</td>
-                                            <td><a href="# " class="attend__git "><i class="fab fa-github-square "></i></a></td>
-                                            <td><a href="# " class="attend__blog "><i class="fas fa-book "></i></a></td>
+                                            <td><a href="#" class="attend__git"><i class="fab fa-github-square "></i></a></td>
+                                            <td><a href="#" class="attend__blog"><i class="fas fa-book "></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -182,13 +197,13 @@
                             {% for challenge in chall.object_list %}
                             <div class="challenge-content ">
                                 <div class="challenge__title ">{{challenge.users}}</div>
+
                                 <p class="challenge__desc ">
                                     {{challenge.desc}}
                                 </p>
                                 <p class="challenge__date ">
                                     {{challenge.created}}
                                 </p>
-
 
                             </div>
                             {% endfor %}
@@ -197,8 +212,6 @@
                             </div>
                         </div>
                     </main>
-
-
                     {% include 'partials/footer.html' %}
                 </div>
             </li>

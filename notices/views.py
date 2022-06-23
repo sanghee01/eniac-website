@@ -33,6 +33,8 @@ class CreateNoticetView(user_mixins.LoggedInOnlyView, FormView):
         notice.save()
         # project.success(self.request, "Photo Uploaded")
         return redirect(reverse("core:notice_list"))
+        
+
 
 def search(request):
     products = None
@@ -41,6 +43,7 @@ def search(request):
         query = request.GET.get('city') 
         products = models.Notice.objects.all().filter(Q(title__contains=query) | Q(desc__contains=query) | Q(tag__name__contains=query))
     return render(request, "notices/search.html", {"query": query, "products": products})
+
 
 
 
