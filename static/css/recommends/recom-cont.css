@@ -1,6 +1,7 @@
 .lectures {
   width: 60%;
   margin: auto;
+  min-height: 200vh;
 }
 .lecture__wrap {
   display: flex;
@@ -9,8 +10,8 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 50px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .lecture__class {
   display: block;
   text-align: start;
