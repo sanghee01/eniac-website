@@ -1,0 +1,13 @@
+<body id="signup-page">
+  {% load static %} {% include 'base.html' %}
+  <div class="signup__form">
+    <h1 class="login__title">Sign Up Eniac</h1>
+
+    <form method="POST" action="{% url 'user:signup' %}">
+      <div class="signup__input">
+        <button class="login__btn signup__btn">다음</button>
+      </div>
+    </form>
+  </div>
+  {% include 'partials/footer.html' %}
+</body>
